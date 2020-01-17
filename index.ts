@@ -1,0 +1,39 @@
+import Server from "./classes/server";
+import mongoose from "mongoose";
+import cors from "cors";
+import bodyParser from "body-parser";
+import fileUpload from "express-fileupload";
+import userRoutes from "./routes/usuario";
+import productoRoutes from "./routes/producto";
+
+const server = new Server();
+
+// Body parser
+server.app.use(bodyParser.urlencoded({ extended: true }));
+server.app.use(bodyParser.json());
+
+// File Upload
+server.app.use(fileUpload());
+
+// Configurar CORS
+server.app.use(cors({ origin: true, credentials: true }));
+
+// Rutas de mi appnpm install @types/express-fileupload
+server.app.use("/user", userRoutes);
+server.app.use("/productos", productoRoutes);
+
+// Conectar DB
+
+mongoose.connect(
+  "mongodb://localhost:27017/catalogo",
+  { useNewUrlParser: true, useCreateIndex: true },
+  err => {
+    if (err) throw err;
+    console.log("Base de datos ONLINE");
+  }
+);
+
+// Levantar express
+server.start(() => {
+  console.log(`Servidor corriendo en puerto ${server.port}`);
+});
