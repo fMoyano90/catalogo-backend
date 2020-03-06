@@ -39,7 +39,6 @@ productoRoutes.post("/", [autenticacion_1.verificaToken], (req, res) => {
     let body = req.body;
     const imagen = fileSystem.imagenDeTempHaciaProducto();
     body.img = imagen;
-    console.log(imagen);
     producto_model_1.Producto.create(body)
         .then((productoDB) => __awaiter(void 0, void 0, void 0, function* () {
         res.json({

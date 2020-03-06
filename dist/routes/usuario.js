@@ -1,4 +1,13 @@
 "use strict";
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
@@ -46,7 +55,9 @@ userRoutes.post("/create", (req, res) => {
         nombre: req.body.nombre,
         email: req.body.email,
         password: bcrypt_1.default.hashSync(req.body.password, 10),
+        role: req.body.role,
         sap: req.body.sap,
+        rut: req.body.rut,
         avatar: req.body.avatar
     };
     usuario_model_1.Usuario.create(user)
@@ -100,4 +111,20 @@ userRoutes.get("/", [autenticacion_1.verificaToken], (req, res) => {
         usuario
     });
 });
+// Obtener usuarios paginados
+userRoutes.get("/all", [autenticacion_1.verificaToken], (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    let pagina = Number(req.query.pagina) || 1;
+    let skip = pagina - 1;
+    skip = skip * 10;
+    const usuarios = yield usuario_model_1.Usuario.find()
+        .sort({ nombre: 1 })
+        .limit(10)
+        .skip(skip)
+        .exec();
+    res.json({
+        ok: true,
+        pagina,
+        usuarios
+    });
+}));
 exports.default = userRoutes;

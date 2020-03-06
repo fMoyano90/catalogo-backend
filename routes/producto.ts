@@ -33,8 +33,6 @@ productoRoutes.post("/", [verificaToken], (req: any, res: Response) => {
   const imagen = fileSystem.imagenDeTempHaciaProducto();
   body.img = imagen;
 
-  console.log(imagen);
-
   Producto.create(body)
     .then(async productoDB => {
       res.json({

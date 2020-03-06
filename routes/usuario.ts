@@ -45,7 +45,9 @@ userRoutes.post("/create", (req: Request, res: Response) => {
     nombre: req.body.nombre,
     email: req.body.email,
     password: bcrypt.hashSync(req.body.password, 10),
+    role: req.body.role,
     sap: req.body.sap,
+    rut: req.body.rut,
     avatar: req.body.avatar
   };
 
@@ -109,6 +111,25 @@ userRoutes.get("/", [verificaToken], (req: any, res: Response) => {
   res.json({
     ok: true,
     usuario
+  });
+});
+
+// Obtener usuarios paginados
+userRoutes.get("/all", [verificaToken], async (req: any, res: Response) => {
+  let pagina = Number(req.query.pagina) || 1;
+  let skip = pagina - 1;
+  skip = skip * 10;
+
+  const usuarios = await Usuario.find()
+    .sort({ nombre: 1 })
+    .limit(10)
+    .skip(skip)
+    .exec();
+
+  res.json({
+    ok: true,
+    pagina,
+    usuarios
   });
 });
 

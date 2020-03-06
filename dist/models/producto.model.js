@@ -20,15 +20,17 @@ const productoSchema = new mongoose_1.Schema({
     medida: {
         type: String
     },
-    img: {
-        type: String
-    },
+    img: [
+        {
+            type: String
+        }
+    ],
     created: {
         type: Date
     }
 });
-productoSchema.pre('save', function (next) {
+productoSchema.pre("save", function (next) {
     this.created = new Date();
     next();
 });
-exports.Producto = mongoose_1.model('Producto', productoSchema);
+exports.Producto = mongoose_1.model("Producto", productoSchema);

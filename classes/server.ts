@@ -1,18 +1,16 @@
-import express from 'express';
+import express from "express";
 
 export default class Server {
+  public app: express.Application;
+  public port: number = 3001;
 
-    public app: express.Application;
-    public port: number = 3001;
+  constructor() {
+    this.app = express();
+  }
 
-    constructor(){
-        this.app = express();
-    }
-
-    start( callback: Function ){
-        this.app.listen(3001, function () {
-            console.log('Servidor corriendo en puerto 3001');
-          });
-    }
-    
+  start(callback: Function) {
+    this.app.listen(process.env.PORT || 3001, function() {
+      console.log("Servidor corriendo en puerto 3001 o " + process.env.PORT);
+    });
+  }
 }
