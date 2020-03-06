@@ -9,8 +9,8 @@ export default class Server {
   }
 
   start(callback: Function) {
-    this.app.listen(process.env.PORT || 3001, function() {
-      console.log("Servidor corriendo en puerto 3001 o " + process.env.PORT);
+    this.app.listen(process.env.PORT, function() {
+      console.log("Servidor corriendo en puerto " + process.env.PORT);
     });
   }
 }
