@@ -25,7 +25,7 @@ server.app.use("/productos", productoRoutes);
 // Conectar DB
 
 mongoose.connect(
-  "mongodb://localhost:27017/catalogo",
+  "mongodb+srv://HitCode:HITCODE4716@catalogoepp-4kv0t.mongodb.net/test?retryWrites=true&w=majority",
   { useNewUrlParser: true, useCreateIndex: true },
   err => {
     if (err) throw err;
