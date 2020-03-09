@@ -18,7 +18,7 @@ const producto_model_1 = require("../models/producto.model");
 const file_system_1 = __importDefault(require("../classes/file-system"));
 const productoRoutes = express_1.Router();
 const fileSystem = new file_system_1.default();
-// Obtener productos paginados
+// Obtener todos los productos paginados
 productoRoutes.get("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     let pagina = Number(req.query.pagina) || 1;
     let skip = pagina - 1;
@@ -48,6 +48,31 @@ productoRoutes.post("/", [autenticacion_1.verificaToken], (req, res) => {
     }))
         .catch(err => {
         res.json(err);
+    });
+});
+// Editar producto
+productoRoutes.put("/:id", (req, res) => {
+    let id = req.params.id;
+    let body = req.body;
+    const imagen = fileSystem.imagenDeTempHaciaProducto();
+    body.img = imagen;
+    producto_model_1.Producto.findByIdAndUpdate(id, body, { new: true, runValidators: true }, (err, productoBD) => {
+        if (err) {
+            return res.status(500).json({
+                ok: false,
+                err
+            });
+        }
+        if (!productoBD) {
+            return res.status(400).json({
+                ok: false,
+                err
+            });
+        }
+        res.json({
+            ok: true,
+            producto: productoBD
+        });
     });
 });
 // Servicio para subir archivos
