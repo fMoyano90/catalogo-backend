@@ -58,9 +58,12 @@ productoRoutes.get("/categoria/:categoria", async (req: any, res: Response) => {
   let skip = pagina - 1;
   skip = skip * 10;
 
-  let categoria = req.params.categoria;
+  let params = req.params.categoria;
+  let categoria = params.toString();
 
-  const productos = await Producto.find({ "productos.categoria": categoria })
+  console.log(categoria);
+
+  const productos = await Producto.find({ categoria: categoria })
     .sort({ nombre: 1 })
     .limit(10)
     .skip(skip)
@@ -79,9 +82,12 @@ productoRoutes.get("/genero/:genero", async (req: any, res: Response) => {
   let skip = pagina - 1;
   skip = skip * 10;
 
-  let genero = req.params.genero;
+  let params = req.params.genero;
+  let genero = params.toString();
 
-  const productos = await Producto.find({ "productos.genero": genero })
+  console.log(genero);
+
+  const productos = await Producto.find({ genero: genero })
     .sort({ nombre: 1 })
     .limit(10)
     .skip(skip)

@@ -62,8 +62,10 @@ productoRoutes.get("/categoria/:categoria", (req, res) => __awaiter(void 0, void
     let pagina = Number(req.query.pagina) || 1;
     let skip = pagina - 1;
     skip = skip * 10;
-    let categoria = req.params.categoria;
-    const productos = yield producto_model_1.Producto.find({ "productos.categoria": categoria })
+    let params = req.params.categoria;
+    let categoria = params.toString();
+    console.log(categoria);
+    const productos = yield producto_model_1.Producto.find({ categoria: categoria })
         .sort({ nombre: 1 })
         .limit(10)
         .skip(skip)
@@ -79,8 +81,10 @@ productoRoutes.get("/genero/:genero", (req, res) => __awaiter(void 0, void 0, vo
     let pagina = Number(req.query.pagina) || 1;
     let skip = pagina - 1;
     skip = skip * 10;
-    let genero = req.params.genero;
-    const productos = yield producto_model_1.Producto.find({ "productos.genero": genero })
+    let params = req.params.genero;
+    let genero = params.toString();
+    console.log(genero);
+    const productos = yield producto_model_1.Producto.find({ genero: genero })
         .sort({ nombre: 1 })
         .limit(10)
         .skip(skip)
