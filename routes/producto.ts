@@ -53,7 +53,7 @@ productoRoutes.get("/:id", async (req: any, res: Response) => {
 });
 
 // Obtener productos por categoria
-productoRoutes.get("/:categoria", async (req: any, res: Response) => {
+productoRoutes.get("/categoria/:categoria", async (req: any, res: Response) => {
   let pagina = Number(req.query.pagina) || 1;
   let skip = pagina - 1;
   skip = skip * 10;
@@ -74,7 +74,7 @@ productoRoutes.get("/:categoria", async (req: any, res: Response) => {
 });
 
 // Obtener productos por genero
-productoRoutes.get("/:genero", async (req: any, res: Response) => {
+productoRoutes.get("/genero/:genero", async (req: any, res: Response) => {
   let pagina = Number(req.query.pagina) || 1;
   let skip = pagina - 1;
   skip = skip * 10;

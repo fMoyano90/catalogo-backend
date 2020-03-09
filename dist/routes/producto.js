@@ -58,7 +58,7 @@ productoRoutes.get("/:id", (req, res) => __awaiter(void 0, void 0, void 0, funct
     });
 }));
 // Obtener productos por categoria
-productoRoutes.get("/:categoria", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+productoRoutes.get("/categoria/:categoria", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     let pagina = Number(req.query.pagina) || 1;
     let skip = pagina - 1;
     skip = skip * 10;
@@ -75,7 +75,7 @@ productoRoutes.get("/:categoria", (req, res) => __awaiter(void 0, void 0, void 0
     });
 }));
 // Obtener productos por genero
-productoRoutes.get("/:genero", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+productoRoutes.get("/genero/:genero", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     let pagina = Number(req.query.pagina) || 1;
     let skip = pagina - 1;
     skip = skip * 10;
