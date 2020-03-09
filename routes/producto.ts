@@ -1,4 +1,4 @@
-import { Router, Response, request } from "express";
+import { Router, Response, request, response } from "express";
 import { verificaToken } from "../middlewares/autenticacion";
 import { Producto } from "../models/producto.model";
 import { FileUpload } from "../interfaces/file-upload";
@@ -7,7 +7,7 @@ import FileSystem from "../classes/file-system";
 const productoRoutes = Router();
 const fileSystem = new FileSystem();
 
-// Obtener productos paginados
+// Obtener todos los productos paginados
 productoRoutes.get("/", async (req: any, res: Response) => {
   let pagina = Number(req.query.pagina) || 1;
   let skip = pagina - 1;
@@ -45,8 +45,41 @@ productoRoutes.post("/", [verificaToken], (req: any, res: Response) => {
     });
 });
 
-// Servicio para subir archivos
+// Editar producto
+productoRoutes.put("/:id", (req: any, res: Response) => {
+  let id = req.params.id;
+  let body = req.body;
+  const imagen = fileSystem.imagenDeTempHaciaProducto();
+  body.img = imagen;
 
+  Producto.findByIdAndUpdate(
+    id,
+    body,
+    { new: true, runValidators: true },
+    (err, productoBD) => {
+      if (err) {
+        return res.status(500).json({
+          ok: false,
+          err
+        });
+      }
+
+      if (!productoBD) {
+        return res.status(400).json({
+          ok: false,
+          err
+        });
+      }
+
+      res.json({
+        ok: true,
+        producto: productoBD
+      });
+    }
+  );
+});
+
+// Servicio para subir archivos
 productoRoutes.post(
   "/upload",
   [verificaToken],
