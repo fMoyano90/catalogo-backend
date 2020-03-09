@@ -34,6 +34,63 @@ productoRoutes.get("/", (req, res) => __awaiter(void 0, void 0, void 0, function
         productos
     });
 }));
+// Obtener producto por id
+productoRoutes.get("/:id", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    let id = req.params.id;
+    const producto = yield producto_model_1.Producto.findById(id, (err, productoBD) => {
+        if (err) {
+            return res.status(500).json({
+                ok: false,
+                err
+            });
+        }
+        if (!productoBD) {
+            return res.status(400).json({
+                ok: false,
+                message: "No existe producto con esa ID",
+                err
+            });
+        }
+        res.json({
+            ok: true,
+            producto: productoBD
+        });
+    });
+}));
+// Obtener productos por categoria
+productoRoutes.get("/:categoria", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    let pagina = Number(req.query.pagina) || 1;
+    let skip = pagina - 1;
+    skip = skip * 10;
+    let categoria = req.params.categoria;
+    const productos = yield producto_model_1.Producto.find({ "productos.categoria": categoria })
+        .sort({ nombre: 1 })
+        .limit(10)
+        .skip(skip)
+        .exec();
+    res.json({
+        ok: true,
+        pagina,
+        productos
+    });
+}));
+// Obtener productos por genero
+productoRoutes.get("/:genero", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    let pagina = Number(req.query.pagina) || 1;
+    let skip = pagina - 1;
+    skip = skip * 10;
+    let genero = req.params.genero;
+    const productos = yield producto_model_1.Producto.find({ "productos.genero": genero })
+        .sort({ nombre: 1 })
+        .limit(10)
+        .skip(skip)
+        .exec();
+    res.json({
+        ok: true,
+        pagina,
+        productos
+    });
+}));
 // Crear Producto
 productoRoutes.post("/", [autenticacion_1.verificaToken], (req, res) => {
     let body = req.body;

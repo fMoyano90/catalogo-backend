@@ -26,6 +26,74 @@ productoRoutes.get("/", async (req: any, res: Response) => {
   });
 });
 
+// Obtener producto por id
+productoRoutes.get("/:id", async (req: any, res: Response) => {
+  let id = req.params.id;
+  const producto = await Producto.findById(id, (err, productoBD) => {
+    if (err) {
+      return res.status(500).json({
+        ok: false,
+        err
+      });
+    }
+
+    if (!productoBD) {
+      return res.status(400).json({
+        ok: false,
+        message: "No existe producto con esa ID",
+        err
+      });
+    }
+
+    res.json({
+      ok: true,
+      producto: productoBD
+    });
+  });
+});
+
+// Obtener productos por categoria
+productoRoutes.get("/:categoria", async (req: any, res: Response) => {
+  let pagina = Number(req.query.pagina) || 1;
+  let skip = pagina - 1;
+  skip = skip * 10;
+
+  let categoria = req.params.categoria;
+
+  const productos = await Producto.find({ "productos.categoria": categoria })
+    .sort({ nombre: 1 })
+    .limit(10)
+    .skip(skip)
+    .exec();
+
+  res.json({
+    ok: true,
+    pagina,
+    productos
+  });
+});
+
+// Obtener productos por genero
+productoRoutes.get("/:genero", async (req: any, res: Response) => {
+  let pagina = Number(req.query.pagina) || 1;
+  let skip = pagina - 1;
+  skip = skip * 10;
+
+  let genero = req.params.genero;
+
+  const productos = await Producto.find({ "productos.genero": genero })
+    .sort({ nombre: 1 })
+    .limit(10)
+    .skip(skip)
+    .exec();
+
+  res.json({
+    ok: true,
+    pagina,
+    productos
+  });
+});
+
 // Crear Producto
 productoRoutes.post("/", [verificaToken], (req: any, res: Response) => {
   let body = req.body;
