@@ -12,12 +12,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const producto_model_1 = require("../models/producto.model");
 const buscadorRoutes = express_1.Router();
-buscadorRoutes.get("/", (req, res) => {
-    res.json({
-        ok: true,
-        message: "Ruta de prueba"
-    });
-});
 // Obtener producto por busqueda
 buscadorRoutes.get("/:busqueda", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     let pagina = Number(req.query.pagina) || 1;
@@ -25,7 +19,7 @@ buscadorRoutes.get("/:busqueda", (req, res) => __awaiter(void 0, void 0, void 0,
     skip = skip * 10;
     let busqueda = req.params.busqueda;
     var regex = new RegExp(busqueda, "i");
-    const productos = yield producto_model_1.Producto.find({}, "material descripcion")
+    const productos = yield producto_model_1.Producto.find({})
         .or([{ descripcion: regex }, { material: regex }])
         .sort({ nombre: 1 })
         .limit(10)
