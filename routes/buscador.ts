@@ -1,19 +1,14 @@
-import { Router, Response, request, response } from "express";
-import { verificaToken } from "../middlewares/autenticacion";
+import { Router, Response } from "express";
 import { Producto } from "../models/producto.model";
-import { FileUpload } from "../interfaces/file-upload";
-import FileSystem from "../classes/file-system";
 
 const buscadorRoutes = Router();
-const fileSystem = new FileSystem();
 
 buscadorRoutes.get("/", (req: any, res: Response) => {
-    res.json({
-        ok: true, 
-        message: "ruta de prueba"
-    })
+  res.json({
+    ok: true,
+    message: "Ruta de prueba"
+  });
 });
-
 
 // Obtener producto por busqueda
 buscadorRoutes.get("/:busqueda", async (req: any, res: Response) => {

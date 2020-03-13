@@ -9,6 +9,7 @@ const body_parser_1 = __importDefault(require("body-parser"));
 const express_fileupload_1 = __importDefault(require("express-fileupload"));
 const usuario_1 = __importDefault(require("./routes/usuario"));
 const producto_1 = __importDefault(require("./routes/producto"));
+const buscador_1 = __importDefault(require("./routes/buscador"));
 const server = new server_1.default();
 // Configurar cabeceras y cors
 server.app.use((req, res, next) => {
@@ -26,6 +27,7 @@ server.app.use(express_fileupload_1.default());
 // Rutas de mi appnpm install @types/express-fileupload
 server.app.use("/user", usuario_1.default);
 server.app.use("/productos", producto_1.default);
+server.app.use("/buscador", buscador_1.default);
 // Conectar DB
 mongoose_1.default.connect("mongodb+srv://HitCode:HITCODE4716@catalogoepp-4kv0t.mongodb.net/test?retryWrites=true&w=majority", { useNewUrlParser: true, useCreateIndex: true }, err => {
     if (err)

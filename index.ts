@@ -5,6 +5,7 @@ import bodyParser from "body-parser";
 import fileUpload from "express-fileupload";
 import userRoutes from "./routes/usuario";
 import productoRoutes from "./routes/producto";
+import buscadorRoutes from "./routes/buscador";
 
 const server = new Server();
 
@@ -30,6 +31,7 @@ server.app.use(fileUpload());
 // Rutas de mi appnpm install @types/express-fileupload
 server.app.use("/user", userRoutes);
 server.app.use("/productos", productoRoutes);
+server.app.use("/buscador", buscadorRoutes);
 
 // Conectar DB
 

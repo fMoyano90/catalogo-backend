@@ -57,25 +57,6 @@ productoRoutes.get("/:id", (req, res) => __awaiter(void 0, void 0, void 0, funct
         });
     });
 }));
-// Obtener producto por busqueda
-productoRoutes.get("buscador/:busqueda", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    let pagina = Number(req.query.pagina) || 1;
-    let skip = pagina - 1;
-    skip = skip * 10;
-    let busqueda = req.params.busqueda;
-    var regex = new RegExp(busqueda, "i");
-    const productos = yield producto_model_1.Producto.find({}, "material descripcion")
-        .or([{ descripcion: regex }, { material: regex }])
-        .sort({ nombre: 1 })
-        .limit(10)
-        .skip(skip)
-        .exec();
-    res.json({
-        ok: true,
-        pagina,
-        productos
-    });
-}));
 // Obtener productos por categoria
 productoRoutes.get("/categoria/:categoria", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     let pagina = Number(req.query.pagina) || 1;
