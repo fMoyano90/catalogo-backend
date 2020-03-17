@@ -67,7 +67,9 @@ userRoutes.post("/create", (req: Request, res: Response) => {
     villa: req.body.villa,
     ciudad: req.body.ciudad,
     comuna: req.body.comuna,
+    telefono: req.body.telefono,
     region: req.body.region,
+    sindicato: req.body.sindicato,
     tipo_socio: req.body.tipo_socio,
     tipo_usuario: req.body.tipo_usuario
   };
@@ -115,7 +117,9 @@ userRoutes.post("/update", verificaToken, (req: any, res: Response) => {
     villa: req.body.villa || req.usuario.villa,
     ciudad: req.body.ciudad || req.usuario.ciudad,
     comuna: req.body.comuna || req.usuario.comuna,
+    telefono: req.body.telefono || req.usuario.telefono,
     region: req.body.region || req.usuario.region,
+    sindicato: req.body.sindicato || req.usuario.sindicato,
     tipo_socio: req.body.tipo_socio || req.usuario.tipo_socio,
     tipo_usuario: req.body.tipo_usuario || req.usuario.tipo_usuario
   };

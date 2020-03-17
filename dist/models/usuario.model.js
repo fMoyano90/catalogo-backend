@@ -86,7 +86,13 @@ const usuarioSchema = new mongoose_1.Schema({
     comuna: {
         type: String
     },
+    telefono: {
+        type: String
+    },
     region: {
+        type: String
+    },
+    sindicato: {
         type: String
     },
     tipo_socio: {
