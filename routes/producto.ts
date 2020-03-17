@@ -197,6 +197,8 @@ productoRoutes.get("/imagen/:img", (req: any, res: Response) => {
   res.sendFile(pathImage);
 });
 
+// IMPORTAR CSV A BASE DE DATOS
+
 productoRoutes.post("/leercsv", (req: any, res: any) => {
   const mongodb = require("mongodb").MongoClient;
   const csvtojson = require("csvtojson");

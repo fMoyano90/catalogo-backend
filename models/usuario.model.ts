@@ -2,23 +2,6 @@ import { Schema, model, Document } from "mongoose";
 import bcrypt from "bcrypt";
 
 const usuarioSchema = new Schema({
-  nombre: {
-    type: String,
-    required: [true, "El nombre es obligatorio"]
-  },
-  avatar: {
-    type: String,
-    default: "av-1.png"
-  },
-  role: {
-    type: String,
-    default: "USER"
-  },
-  email: {
-    type: String,
-    unique: true,
-    required: [true, "El correo es necesario"]
-  },
   sap: {
     type: String,
     unique: true,
@@ -29,16 +12,90 @@ const usuarioSchema = new Schema({
     unique: true,
     required: [true, "El RUT es obligatorio"]
   },
-  password: {
+  nombre: {
     type: String,
-    required: [true, "La contraseña es obligatoria"]
+    required: [true, "El nombre es obligatorio"]
+  },
+  genero: {
+    type: String
+  },
+  estado_civil: {
+    type: String
+  },
+  rol: {
+    type: String
+  },
+  contrato: {
+    type: String
+  },
+  aco: {
+    type: String
+  },
+  nacimiento: {
+    type: String
+  },
+  ingreso: {
+    type: String
+  },
+  division: {
+    type: String
+  },
+  centro_costo: {
+    type: String
+  },
+  posicion: {
+    type: String
+  },
+  div_pers: {
+    type: String
+  },
+  funcion: {
+    type: String
+  },
+  organizacion: {
+    type: String
+  },
+  superintendencia: {
+    type: String
+  },
+  gerencia: {
+    type: String
+  },
+  regla_ppl: {
+    type: String
+  },
+  previsiones: {
+    type: String
+  },
+  salud: {
+    type: String
+  },
+  calle: {
+    type: String
+  },
+  villa: {
+    type: String
+  },
+  ciudad: {
+    type: String
+  },
+  comuna: {
+    type: String
+  },
+  region: {
+    type: String
+  },
+  tipo_socio: {
+    type: String
+  },
+  tipo_usuario: {
+    type: String,
+    default: "USER"
   }
 });
 
-usuarioSchema.method("compararPassword", function(
-  password: string = ""
-): boolean {
-  if (bcrypt.compareSync(password, this.password)) {
+usuarioSchema.method("compararSap", function(sap: string = ""): boolean {
+  if (bcrypt.compareSync(sap, this.sap)) {
     return true;
   } else {
     return false;
@@ -46,14 +103,36 @@ usuarioSchema.method("compararPassword", function(
 });
 
 interface IUsuario extends Document {
-  nombre: string;
-  email: string;
   sap: string;
-  password: string;
-  avatar: string;
-  role: string;
+  rut: string;
+  nombre: string;
+  genero: string;
+  estado_civil: string;
+  rol: string;
+  contrato: string;
+  aco: string;
+  nacimiento: string;
+  ingreso: string;
+  division: string;
+  centro_costo: string;
+  posicion: string;
+  div_pers: string;
+  funcion: string;
+  organizacion: string;
+  superintendencia: string;
+  gerencia: string;
+  regla_ppl: string;
+  previsiones: string;
+  salud: string;
+  calle: string;
+  villa: string;
+  ciudad: string;
+  comuna: string;
+  region: string;
+  tipo_socio: string;
+  tipo_usuario: string;
 
-  compararPassword(password: string): boolean;
+  compararSap(sap: string): boolean;
 }
 
 export const Usuario = model<IUsuario>("Usuario", usuarioSchema);
