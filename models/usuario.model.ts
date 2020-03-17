@@ -3,7 +3,7 @@ import bcrypt from "bcrypt";
 
 const usuarioSchema = new Schema({
   sap: {
-    type: String,
+    type: Number,
     unique: true,
     required: [true, "El número de SAP es obligatorio"]
   },
@@ -100,7 +100,7 @@ const usuarioSchema = new Schema({
   }
 });
 
-usuarioSchema.method("compararSap", function(sap: string = ""): boolean {
+usuarioSchema.method("compararSap", function(sap: number = 0): boolean {
   if (bcrypt.compareSync(sap, this.sap)) {
     return true;
   } else {
@@ -109,7 +109,7 @@ usuarioSchema.method("compararSap", function(sap: string = ""): boolean {
 });
 
 interface IUsuario extends Document {
-  sap: string;
+  sap: number;
   rut: string;
   nombre: string;
   genero: string;
@@ -134,7 +134,9 @@ interface IUsuario extends Document {
   villa: string;
   ciudad: string;
   comuna: string;
+  telefono: string;
   region: string;
+  sindicato: string;
   tipo_socio: string;
   tipo_usuario: string;
 

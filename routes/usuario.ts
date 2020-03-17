@@ -1,6 +1,5 @@
 import { Router, Request, Response } from "express";
 import { Usuario } from "../models/usuario.model";
-import bcrypt from "bcrypt";
 import Token from "../classes/token";
 import { verificaToken } from "../middlewares/autenticacion";
 
@@ -34,7 +33,7 @@ userRoutes.post("/login", (req: Request, res: Response) => {
     } else {
       return res.json({
         ok: false,
-        mensaje: "Número de SAP o RUT no son correctos"
+        mensaje: "Número de SAP o RUT no son correctos."
       });
     }
   });

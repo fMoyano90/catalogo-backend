@@ -7,7 +7,7 @@ const mongoose_1 = require("mongoose");
 const bcrypt_1 = __importDefault(require("bcrypt"));
 const usuarioSchema = new mongoose_1.Schema({
     sap: {
-        type: String,
+        type: Number,
         unique: true,
         required: [true, "El número de SAP es obligatorio"]
     },
@@ -103,7 +103,7 @@ const usuarioSchema = new mongoose_1.Schema({
         default: "USER"
     }
 });
-usuarioSchema.method("compararSap", function (sap = "") {
+usuarioSchema.method("compararSap", function (sap = 0) {
     if (bcrypt_1.default.compareSync(sap, this.sap)) {
         return true;
     }
