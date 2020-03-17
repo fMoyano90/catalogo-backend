@@ -101,7 +101,7 @@ const usuarioSchema = new Schema({
 });
 
 usuarioSchema.method("compararSap", function(sap: number = 0): boolean {
-  if (bcrypt.compareSync(sap, this.sap)) {
+  if (sap == this.sap) {
     return true;
   } else {
     return false;

@@ -1,10 +1,6 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = require("mongoose");
-const bcrypt_1 = __importDefault(require("bcrypt"));
 const usuarioSchema = new mongoose_1.Schema({
     sap: {
         type: Number,
@@ -104,7 +100,7 @@ const usuarioSchema = new mongoose_1.Schema({
     }
 });
 usuarioSchema.method("compararSap", function (sap = 0) {
-    if (bcrypt_1.default.compareSync(sap, this.sap)) {
+    if (sap == this.sap) {
         return true;
     }
     else {

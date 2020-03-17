@@ -44,7 +44,7 @@ userRoutes.post("/login", (req, res) => {
         else {
             return res.json({
                 ok: false,
-                mensaje: "Número de SAP o RUT no son correctos."
+                mensaje: "Número de SAP o RUT no son correctos"
             });
         }
     });

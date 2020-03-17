@@ -33,7 +33,7 @@ userRoutes.post("/login", (req: Request, res: Response) => {
     } else {
       return res.json({
         ok: false,
-        mensaje: "Número de SAP o RUT no son correctos."
+        mensaje: "Número de SAP o RUT no son correctos"
       });
     }
   });
