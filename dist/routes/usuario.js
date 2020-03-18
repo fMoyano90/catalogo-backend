@@ -177,6 +177,29 @@ userRoutes.get("/all", [autenticacion_1.verificaToken], (req, res) => __awaiter(
         usuarios
     });
 }));
+// Usuario por ID
+userRoutes.get("/obtener/:id", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    let id = req.params.id;
+    const usuario = yield usuario_model_1.Usuario.findById(id, (err, usuarioBD) => {
+        if (err) {
+            return res.status(500).json({
+                ok: false,
+                err
+            });
+        }
+        if (!usuarioBD) {
+            return res.status(400).json({
+                ok: false,
+                message: "No existe un usuario con esa ID",
+                err
+            });
+        }
+        res.json({
+            ok: true,
+            usuario: usuarioBD
+        });
+    });
+}));
 // IMPORTAR CSV A BASE DE DATOS
 userRoutes.post("/leercsv", (req, res) => {
     const mongodb = require("mongodb").MongoClient;

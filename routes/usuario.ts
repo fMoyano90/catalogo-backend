@@ -184,6 +184,32 @@ userRoutes.get("/all", [verificaToken], async (req: any, res: Response) => {
   });
 });
 
+// Usuario por ID
+userRoutes.get("/obtener/:id", async (req: any, res: Response) => {
+  let id = req.params.id;
+  const usuario = await Usuario.findById(id, (err, usuarioBD) => {
+    if (err) {
+      return res.status(500).json({
+        ok: false,
+        err
+      });
+    }
+
+    if (!usuarioBD) {
+      return res.status(400).json({
+        ok: false,
+        message: "No existe un usuario con esa ID",
+        err
+      });
+    }
+
+    res.json({
+      ok: true,
+      usuario: usuarioBD
+    });
+  });
+});
+
 // IMPORTAR CSV A BASE DE DATOS
 
 userRoutes.post("/leercsv", (req: any, res: any) => {
