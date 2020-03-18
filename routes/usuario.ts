@@ -156,29 +156,12 @@ userRoutes.post("/update", verificaToken, (req: any, res: Response) => {
   );
 });
 
-//OBTENER USUARIO POR ID
-userRoutes.get("/:id", [verificaToken], async (req: any, res: Response) => {
-  let id = req.params.id;
+userRoutes.get("/", [verificaToken], (req: any, res: Response) => {
+  const usuario = req.usuario;
 
-  const usuario = await Usuario.findById(id, (err, usuarioBD) => {
-    if (err) {
-      return res.status(500).json({
-        ok: false,
-        err
-      });
-    }
-    if (!usuarioBD) {
-      return res.status(400).json({
-        ok: false,
-        message: "No existe un usuario con esa ID",
-        err
-      });
-    }
-
-    res.json({
-      ok: true,
-      usuario
-    });
+  res.json({
+    ok: true,
+    usuario
   });
 });
 

@@ -154,29 +154,13 @@ userRoutes.post("/update", autenticacion_1.verificaToken, (req, res) => {
         });
     });
 });
-//OBTENER USUARIO POR ID
-userRoutes.get("/:id", [autenticacion_1.verificaToken], (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    let id = req.params.id;
-    const usuario = yield usuario_model_1.Usuario.findById(id, (err, usuarioBD) => {
-        if (err) {
-            return res.status(500).json({
-                ok: false,
-                err
-            });
-        }
-        if (!usuarioBD) {
-            return res.status(400).json({
-                ok: false,
-                message: "No existe un usuario con esa ID",
-                err
-            });
-        }
-        res.json({
-            ok: true,
-            usuario
-        });
+userRoutes.get("/", [autenticacion_1.verificaToken], (req, res) => {
+    const usuario = req.usuario;
+    res.json({
+        ok: true,
+        usuario
     });
-}));
+});
 // Obtener usuarios paginados
 userRoutes.get("/all", [autenticacion_1.verificaToken], (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     let pagina = Number(req.query.pagina) || 1;
