@@ -17,6 +17,7 @@ const usuario_model_1 = require("../models/usuario.model");
 const token_1 = __importDefault(require("../classes/token"));
 const autenticacion_1 = require("../middlewares/autenticacion");
 const userRoutes = express_1.Router();
+// LOGIN DE USUARIOS
 userRoutes.post("/login", (req, res) => {
     const body = req.body;
     usuario_model_1.Usuario.findOne({ rut: body.rut }, (err, userDB) => {
@@ -49,6 +50,7 @@ userRoutes.post("/login", (req, res) => {
         }
     });
 });
+// CREAR USUARIO
 userRoutes.post("/create", (req, res) => {
     const user = {
         sap: req.body.sap,
@@ -152,13 +154,29 @@ userRoutes.post("/update", autenticacion_1.verificaToken, (req, res) => {
         });
     });
 });
-userRoutes.get("/", [autenticacion_1.verificaToken], (req, res) => {
-    const usuario = req.usuario;
-    res.json({
-        ok: true,
-        usuario
+//OBTENER USUARIO POR ID
+userRoutes.get("/:id", [autenticacion_1.verificaToken], (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    let id = req.params.id;
+    const usuario = yield usuario_model_1.Usuario.findById(id, (err, usuarioBD) => {
+        if (err) {
+            return res.status(500).json({
+                ok: false,
+                err
+            });
+        }
+        if (!usuarioBD) {
+            return res.status(400).json({
+                ok: false,
+                message: "No existe un usuario con esa ID",
+                err
+            });
+        }
+        res.json({
+            ok: true,
+            usuario
+        });
     });
-});
+}));
 // Obtener usuarios paginados
 userRoutes.get("/all", [autenticacion_1.verificaToken], (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     let pagina = Number(req.query.pagina) || 1;

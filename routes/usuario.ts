@@ -4,6 +4,8 @@ import Token from "../classes/token";
 import { verificaToken } from "../middlewares/autenticacion";
 
 const userRoutes = Router();
+
+// LOGIN DE USUARIOS
 userRoutes.post("/login", (req: Request, res: Response) => {
   const body = req.body;
 
@@ -39,6 +41,7 @@ userRoutes.post("/login", (req: Request, res: Response) => {
   });
 });
 
+// CREAR USUARIO
 userRoutes.post("/create", (req: Request, res: Response) => {
   const user = {
     sap: req.body.sap,
@@ -153,12 +156,29 @@ userRoutes.post("/update", verificaToken, (req: any, res: Response) => {
   );
 });
 
-userRoutes.get("/", [verificaToken], (req: any, res: Response) => {
-  const usuario = req.usuario;
+//OBTENER USUARIO POR ID
+userRoutes.get("/:id", [verificaToken], async (req: any, res: Response) => {
+  let id = req.params.id;
 
-  res.json({
-    ok: true,
-    usuario
+  const usuario = await Usuario.findById(id, (err, usuarioBD) => {
+    if (err) {
+      return res.status(500).json({
+        ok: false,
+        err
+      });
+    }
+    if (!usuarioBD) {
+      return res.status(400).json({
+        ok: false,
+        message: "No existe un usuario con esa ID",
+        err
+      });
+    }
+
+    res.json({
+      ok: true,
+      usuario
+    });
   });
 });
 
