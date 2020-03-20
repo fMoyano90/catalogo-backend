@@ -17,8 +17,15 @@ export default class FileSystem {
       file.mv(`${path}/${nombreArchivo}`, (err: any) => {
         if (err) {
           reject(err);
+          console.log({
+            mensaje: "Ocurrio un error al subir archivo",
+            error: err
+          });
         } else {
           resolve();
+          console.log({
+            message: "El archivo esta en su carpeta temporal"
+          });
         }
       });
     }).catch(err =>

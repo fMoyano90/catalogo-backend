@@ -19,9 +19,16 @@ class FileSystem {
             file.mv(`${path}/${nombreArchivo}`, (err) => {
                 if (err) {
                     reject(err);
+                    console.log({
+                        mensaje: "Ocurrio un error al subir archivo",
+                        error: err
+                    });
                 }
                 else {
                     resolve();
+                    console.log({
+                        message: "El archivo esta en su carpeta temporal"
+                    });
                 }
             });
         }).catch(err => console.log({
