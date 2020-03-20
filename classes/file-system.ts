@@ -20,7 +20,12 @@ export default class FileSystem {
           resolve();
         }
       });
-    }).catch(err => console.log(err));
+    }).catch(err =>
+      console.log({
+        error: err,
+        mensaje: "Ocurrio un error al guardar imagen temporal"
+      })
+    );
   }
 
   private generarNombreUnico(nombreOriginal: string) {

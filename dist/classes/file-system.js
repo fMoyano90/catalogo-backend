@@ -23,7 +23,10 @@ class FileSystem {
                     resolve();
                 }
             });
-        }).catch(err => console.log(err));
+        }).catch(err => console.log({
+            error: err,
+            mensaje: "Ocurrio un error al guardar imagen temporal"
+        }));
     }
     generarNombreUnico(nombreOriginal) {
         const nombreArr = nombreOriginal.split(".");
