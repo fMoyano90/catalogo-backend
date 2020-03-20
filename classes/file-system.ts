@@ -36,7 +36,7 @@ export default class FileSystem {
     const pathImage = path.resolve(__dirname, "../uploads");
     const pathImageTemp = pathImage + "/temp";
 
-    // console.log(pathImage);
+    console.log(pathImageTemp);
 
     const existe = fs.existsSync(pathImage);
 

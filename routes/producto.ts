@@ -161,7 +161,7 @@ productoRoutes.post(
     if (!req.files) {
       return res.status(400).json({
         ok: false,
-        mensaje: "No se subió el archivo"
+        mensaje: "No se subió el archivo."
       });
     }
 
