@@ -20,7 +20,7 @@ export default class FileSystem {
           resolve();
         }
       });
-    });
+    }).catch(err => console.log(err));
   }
 
   private generarNombreUnico(nombreOriginal: string) {
@@ -33,7 +33,7 @@ export default class FileSystem {
   }
 
   private crearCarpetaImagen() {
-    const pathImage = path.resolve("dist/uploads");
+    const pathImage = path.resolve(__dirname, "../uploads");
     const pathImageTemp = pathImage + "/temp";
 
     console.log(pathImageTemp);

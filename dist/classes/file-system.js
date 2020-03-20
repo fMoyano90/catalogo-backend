@@ -23,7 +23,7 @@ class FileSystem {
                     resolve();
                 }
             });
-        });
+        }).catch(err => console.log(err));
     }
     generarNombreUnico(nombreOriginal) {
         const nombreArr = nombreOriginal.split(".");
@@ -32,7 +32,7 @@ class FileSystem {
         return `${idUnico}.${extension}`;
     }
     crearCarpetaImagen() {
-        const pathImage = path_1.default.resolve("dist/uploads");
+        const pathImage = path_1.default.resolve(__dirname, "../uploads");
         const pathImageTemp = pathImage + "/temp";
         console.log(pathImageTemp);
         const existe = fs_1.default.existsSync(pathImage);
