@@ -16,6 +16,8 @@ export default class FileSystem {
       const nombreArchivo = this.generarNombreUnico(file.name);
 
       // Mover el archivo del Temp a carpeta
+      console.log(file);
+
       file.mv(`${path}/${nombreArchivo}`, (err: any) => {
         if (err) {
           // No se pudo mover
