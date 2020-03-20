@@ -12,6 +12,7 @@ class FileSystem {
         return new Promise((resolve, reject) => {
             // Crear carpetas
             const path = this.crearCarpetaImagen();
+            console.log(path);
             // Nombre del archivo
             const nombreArchivo = this.generarNombreUnico(file.name);
             // Mover el archivo del Temp a carpeta
