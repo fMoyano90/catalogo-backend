@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const path_1 = __importDefault(require("path"));
 const fs_1 = __importDefault(require("fs"));
 const uniqid_1 = __importDefault(require("uniqid"));
+var mv = require("mv");
 class FileSystem {
     constructor() { }
     guardarImagenTemporal(file) {
@@ -17,7 +18,7 @@ class FileSystem {
             const nombreArchivo = this.generarNombreUnico(file.name);
             // Mover el archivo del Temp a carpeta
             console.log({ nombreArchivo: nombreArchivo });
-            file.mv(`${path}/${nombreArchivo}`, (err) => {
+            mv(file.tempFilePath, `${path}/${nombreArchivo}`, (err) => {
                 if (err) {
                     reject(err);
                     console.log({

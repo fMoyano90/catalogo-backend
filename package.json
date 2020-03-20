@@ -22,6 +22,7 @@
     "fast-csv": "^4.0.2",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.4.11",
+    "mv": "^2.1.1",
     "node-fetch": "^2.6.0",
     "node-gyp": "^6.0.1",
     "uniqid": "^5.2.0"

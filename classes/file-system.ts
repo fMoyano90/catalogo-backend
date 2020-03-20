@@ -2,6 +2,7 @@ import { FileUpload } from "../interfaces/file-upload";
 import path from "path";
 import fs from "fs";
 import uniqid from "uniqid";
+var mv = require("mv");
 
 export default class FileSystem {
   constructor() {}
@@ -16,7 +17,7 @@ export default class FileSystem {
       // Mover el archivo del Temp a carpeta
       console.log({ nombreArchivo: nombreArchivo });
 
-      file.mv(`${path}/${nombreArchivo}`, (err: any) => {
+      mv(file.tempFilePath, `${path}/${nombreArchivo}`, (err: any) => {
         if (err) {
           reject(err);
           console.log({
