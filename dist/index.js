@@ -23,7 +23,7 @@ server.app.use((req, res, next) => {
 server.app.use(body_parser_1.default.urlencoded({ extended: true }));
 server.app.use(body_parser_1.default.json());
 // File Upload
-server.app.use(express_fileupload_1.default());
+server.app.use(express_fileupload_1.default({ useTempFiles: true }));
 // Rutas de mi appnpm install @types/express-fileupload
 server.app.use("/user", usuario_1.default);
 server.app.use("/productos", producto_1.default);

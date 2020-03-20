@@ -11,20 +11,21 @@ export default class FileSystem {
     return new Promise((resolve, reject) => {
       // Crear carpetas
       const path = this.crearCarpetaImagen();
-      console.log(path);
+
       // Nombre del archivo
       const nombreArchivo = this.generarNombreUnico(file.name);
-      // Mover el archivo del Temp a carpeta
-      console.log({ nombreArchivo: nombreArchivo });
 
-      fs.writeFile(`${path}/${nombreArchivo}`, nombreArchivo, (err: any) => {
+      // Mover el archivo del Temp a carpeta
+      file.mv(`${path}/${nombreArchivo}`, (err: any) => {
         if (err) {
+          // No se pudo mover
           reject(err);
           console.log({
             mensaje: "Ocurrio un error al subir archivo",
             error: err
           });
         } else {
+          // Todo salio bien
           resolve();
           console.log({
             message: "El archivo esta en su carpeta temporal"

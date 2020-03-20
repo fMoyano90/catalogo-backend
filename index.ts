@@ -26,7 +26,7 @@ server.app.use(bodyParser.urlencoded({ extended: true }));
 server.app.use(bodyParser.json());
 
 // File Upload
-server.app.use(fileUpload());
+server.app.use(fileUpload({ useTempFiles: true }));
 
 // Rutas de mi appnpm install @types/express-fileupload
 server.app.use("/user", userRoutes);
