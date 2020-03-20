@@ -33,7 +33,7 @@ export default class FileSystem {
   }
 
   private crearCarpetaImagen() {
-    const pathImage = path.resolve("../uploads");
+    const pathImage = path.resolve("dist/uploads");
     const pathImageTemp = pathImage + "/temp";
 
     console.log(pathImageTemp);

@@ -32,7 +32,7 @@ class FileSystem {
         return `${idUnico}.${extension}`;
     }
     crearCarpetaImagen() {
-        const pathImage = path_1.default.resolve("../uploads");
+        const pathImage = path_1.default.resolve("dist/uploads");
         const pathImageTemp = pathImage + "/temp";
         console.log(pathImageTemp);
         const existe = fs_1.default.existsSync(pathImage);
