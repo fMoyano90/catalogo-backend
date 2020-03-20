@@ -17,7 +17,7 @@ export default class FileSystem {
       // Mover el archivo del Temp a carpeta
       console.log({ nombreArchivo: nombreArchivo });
 
-      mv(file.tempFilePath, `${path}/${nombreArchivo}`, (err: any) => {
+      fs.writeFile(`${path}/${nombreArchivo}`, nombreArchivo, (err: any) => {
         if (err) {
           reject(err);
           console.log({
