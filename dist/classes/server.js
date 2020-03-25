@@ -10,8 +10,8 @@ class Server {
         this.app = express_1.default();
     }
     start(callback) {
-        this.app.listen(process.env.PORT, function () {
-            console.log("Servidor corriendo en puerto " + process.env.PORT);
+        this.app.listen(3001, function () {
+            console.log("Servidor corriendo en puerto 3001");
         });
     }
 }

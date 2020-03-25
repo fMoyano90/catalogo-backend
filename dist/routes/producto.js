@@ -18,7 +18,7 @@ const producto_model_1 = require("../models/producto.model");
 const file_system_1 = __importDefault(require("../classes/file-system"));
 const productoRoutes = express_1.Router();
 const fileSystem = new file_system_1.default();
-// Obtener todos los productos paginados
+// OBTENER TODOS LOS PRODUCTOS PAGINADOS
 productoRoutes.get("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     let pagina = Number(req.query.pagina) || 1;
     let skip = pagina - 1;
@@ -34,7 +34,7 @@ productoRoutes.get("/", (req, res) => __awaiter(void 0, void 0, void 0, function
         productos
     });
 }));
-// Obtener producto por id
+// OBTENER PRODUCTO POR ID
 productoRoutes.get("/:id", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     let id = req.params.id;
     const producto = yield producto_model_1.Producto.findById(id, (err, productoBD) => {
@@ -57,7 +57,7 @@ productoRoutes.get("/:id", (req, res) => __awaiter(void 0, void 0, void 0, funct
         });
     });
 }));
-// Obtener productos por categoria
+// OBTENER PRODUCTOS POR CATEGORIA
 productoRoutes.get("/categoria/:categoria", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     let pagina = Number(req.query.pagina) || 1;
     let skip = pagina - 1;
@@ -76,7 +76,7 @@ productoRoutes.get("/categoria/:categoria", (req, res) => __awaiter(void 0, void
         productos
     });
 }));
-// Obtener productos por genero
+// OBTENER PRODUCTOS POR GENERO
 productoRoutes.get("/genero/:genero", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     let pagina = Number(req.query.pagina) || 1;
     let skip = pagina - 1;
@@ -95,8 +95,8 @@ productoRoutes.get("/genero/:genero", (req, res) => __awaiter(void 0, void 0, vo
         productos
     });
 }));
-// Crear Producto
-productoRoutes.post("/", [autenticacion_1.verificaToken], (req, res) => {
+// CREAR PRODUCTO
+productoRoutes.post("/", [autenticacion_1.verificaToken], (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     let body = req.body;
     const imagen = fileSystem.imagenDeTempHaciaProducto();
     body.img = imagen;
@@ -110,8 +110,8 @@ productoRoutes.post("/", [autenticacion_1.verificaToken], (req, res) => {
         .catch(err => {
         res.json(err);
     });
-});
-// Editar producto
+}));
+// EDITAR PRODUCTO
 productoRoutes.put("/:id", (req, res) => {
     let id = req.params.id;
     let body = req.body;
@@ -136,7 +136,7 @@ productoRoutes.put("/:id", (req, res) => {
         });
     });
 });
-// Servicio para subir archivos
+// SERVICIO PARA SUBIR ARCHIVOS A STORAGE
 productoRoutes.post("/upload", [autenticacion_1.verificaToken], (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     if (!req.files) {
         return res.status(400).json({
@@ -163,6 +163,7 @@ productoRoutes.post("/upload", [autenticacion_1.verificaToken], (req, res) => __
         file: file.mimetype
     });
 }));
+// LLAMAR IMAGEN DESDE STORAGE
 productoRoutes.get("/imagen/:img", (req, res) => {
     const img = req.params.img;
     const pathImage = fileSystem.getImageUrl(img);
@@ -198,5 +199,8 @@ productoRoutes.post("/leercsv", (req, res) => {
             data: csvData
         });
     });
+});
+productoRoutes.post("/subir-imagen", (req, res) => {
+    req.body;
 });
 exports.default = productoRoutes;

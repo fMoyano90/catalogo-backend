@@ -7,7 +7,7 @@ import FileSystem from "../classes/file-system";
 const productoRoutes = Router();
 const fileSystem = new FileSystem();
 
-// Obtener todos los productos paginados
+// OBTENER TODOS LOS PRODUCTOS PAGINADOS
 productoRoutes.get("/", async (req: any, res: Response) => {
   let pagina = Number(req.query.pagina) || 1;
   let skip = pagina - 1;
@@ -26,7 +26,7 @@ productoRoutes.get("/", async (req: any, res: Response) => {
   });
 });
 
-// Obtener producto por id
+// OBTENER PRODUCTO POR ID
 productoRoutes.get("/:id", async (req: any, res: Response) => {
   let id = req.params.id;
   const producto = await Producto.findById(id, (err, productoBD) => {
@@ -52,7 +52,7 @@ productoRoutes.get("/:id", async (req: any, res: Response) => {
   });
 });
 
-// Obtener productos por categoria
+// OBTENER PRODUCTOS POR CATEGORIA
 productoRoutes.get("/categoria/:categoria", async (req: any, res: Response) => {
   let pagina = Number(req.query.pagina) || 1;
   let skip = pagina - 1;
@@ -76,7 +76,7 @@ productoRoutes.get("/categoria/:categoria", async (req: any, res: Response) => {
   });
 });
 
-// Obtener productos por genero
+// OBTENER PRODUCTOS POR GENERO
 productoRoutes.get("/genero/:genero", async (req: any, res: Response) => {
   let pagina = Number(req.query.pagina) || 1;
   let skip = pagina - 1;
@@ -100,13 +100,12 @@ productoRoutes.get("/genero/:genero", async (req: any, res: Response) => {
   });
 });
 
-// Crear Producto
-productoRoutes.post("/", [verificaToken], (req: any, res: Response) => {
+// CREAR PRODUCTO
+productoRoutes.post("/", [verificaToken], async (req: any, res: Response) => {
   let body = req.body;
 
   const imagen = fileSystem.imagenDeTempHaciaProducto();
   body.img = imagen;
-
   Producto.create(body)
     .then(async productoDB => {
       res.json({
@@ -119,7 +118,7 @@ productoRoutes.post("/", [verificaToken], (req: any, res: Response) => {
     });
 });
 
-// Editar producto
+// EDITAR PRODUCTO
 productoRoutes.put("/:id", (req: any, res: Response) => {
   let id = req.params.id;
   let body = req.body;
@@ -153,7 +152,7 @@ productoRoutes.put("/:id", (req: any, res: Response) => {
   );
 });
 
-// Servicio para subir archivos
+// SERVICIO PARA SUBIR ARCHIVOS A STORAGE
 productoRoutes.post(
   "/upload",
   [verificaToken],
@@ -190,6 +189,7 @@ productoRoutes.post(
   }
 );
 
+// LLAMAR IMAGEN DESDE STORAGE
 productoRoutes.get("/imagen/:img", (req: any, res: Response) => {
   const img = req.params.img;
   const pathImage = fileSystem.getImageUrl(img);
@@ -198,7 +198,6 @@ productoRoutes.get("/imagen/:img", (req: any, res: Response) => {
 });
 
 // IMPORTAR CSV A BASE DE DATOS
-
 productoRoutes.post("/leercsv", (req: any, res: any) => {
   const mongodb = require("mongodb").MongoClient;
   const csvtojson = require("csvtojson");
@@ -232,6 +231,10 @@ productoRoutes.post("/leercsv", (req: any, res: any) => {
         data: csvData
       });
     });
+});
+
+productoRoutes.post("/subir-imagen", (req, res) => {
+  req.body;
 });
 
 export default productoRoutes;

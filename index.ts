@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import cors from "cors";
 import bodyParser from "body-parser";
 import fileUpload from "express-fileupload";
+// RUTAS
 import userRoutes from "./routes/usuario";
 import productoRoutes from "./routes/producto";
 import buscadorRoutes from "./routes/buscador";
@@ -37,6 +38,7 @@ server.app.use("/buscador", buscadorRoutes);
 
 mongoose.connect(
   "mongodb+srv://HitCode:HITCODE4716@catalogoepp-4kv0t.mongodb.net/test?retryWrites=true&w=majority",
+  //"mongodb://localhost:27017/catalogo",
   { useNewUrlParser: true, useCreateIndex: true },
   err => {
     if (err) throw err;

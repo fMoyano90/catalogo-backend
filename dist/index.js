@@ -7,6 +7,7 @@ const server_1 = __importDefault(require("./classes/server"));
 const mongoose_1 = __importDefault(require("mongoose"));
 const body_parser_1 = __importDefault(require("body-parser"));
 const express_fileupload_1 = __importDefault(require("express-fileupload"));
+// RUTAS
 const usuario_1 = __importDefault(require("./routes/usuario"));
 const producto_1 = __importDefault(require("./routes/producto"));
 const buscador_1 = __importDefault(require("./routes/buscador"));
@@ -29,7 +30,9 @@ server.app.use("/user", usuario_1.default);
 server.app.use("/productos", producto_1.default);
 server.app.use("/buscador", buscador_1.default);
 // Conectar DB
-mongoose_1.default.connect("mongodb+srv://HitCode:HITCODE4716@catalogoepp-4kv0t.mongodb.net/test?retryWrites=true&w=majority", { useNewUrlParser: true, useCreateIndex: true }, err => {
+mongoose_1.default.connect("mongodb+srv://HitCode:HITCODE4716@catalogoepp-4kv0t.mongodb.net/test?retryWrites=true&w=majority", 
+//"mongodb://localhost:27017/catalogo",
+{ useNewUrlParser: true, useCreateIndex: true }, err => {
     if (err)
         throw err;
     console.log("Base de datos ONLINE");
