@@ -204,7 +204,7 @@ productoRoutes.post("/leercsv", (req, res) => {
 productoRoutes.post("/leercsv2", (req, res) => {
     const mongodb = require("mongodb").MongoClient;
     const csvtojson = require("csvtojson");
-    const csvFilePath = "assets/productos1.csv";
+    const csvFilePath = "assets/usuarios.csv";
     // let url = "mongodb://username:password@localhost:27017/";
     let url = "mongodb://localhost:27017/";
     csvtojson({
