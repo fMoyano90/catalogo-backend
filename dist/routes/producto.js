@@ -113,7 +113,7 @@ productoRoutes.post("/", [autenticacion_1.verificaToken], (req, res) => __awaite
     });
 }));
 // EDITAR PRODUCTO
-productoRoutes.put("/:id", (req, res) => {
+productoRoutes.put("/:id", [autenticacion_1.verificaToken], (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     let id = req.params.id;
     let body = req.body;
     const imagen = fileSystem.imagenDeTempHaciaProducto();
@@ -129,7 +129,7 @@ productoRoutes.put("/:id", (req, res) => {
         .catch(err => {
         res.json(err);
     });
-});
+}));
 // SERVICIO PARA SUBIR ARCHIVOS A STORAGE
 productoRoutes.post("/upload", [autenticacion_1.verificaToken], (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     if (!req.files) {

@@ -120,7 +120,7 @@ productoRoutes.post("/", [verificaToken], async (req: any, res: Response) => {
 });
 
 // EDITAR PRODUCTO
-productoRoutes.put("/:id", (req: any, res: Response) => {
+productoRoutes.put("/:id", [verificaToken], async (req: any, res: Response) => {
   let id = req.params.id;
   let body = req.body;
   const imagen = fileSystem.imagenDeTempHaciaProducto();
