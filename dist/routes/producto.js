@@ -118,23 +118,16 @@ productoRoutes.put("/:id", (req, res) => {
     let body = req.body;
     const imagen = fileSystem.imagenDeTempHaciaProducto();
     body.img = imagen;
-    producto_model_1.Producto.findByIdAndUpdate(id, body, { new: true, runValidators: true }, (err, productoBD) => {
-        if (err) {
-            return res.status(500).json({
-                ok: false,
-                err
-            });
-        }
-        if (!productoBD) {
-            return res.status(400).json({
-                ok: false,
-                err
-            });
-        }
+    producto_model_1.Producto.findByIdAndUpdate(id, body)
+        .then((productoDB) => __awaiter(void 0, void 0, void 0, function* () {
         res.json({
             ok: true,
-            producto: productoBD
+            producto: productoDB,
+            nombreImagen: imagen
         });
+    }))
+        .catch(err => {
+        res.json(err);
     });
 });
 // SERVICIO PARA SUBIR ARCHIVOS A STORAGE
