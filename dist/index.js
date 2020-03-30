@@ -30,9 +30,9 @@ server.app.use("/user", usuario_1.default);
 server.app.use("/productos", producto_1.default);
 server.app.use("/buscador", buscador_1.default);
 // Conectar DB
-mongoose_1.default.connect(
-// "mongodb://localhost:27017/catalogo",
-"mongodb+srv://HitCode:HITCODE4716@catalogoepp-4kv0t.mongodb.net/test?retryWrites=true&w=majority", { useNewUrlParser: true, useCreateIndex: true }, err => {
+mongoose_1.default.connect("mongodb://localhost:27017/catalogo", 
+// "mongodb+srv://HitCode:HITCODE4716@catalogoepp-4kv0t.mongodb.net/test?retryWrites=true&w=majority",
+{ useNewUrlParser: true, useCreateIndex: true }, err => {
     if (err)
         throw err;
     console.log("Base de datos ONLINE");
