@@ -104,7 +104,8 @@ productoRoutes.post("/", [autenticacion_1.verificaToken], (req, res) => __awaite
         .then((productoDB) => __awaiter(void 0, void 0, void 0, function* () {
         res.json({
             ok: true,
-            producto: productoDB
+            producto: productoDB,
+            nombreImagen: imagen
         });
     }))
         .catch(err => {

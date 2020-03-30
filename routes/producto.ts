@@ -110,7 +110,8 @@ productoRoutes.post("/", [verificaToken], async (req: any, res: Response) => {
     .then(async productoDB => {
       res.json({
         ok: true,
-        producto: productoDB
+        producto: productoDB,
+        nombreImagen: imagen
       });
     })
     .catch(err => {
