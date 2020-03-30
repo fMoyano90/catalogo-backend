@@ -169,7 +169,7 @@ productoRoutes.get("/imagen/:img", (req, res) => {
     const pathImage = fileSystem.getImageUrl(img);
     res.sendFile(pathImage);
 });
-// IMPORTAR CSV A BASE DE DATOS
+// IMPORTAR CSV A BASE DE DATOS (PRODUCTOS)
 productoRoutes.post("/leercsv", (req, res) => {
     const mongodb = require("mongodb").MongoClient;
     const csvtojson = require("csvtojson");
@@ -187,6 +187,37 @@ productoRoutes.post("/leercsv", (req, res) => {
             client
                 .db("catalogo")
                 .collection("productos")
+                .insertMany(csvData, (err, res) => {
+                if (err)
+                    throw err;
+                console.log(`Inserted: ${res.insertedCount} rows`);
+                client.close();
+            });
+        });
+        res.json({
+            status: 200,
+            data: csvData
+        });
+    });
+});
+// IMPORTAR CSV A BASE DE DATOS
+productoRoutes.post("/leercsv2", (req, res) => {
+    const mongodb = require("mongodb").MongoClient;
+    const csvtojson = require("csvtojson");
+    const csvFilePath = "assets/productos1.csv";
+    // let url = "mongodb://username:password@localhost:27017/";
+    let url = "mongodb://localhost:27017/";
+    csvtojson({
+        delimiter: [";"]
+    })
+        .fromFile(csvFilePath)
+        .then((csvData) => {
+        mongodb.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (err, client) => {
+            if (err)
+                throw err;
+            client
+                .db("catalogo")
+                .collection("usuarios")
                 .insertMany(csvData, (err, res) => {
                 if (err)
                     throw err;
