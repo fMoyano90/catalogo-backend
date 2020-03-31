@@ -260,4 +260,25 @@ productoRoutes.post("/subir-imagen", (req, res) => {
   req.body;
 });
 
+// Eliminar producto por ID
+productoRoutes.delete(
+  "/delete-epp/:id",
+  [verificaToken],
+  (req: any, res: Response) => {
+    let id = req.params.id;
+    Producto.findByIdAndDelete(id, (err, eppEliminado) => {
+      if (err) {
+        return res.status(500).json({
+          ok: false,
+          err
+        });
+      }
+      res.json({
+        ok: true,
+        eppEliminado
+      });
+    });
+  }
+);
+
 export default productoRoutes;

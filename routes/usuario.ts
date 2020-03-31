@@ -270,4 +270,25 @@ userRoutes.get("/busqueda/:busqueda", async (req: any, res: Response) => {
   });
 });
 
+// Eliminar usuario por ID
+userRoutes.delete(
+  "/delete-user/:id",
+  [verificaToken],
+  (req: any, res: Response) => {
+    let id = req.params.id;
+    Usuario.findByIdAndDelete(id, (err, usuarioEliminado) => {
+      if (err) {
+        return res.status(500).json({
+          ok: false,
+          err
+        });
+      }
+      res.json({
+        ok: true,
+        usuarioEliminado
+      });
+    });
+  }
+);
+
 export default userRoutes;

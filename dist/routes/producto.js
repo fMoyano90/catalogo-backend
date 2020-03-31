@@ -228,4 +228,20 @@ productoRoutes.post("/leercsv2", (req, res) => {
 productoRoutes.post("/subir-imagen", (req, res) => {
     req.body;
 });
+// Eliminar producto por ID
+productoRoutes.delete("/delete-epp/:id", [autenticacion_1.verificaToken], (req, res) => {
+    let id = req.params.id;
+    producto_model_1.Producto.findByIdAndDelete(id, (err, eppEliminado) => {
+        if (err) {
+            return res.status(500).json({
+                ok: false,
+                err
+            });
+        }
+        res.json({
+            ok: true,
+            eppEliminado
+        });
+    });
+});
 exports.default = productoRoutes;

@@ -250,4 +250,20 @@ userRoutes.get("/busqueda/:busqueda", (req, res) => __awaiter(void 0, void 0, vo
         usuarios
     });
 }));
+// Eliminar usuario por ID
+userRoutes.delete("/delete-user/:id", [autenticacion_1.verificaToken], (req, res) => {
+    let id = req.params.id;
+    usuario_model_1.Usuario.findByIdAndDelete(id, (err, usuarioEliminado) => {
+        if (err) {
+            return res.status(500).json({
+                ok: false,
+                err
+            });
+        }
+        res.json({
+            ok: true,
+            usuarioEliminado
+        });
+    });
+});
 exports.default = userRoutes;
