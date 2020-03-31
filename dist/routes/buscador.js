@@ -14,7 +14,7 @@ const producto_model_1 = require("../models/producto.model");
 const usuario_model_1 = require("../models/usuario.model");
 const buscadorRoutes = express_1.Router();
 // Obtener producto por busqueda
-buscadorRoutes.get("producto/:busqueda", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+buscadorRoutes.get("/producto/:busqueda", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     let pagina = Number(req.query.pagina) || 1;
     let skip = pagina - 1;
     skip = skip * 10;
@@ -33,7 +33,7 @@ buscadorRoutes.get("producto/:busqueda", (req, res) => __awaiter(void 0, void 0,
     });
 }));
 // Obtener usuario por busqueda
-buscadorRoutes.get("usuario/:busqueda", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+buscadorRoutes.get("/usuario/:busqueda", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     let pagina = Number(req.query.pagina) || 1;
     let skip = pagina - 1;
     skip = skip * 10;

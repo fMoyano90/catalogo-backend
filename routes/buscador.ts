@@ -5,7 +5,7 @@ import { Usuario } from "../models/usuario.model";
 const buscadorRoutes = Router();
 
 // Obtener producto por busqueda
-buscadorRoutes.get("producto/:busqueda", async (req: any, res: Response) => {
+buscadorRoutes.get("/producto/:busqueda", async (req: any, res: Response) => {
   let pagina = Number(req.query.pagina) || 1;
   let skip = pagina - 1;
   skip = skip * 10;
@@ -28,7 +28,7 @@ buscadorRoutes.get("producto/:busqueda", async (req: any, res: Response) => {
 });
 
 // Obtener usuario por busqueda
-buscadorRoutes.get("usuario/:busqueda", async (req: any, res: Response) => {
+buscadorRoutes.get("/usuario/:busqueda", async (req: any, res: Response) => {
   let pagina = Number(req.query.pagina) || 1;
   let skip = pagina - 1;
   skip = skip * 10;
