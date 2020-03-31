@@ -231,7 +231,7 @@ userRoutes.post("/leercsv", (req, res) => {
         });
     });
     // Obtener usuario por busqueda
-    userRoutes.get("/busqueda/:busqueda", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    userRoutes.get("/busqueda/:busqueda", (req, res) => {
         // let pagina = Number(req.query.pagina) || 1;
         // let skip = pagina - 1;
         // skip = skip * 10;
@@ -248,6 +248,6 @@ userRoutes.post("/leercsv", (req, res) => {
             // pagina,
             // usuarios
         });
-    }));
+    });
 });
 exports.default = userRoutes;
