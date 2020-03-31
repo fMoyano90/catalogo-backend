@@ -245,6 +245,29 @@ userRoutes.post("/leercsv", (req: any, res: any) => {
         data: csvData
       });
     });
+
+  // Obtener usuario por busqueda
+  userRoutes.get("/busqueda/:busqueda", async (req: any, res: Response) => {
+    let pagina = Number(req.query.pagina) || 1;
+    let skip = pagina - 1;
+    skip = skip * 10;
+
+    let busqueda = req.params.busqueda;
+    var regex = new RegExp(busqueda, "i");
+
+    const usuarios = await Usuario.find({})
+      .or([{ sap: regex }, { rut: regex }, { nombre: regex }])
+      .sort({ nombre: 1 })
+      .limit(10)
+      .skip(skip)
+      .exec();
+
+    res.json({
+      ok: true,
+      pagina,
+      usuarios
+    });
+  });
 });
 
 export default userRoutes;
