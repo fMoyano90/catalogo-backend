@@ -239,7 +239,7 @@ userRoutes.get("/busqueda/:busqueda", (req, res) => __awaiter(void 0, void 0, vo
     let busqueda = req.params.busqueda;
     var regex = new RegExp(busqueda, "i");
     const usuarios = yield usuario_model_1.Usuario.find({})
-        .or([{ sap: regex }, { rut: regex }, { nombre: regex }])
+        .or([{ nombre: regex }])
         .sort({ nombre: 1 })
         .limit(10)
         .skip(skip)
