@@ -25,12 +25,16 @@ userRoutes.post("/login", (req: Request, res: Response) => {
         nombre: userDB.nombre,
         sap: userDB.sap,
         rut: userDB.rut,
+        ubicacion: userDB.div_pers,
         tipo_usuario: userDB.tipo_usuario
       });
 
       res.json({
         ok: true,
-        token: tokenUser
+        token: tokenUser,
+        userID: userDB._id,
+        userUbicacion: userDB.div_pers,
+        userRole: userDB.tipo_usuario
       });
     } else {
       return res.json({

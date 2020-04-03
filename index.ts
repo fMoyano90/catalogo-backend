@@ -7,6 +7,7 @@ import fileUpload from "express-fileupload";
 import userRoutes from "./routes/usuario";
 import productoRoutes from "./routes/producto";
 import buscadorRoutes from "./routes/buscador";
+import solicitudRoutes from "./routes/solicitud";
 
 const server = new Server();
 
@@ -33,6 +34,7 @@ server.app.use(fileUpload({ useTempFiles: true }));
 server.app.use("/user", userRoutes);
 server.app.use("/productos", productoRoutes);
 server.app.use("/buscador", buscadorRoutes);
+server.app.use("/solicitudes", solicitudRoutes);
 
 // Conectar DB
 

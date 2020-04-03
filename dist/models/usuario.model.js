@@ -97,6 +97,14 @@ const usuarioSchema = new mongoose_1.Schema({
     tipo_usuario: {
         type: String,
         default: "USER"
+    },
+    solictud_verano: {
+        type: Number,
+        default: null
+    },
+    solicitul_invierno: {
+        type: Number,
+        default: null
     }
 });
 usuarioSchema.method("compararSap", function (sap = 0) {

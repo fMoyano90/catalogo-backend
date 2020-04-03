@@ -97,6 +97,14 @@ const usuarioSchema = new Schema({
   tipo_usuario: {
     type: String,
     default: "USER"
+  },
+  solictud_verano: {
+    type: Number,
+    default: null
+  },
+  solicitul_invierno: {
+    type: Number,
+    default: null
   }
 });
 
@@ -139,6 +147,8 @@ interface IUsuario extends Document {
   sindicato: string;
   tipo_socio: string;
   tipo_usuario: string;
+  solicitud_verano?: number;
+  solicitud_invierno?: number;
 
   compararSap(sap: string): boolean;
 }
