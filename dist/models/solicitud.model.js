@@ -4,13 +4,13 @@ const mongoose_1 = require("mongoose");
 const solicitudSchema = new mongoose_1.Schema({
     usuarioID: {
         type: String,
-        required: [true, "El id del usuario es obligatorio"]
+        required: [true, "El id del usuario es obligatorio"],
     },
     nombre: { type: String },
     rut: { type: String },
     sap: { type: String },
     funcion: { type: String },
-    ubicación: { type: String },
+    ubicacion: { type: String },
     periodo: { type: String },
     epp1: { type: String },
     tall1: { type: String },
@@ -43,7 +43,7 @@ const solicitudSchema = new mongoose_1.Schema({
     epp15: { type: String },
     tall15: { type: String },
     temporada: { type: String },
-    anio: { type: Date },
-    mes: { type: Date }
+    anio: { type: Number },
+    mes: { type: Number },
 });
 exports.Solicitud = mongoose_1.model("Solicitud", solicitudSchema);

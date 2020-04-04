@@ -3,13 +3,13 @@ import { Schema, model, Document } from "mongoose";
 const solicitudSchema = new Schema({
   usuarioID: {
     type: String,
-    required: [true, "El id del usuario es obligatorio"]
+    required: [true, "El id del usuario es obligatorio"],
   },
   nombre: { type: String },
   rut: { type: String },
   sap: { type: String },
   funcion: { type: String },
-  ubicación: { type: String },
+  ubicacion: { type: String },
   periodo: { type: String },
   epp1: { type: String },
   tall1: { type: String },
@@ -42,8 +42,8 @@ const solicitudSchema = new Schema({
   epp15: { type: String },
   tall15: { type: String },
   temporada: { type: String },
-  anio: { type: Date },
-  mes: { type: Date }
+  anio: { type: Number },
+  mes: { type: Number },
 });
 
 interface ISolicitud extends Document {
@@ -52,7 +52,7 @@ interface ISolicitud extends Document {
   rut: string;
   sap: string;
   funcion: string;
-  ubicación: string;
+  ubicacion: string;
   periodo: string;
   epp1: string;
   tall1: string;
@@ -85,8 +85,8 @@ interface ISolicitud extends Document {
   epp15: string;
   tall15: string;
   temporada: string;
-  anio: Date;
-  mes: Date;
+  anio: number;
+  mes: number;
 }
 
 export const Solicitud = model<ISolicitud>("Solicitud", solicitudSchema);
