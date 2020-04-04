@@ -11,13 +11,13 @@ solicitudRoutes.post("/", [verificaToken], async (req: any, res: Response) => {
   // EMITIR CORREOS
 
   Solicitud.create(body)
-    .then(async solicitudDB => {
+    .then(async (solicitudDB) => {
       res.json({
         ok: true,
-        solicitud: solicitudDB
+        solicitud: solicitudDB,
       });
     })
-    .catch(err => {
+    .catch((err) => {
       res.json(err);
     });
 });
@@ -39,7 +39,33 @@ solicitudRoutes.get("/:anio", async (req: any, res: Response) => {
   res.json({
     ok: true,
     pagina,
-    solicitudes
+    solicitudes,
+  });
+});
+
+// SOLICITUD POR ID
+solicitudRoutes.get("/obtener/:id", async (req: any, res: Response) => {
+  let id = req.params.id;
+  const solicitud = await Solicitud.findById(id, (err, solicitudBD) => {
+    if (err) {
+      return res.status(500).json({
+        ok: false,
+        err,
+      });
+    }
+
+    if (!solicitudBD) {
+      return res.status(400).json({
+        ok: false,
+        message: "No existe una solicitud con esa ID",
+        err,
+      });
+    }
+
+    res.json({
+      ok: true,
+      solicitud: solicitudBD,
+    });
   });
 });
 
