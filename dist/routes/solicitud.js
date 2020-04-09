@@ -12,34 +12,35 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const autenticacion_1 = require("../middlewares/autenticacion");
 const solicitud_model_1 = require("../models/solicitud.model");
-// import nodemailer from 'nodemailer';
+const nodemailer = require('nodemailer');
 const solicitudRoutes = express_1.Router();
 // CREAR SOLICITUD
 solicitudRoutes.post('/', [autenticacion_1.verificaToken], (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     let body = req.body;
     // EMITIR CORREOS
-    // const transporter = nodemailer.createTransport({
-    //   host: 'smtp.ethereal.email',
-    //   port: 587,
-    //   secure: false,
-    //   auth: {
-    //     user: 'reyna.will76@ethereal.email',
-    //     pass: 'kX4PqKMv45RxH9z4xA',
-    //   },
-    // });
-    // var mailOptions = {
-    //   from: 'Remitente',
-    //   to: 'f.moyano90@gmail.com',
-    //   subject: 'Solicitud de Epp peridodo: ',
-    //   text: 'Texto enviado desde Node',
-    // };
-    // transporter.sendMail(mailOptions, (error, info) => {
-    //   if (error) {
-    //     res.status(500).send(error.message);
-    //   } else {
-    //     console.log('Email enviado correctamente');
-    //   }
-    // });
+    const transporter = nodemailer.createTransport({
+        host: 'smtp.ethereal.email',
+        port: 587,
+        secure: false,
+        auth: {
+            user: 'reyna.will76@ethereal.email',
+            pass: 'kX4PqKMv45RxH9z4xA',
+        },
+    });
+    var mailOptions = {
+        from: 'Remitente',
+        to: 'f.moyano90@gmail.com',
+        subject: 'Solicitud de Epp peridodo: ',
+        text: 'Texto enviado desde Node',
+    };
+    transporter.sendMail(mailOptions, (err, info) => {
+        if (err) {
+            res.status(500).send(err.message);
+        }
+        else {
+            console.log('Email enviado');
+        }
+    });
     solicitud_model_1.Solicitud.create(body)
         .then((solicitudDB) => __awaiter(void 0, void 0, void 0, function* () {
         res.json({
