@@ -8,27 +8,23 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const autenticacion_1 = require("../middlewares/autenticacion");
 const solicitud_model_1 = require("../models/solicitud.model");
-const nodemailer_1 = __importDefault(require("nodemailer"));
 const solicitudRoutes = express_1.Router();
 // CREAR SOLICITUD
 solicitudRoutes.post('/', [autenticacion_1.verificaToken], (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     let body = req.body;
     // EMITIR CORREOS
-    const transporter = nodemailer_1.default.createTransport({
-        host: 'smtp.ethereal.email',
-        port: 25,
-        auth: {
-            user: 'reyna.will76@ethereal.email',
-            pass: 'kX4PqKMv45RxH9z4xA',
-        },
-    });
+    // const transporter = nodemailer.createTransport({
+    //   host: 'smtp.ethereal.email',
+    //   port: 25,
+    //   auth: {
+    //     user: 'reyna.will76@ethereal.email',
+    //     pass: 'kX4PqKMv45RxH9z4xA',
+    //   },
+    // });
     // var mailOptions = {
     //   from: 'Remitente',
     //   to: 'f.moyano90@gmail.com',
