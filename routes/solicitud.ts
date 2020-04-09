@@ -10,15 +10,15 @@ solicitudRoutes.post('/', [verificaToken], async (req: any, res: Response) => {
   let body = req.body;
 
   // EMITIR CORREOS
-  // const transporter = nodemailer.createTransport({
-  //   host: 'smtp.mailtrap.io',
-  //   port: 2525,
-  //   secure: false,
-  //   auth: {
-  //     user: '5af772fd26f4a4',
-  //     pass: '95176b25d32ae6',
-  //   },
-  // });
+  const transporter = nodemailer.createTransport({
+    host: 'smtp.mailtrap.io',
+    port: 2525,
+    secure: false,
+    auth: {
+      user: '5af772fd26f4a4',
+      pass: '95176b25d32ae6',
+    },
+  });
 
   // var mailOptions = {
   //   from: 'Remitente',
