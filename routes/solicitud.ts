@@ -1,14 +1,39 @@
-import { Router, Response, request, response } from "express";
-import { verificaToken } from "../middlewares/autenticacion";
-import { Solicitud } from "../models/solicitud.model";
+import { Router, Response, request, response } from 'express';
+import { verificaToken } from '../middlewares/autenticacion';
+import { Solicitud } from '../models/solicitud.model';
+import nodemailer from 'nodemailer';
 
 const solicitudRoutes = Router();
 
 // CREAR SOLICITUD
-solicitudRoutes.post("/", [verificaToken], async (req: any, res: Response) => {
+solicitudRoutes.post('/', [verificaToken], async (req: any, res: Response) => {
   let body = req.body;
 
   // EMITIR CORREOS
+  const transporter = nodemailer.createTransport({
+    host: 'smtp.ethereal.email',
+    port: 587,
+    secure: false,
+    auth: {
+      user: 'reyna.will76@ethereal.email',
+      pass: 'kX4PqKMv45RxH9z4xA',
+    },
+  });
+
+  var mailOptions = {
+    from: 'Remitente',
+    to: 'f.moyano90@gmail.com',
+    subject: 'Solicitud de Epp peridodo: ',
+    html: '<b>Texto enviado desde Node</b> usando HTML',
+  };
+
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      res.status(500).send(error.message);
+    } else {
+      console.log('Email enviado correctamente');
+    }
+  });
 
   Solicitud.create(body)
     .then(async (solicitudDB) => {
@@ -23,7 +48,7 @@ solicitudRoutes.post("/", [verificaToken], async (req: any, res: Response) => {
 });
 
 // LISTAR SOLICITUD POR AÑO
-solicitudRoutes.get("/:anio", async (req: any, res: Response) => {
+solicitudRoutes.get('/:anio', async (req: any, res: Response) => {
   let pagina = Number(req.query.pagina) || 1;
   let skip = pagina - 1;
   skip = skip * 10;
@@ -44,7 +69,7 @@ solicitudRoutes.get("/:anio", async (req: any, res: Response) => {
 });
 
 // SOLICITUD POR ID
-solicitudRoutes.get("/obtener/:id", async (req: any, res: Response) => {
+solicitudRoutes.get('/obtener/:id', async (req: any, res: Response) => {
   let id = req.params.id;
   const solicitud = await Solicitud.findById(id, (err, solicitudBD) => {
     if (err) {
@@ -57,7 +82,7 @@ solicitudRoutes.get("/obtener/:id", async (req: any, res: Response) => {
     if (!solicitudBD) {
       return res.status(400).json({
         ok: false,
-        message: "No existe una solicitud con esa ID",
+        message: 'No existe una solicitud con esa ID',
         err,
       });
     }
