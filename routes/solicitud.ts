@@ -116,29 +116,29 @@ function definirSolicitud(body: any) {
     switch (body.ubicacion) {
       case 'Los Andes':
         solicitudMail = `
-        <table>
+        <table style="border-collapse: collapse; width: 100%;">
           <thead>
               <tr>
-                  <th>Articulo</th>
-                  <th>Talla</th>
-                  <th>Cantidad</th>
+                  <th style="border: 1px solid #dddddd; text-align:left; padding: 8px;">Articulo</th>
+                  <th style="border: 1px solid #dddddd; text-align:left; padding: 8px;">Talla</th>
+                  <th style="border: 1px solid #dddddd; text-align:left; padding: 8px;">Cantidad</th>
               </tr>
           </thead>
           <tbody>
               <tr>
-                  <td>${body.epp1}</td>
-                  <td>${body.tall1}</td>
-                  <td>1</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp1}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall1}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
               </tr>
               <tr>
-                  <td>${body.epp2}</td>
-                  <td>${body.tall2}</td>
-                  <td>1</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp2}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall2}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
               </tr>
               <tr>
-                  <td>${body.epp3}</td>
-                  <td>${body.tall3}</td>
-                  <td>1</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp3}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall3}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
               </tr> 
           </tbody>
       </table>
