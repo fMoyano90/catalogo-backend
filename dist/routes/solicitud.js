@@ -24,6 +24,7 @@ solicitudRoutes.post('/', [autenticacion_1.verificaToken], (req, res) => __await
     const transporter = nodemailer_1.default.createTransport({
         host: 'smtp.mailtrap.io',
         port: 2525,
+        secure: false,
         auth: {
             user: '5af772fd26f4a4',
             pass: '95176b25d32ae6',
