@@ -30,12 +30,12 @@ solicitudRoutes.post('/', [autenticacion_1.verificaToken], (req, res) => __await
             pass: 'kX4PqKMv45RxH9z4xA',
         },
     });
-    // var mailOptions = {
-    //   from: 'Remitente',
-    //   to: 'f.moyano90@gmail.com',
-    //   subject: 'Solicitud de Epp peridodo: ',
-    //   text: 'Texto enviado desde Node',
-    // };
+    var mailOptions = {
+        from: 'Remitente',
+        to: 'f.moyano90@gmail.com',
+        subject: 'Solicitud de Epp peridodo: ',
+        text: 'Texto enviado desde Node',
+    };
     // transporter.sendMail(mailOptions, (err: any, info: any) => {
     //   if (err) {
     //     res.status(500).send(err.message);
