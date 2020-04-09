@@ -27,13 +27,13 @@ solicitudRoutes.post('/', [verificaToken], async (req: any, res: Response) => {
     text: 'Texto enviado desde Node',
   };
 
-  // transporter.sendMail(mailOptions, (err: any, info: any) => {
-  //   if (err) {
-  //     res.status(500).send(err.message);
-  //   } else {
-  //     console.log('Email enviado');s
-  //   }
-  // });
+  transporter.sendMail(mailOptions, (err: any, info: any) => {
+    if (err) {
+      res.status(500).send(err.message);
+    } else {
+      console.log('Email enviado');
+    }
+  });
 
   Solicitud.create(body)
     .then(async (solicitudDB) => {
