@@ -12,7 +12,7 @@ solicitudRoutes.post('/', [verificaToken], async (req: any, res: Response) => {
   // EMITIR CORREOS
   const transporter = nodemailer.createTransport({
     host: 'smtp.ethereal.email',
-    port: 587,
+    port: 25,
     auth: {
       user: 'reyna.will76@ethereal.email',
       pass: 'kX4PqKMv45RxH9z4xA',
