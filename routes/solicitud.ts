@@ -10,12 +10,13 @@ solicitudRoutes.post('/', [verificaToken], async (req: any, res: Response) => {
   let body = req.body;
 
   // EMITIR CORREOS
-  var transporter = nodemailer.createTransport({
-    host: 'smtp.mailtrap.io',
-    port: 2525,
+  const transporter = nodemailer.createTransport({
+    host: 'smtp.ethereal.email',
+    port: 587,
+    secure: false,
     auth: {
-      user: '5af772fd26f4a4',
-      pass: '95176b25d32ae6',
+      user: 'reyna.will76@ethereal.email',
+      pass: 'kX4PqKMv45RxH9z4xA',
     },
   });
 
@@ -23,7 +24,7 @@ solicitudRoutes.post('/', [verificaToken], async (req: any, res: Response) => {
     from: 'Remitente',
     to: 'f.moyano90@gmail.com',
     subject: 'Solicitud de Epp peridodo: ',
-    html: '<b>Texto enviado desde Node</b> usando HTML',
+    text: 'Texto enviado desde Node',
   };
 
   transporter.sendMail(mailOptions, (error, info) => {
