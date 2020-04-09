@@ -12,7 +12,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const autenticacion_1 = require("../middlewares/autenticacion");
 const solicitud_model_1 = require("../models/solicitud.model");
-// import nodemailer from 'nodemailer';
 const solicitudRoutes = express_1.Router();
 // CREAR SOLICITUD
 solicitudRoutes.post('/', [autenticacion_1.verificaToken], (req, res) => __awaiter(void 0, void 0, void 0, function* () {
