@@ -10,15 +10,15 @@ solicitudRoutes.post('/', [verificaToken], async (req: any, res: Response) => {
   let body = req.body;
 
   // EMITIR CORREOS
-  // const transporter = nodemailer.createTransport({
-  //   host: 'smtp.ethereal.email',
-  //   port: 587,
-  //   secure: false,
-  //   auth: {
-  //     user: 'reyna.will76@ethereal.email',
-  //     pass: 'kX4PqKMv45RxH9z4xA',
-  //   },
-  // });
+  const transporter = nodemailer.createTransport({
+    host: 'smtp.ethereal.email',
+    port: 587,
+    secure: false,
+    auth: {
+      user: 'reyna.will76@ethereal.email',
+      pass: 'kX4PqKMv45RxH9z4xA',
+    },
+  });
 
   // var mailOptions = {
   //   from: 'Remitente',
