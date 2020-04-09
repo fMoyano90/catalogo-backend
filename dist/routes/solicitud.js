@@ -22,12 +22,11 @@ solicitudRoutes.post('/', [autenticacion_1.verificaToken], (req, res) => __await
     let body = req.body;
     // EMITIR CORREOS
     const transporter = nodemailer_1.default.createTransport({
-        host: 'smtp.ethereal.email',
-        port: 587,
-        secure: false,
+        host: 'smtp.mailtrap.io',
+        port: 2525,
         auth: {
-            user: 'reyna.will76@ethereal.email',
-            pass: 'kX4PqKMv45RxH9z4xA',
+            user: '5af772fd26f4a4',
+            pass: '95176b25d32ae6',
         },
     });
     var mailOptions = {
