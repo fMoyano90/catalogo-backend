@@ -13,7 +13,7 @@ solicitudRoutes.post('/', [verificaToken], async (req: any, res: Response) => {
   const transporter = nodemailer.createTransport({
     host: 'smtp.mailtrap.io',
     port: 2525,
-    secure: false,
+    secure: true,
     auth: {
       user: '5af772fd26f4a4',
       pass: '95176b25d32ae6',
