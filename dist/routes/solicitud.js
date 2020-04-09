@@ -8,48 +8,46 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const autenticacion_1 = require("../middlewares/autenticacion");
 const solicitud_model_1 = require("../models/solicitud.model");
-const nodemailer_1 = __importDefault(require("nodemailer"));
+// import nodemailer from 'nodemailer';
 const solicitudRoutes = express_1.Router();
 // CREAR SOLICITUD
 solicitudRoutes.post('/', [autenticacion_1.verificaToken], (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     let body = req.body;
     // EMITIR CORREOS
-    const transporter = nodemailer_1.default.createTransport({
-        host: 'smtp.mailtrap.io',
-        port: 2525,
-        secure: false,
-        auth: {
-            user: '5af772fd26f4a4',
-            pass: '95176b25d32ae6',
-        },
-    });
-    var mailOptions = {
-        from: 'Remitente',
-        to: 'f.moyano90@gmail.com',
-        subject: 'Solicitud de Epp peridodo: ',
-        text: 'Texto enviado desde Node',
-    };
-    let envioCorreo = yield transporter.sendMail(mailOptions, (err, info) => {
-        if (err) {
-            res.status(500).send(err.message);
-        }
-        else {
-            res.status(200).send('Enviado correctamente');
-        }
-    });
+    // const transporter = nodemailer.createTransport({
+    //   host: 'smtp.mailtrap.io',
+    //   port: 2525,
+    //   secure: false,
+    //   auth: {
+    //     user: '5af772fd26f4a4',
+    //     pass: '95176b25d32ae6',
+    //   },
+    // });
+    // var mailOptions = {
+    //   from: 'Remitente',
+    //   to: 'f.moyano90@gmail.com',
+    //   subject: 'Solicitud de Epp peridodo: ',
+    //   text: 'Texto enviado desde Node',
+    // };
+    // let envioCorreo = await transporter.sendMail(
+    //   mailOptions,
+    //   (err: any, info: any) => {
+    //     if (err) {
+    //       res.status(500).send(err.message);
+    //     } else {
+    //       res.status(200).send('Enviado correctamente');
+    //     }
+    //   }
+    // );
     solicitud_model_1.Solicitud.create(body)
         .then((solicitudDB) => __awaiter(void 0, void 0, void 0, function* () {
         res.json({
             ok: true,
             solicitud: solicitudDB,
-            envioCorreo,
         });
     }))
         .catch((err) => {

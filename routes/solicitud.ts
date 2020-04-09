@@ -1,7 +1,7 @@
 import { Router, Response, request, response } from 'express';
 import { verificaToken } from '../middlewares/autenticacion';
 import { Solicitud } from '../models/solicitud.model';
-import nodemailer from 'nodemailer';
+// import nodemailer from 'nodemailer';
 
 const solicitudRoutes = Router();
 
@@ -10,40 +10,39 @@ solicitudRoutes.post('/', [verificaToken], async (req: any, res: Response) => {
   let body = req.body;
 
   // EMITIR CORREOS
-  const transporter = nodemailer.createTransport({
-    host: 'smtp.mailtrap.io',
-    port: 2525,
-    secure: false,
-    auth: {
-      user: '5af772fd26f4a4',
-      pass: '95176b25d32ae6',
-    },
-  });
+  // const transporter = nodemailer.createTransport({
+  //   host: 'smtp.mailtrap.io',
+  //   port: 2525,
+  //   secure: false,
+  //   auth: {
+  //     user: '5af772fd26f4a4',
+  //     pass: '95176b25d32ae6',
+  //   },
+  // });
 
-  var mailOptions = {
-    from: 'Remitente',
-    to: 'f.moyano90@gmail.com',
-    subject: 'Solicitud de Epp peridodo: ',
-    text: 'Texto enviado desde Node',
-  };
+  // var mailOptions = {
+  //   from: 'Remitente',
+  //   to: 'f.moyano90@gmail.com',
+  //   subject: 'Solicitud de Epp peridodo: ',
+  //   text: 'Texto enviado desde Node',
+  // };
 
-  let envioCorreo = await transporter.sendMail(
-    mailOptions,
-    (err: any, info: any) => {
-      if (err) {
-        res.status(500).send(err.message);
-      } else {
-        res.status(200).send('Enviado correctamente');
-      }
-    }
-  );
+  // let envioCorreo = await transporter.sendMail(
+  //   mailOptions,
+  //   (err: any, info: any) => {
+  //     if (err) {
+  //       res.status(500).send(err.message);
+  //     } else {
+  //       res.status(200).send('Enviado correctamente');
+  //     }
+  //   }
+  // );
 
   Solicitud.create(body)
     .then(async (solicitudDB) => {
       res.json({
         ok: true,
         solicitud: solicitudDB,
-        envioCorreo,
       });
     })
     .catch((err) => {
