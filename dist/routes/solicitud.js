@@ -29,22 +29,20 @@ solicitudRoutes.post('/', [autenticacion_1.verificaToken], (req, res) => __await
             pass: 'kX4PqKMv45RxH9z4xA',
         },
     });
-    // var mailOptions = {
-    //   from: 'Remitente',
-    //   to: 'f.moyano90@gmail.com',
-    //   subject: 'Solicitud de Epp peridodo: ',
-    //   text: 'Texto enviado desde Node',
-    // };
-    // let envioCorreo = await transporter.sendMail(
-    //   mailOptions,
-    //   (err: any, info: any) => {
-    //     if (err) {
-    //       res.status(500).send(err.message);
-    //     } else {
-    //       res.status(200).send('Enviado correctamente');
-    //     }
-    //   }
-    // );
+    var mailOptions = {
+        from: 'Remitente',
+        to: 'f.moyano90@gmail.com',
+        subject: 'Solicitud de Epp peridodo: ',
+        text: 'Texto enviado desde Node',
+    };
+    let envioCorreo = yield transporter.sendMail(mailOptions, (err, info) => {
+        if (err) {
+            res.status(500).send(err.message);
+        }
+        else {
+            res.status(200).send('Enviado correctamente');
+        }
+    });
     solicitud_model_1.Solicitud.create(body)
         .then((solicitudDB) => __awaiter(void 0, void 0, void 0, function* () {
         res.json({

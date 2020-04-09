@@ -19,23 +19,23 @@ solicitudRoutes.post('/', [verificaToken], async (req: any, res: Response) => {
     },
   });
 
-  // var mailOptions = {
-  //   from: 'Remitente',
-  //   to: 'f.moyano90@gmail.com',
-  //   subject: 'Solicitud de Epp peridodo: ',
-  //   text: 'Texto enviado desde Node',
-  // };
+  var mailOptions = {
+    from: 'Remitente',
+    to: 'f.moyano90@gmail.com',
+    subject: 'Solicitud de Epp peridodo: ',
+    text: 'Texto enviado desde Node',
+  };
 
-  // let envioCorreo = await transporter.sendMail(
-  //   mailOptions,
-  //   (err: any, info: any) => {
-  //     if (err) {
-  //       res.status(500).send(err.message);
-  //     } else {
-  //       res.status(200).send('Enviado correctamente');
-  //     }
-  //   }
-  // );
+  let envioCorreo = await transporter.sendMail(
+    mailOptions,
+    (err: any, info: any) => {
+      if (err) {
+        res.status(500).send(err.message);
+      } else {
+        res.status(200).send('Enviado correctamente');
+      }
+    }
+  );
 
   Solicitud.create(body)
     .then(async (solicitudDB) => {
