@@ -1,7 +1,7 @@
 import { Router, Response, request, response } from 'express';
 import { verificaToken } from '../middlewares/autenticacion';
 import { Solicitud } from '../models/solicitud.model';
-// const nodemailer = require('nodemailer');
+import nodemailer from 'nodemailer';
 
 const solicitudRoutes = Router();
 
