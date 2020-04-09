@@ -20,10 +20,10 @@ solicitudRoutes.post('/', [verificaToken], async (req: any, res: Response) => {
   });
 
   var mailOptions = {
-    from: 'Remitente',
+    from: '"FElIPE DEV 👻" <foo@example.com>',
     to: 'f.moyano90@gmail.com',
-    subject: 'Solicitud de Epp peridodo: ',
-    text: 'Texto enviado desde Node',
+    subject: '✔ Solicitud de Epp peridodo: ' + body.temporada,
+    html: '<b>Texto enviado desde Node</b>',
   };
 
   let envioCorreo = await transporter.sendMail(
