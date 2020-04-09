@@ -10,6 +10,8 @@ solicitudRoutes.post('/', [verificaToken], async (req: any, res: Response) => {
   let body = req.body;
 
   // EMITIR CORREOS
+  let solicitudMail = await definirSolicitud(body);
+
   const transporter = nodemailer.createTransport({
     host: 'smtp.mailtrap.io',
     port: 2525,
@@ -18,7 +20,7 @@ solicitudRoutes.post('/', [verificaToken], async (req: any, res: Response) => {
       pass: '95176b25d32ae6',
     },
   });
-  var hola = `HOLA DESDE VARIABLE`;
+
   var mailOptions = {
     from: '"FElIPE DEV 👻" <foo@example.com>',
     to: 'f.moyano90@gmail.com',
@@ -34,7 +36,7 @@ solicitudRoutes.post('/', [verificaToken], async (req: any, res: Response) => {
       <p><b>Año:</b> ${body.anio}</p>
       <p><b>Temporada:</b> ${body.temporada}</p>
       <h3>2. Datos de la solicitud</h3>
-      ${hola}
+      ${solicitudMail}
       `,
   };
 
@@ -107,5 +109,44 @@ solicitudRoutes.get('/obtener/:id', async (req: any, res: Response) => {
     });
   });
 });
+
+function definirSolicitud(body: any) {
+  var solicitudMail = '';
+  if (body.temporada == 'INVIERNO') {
+    switch (body.ubicacion) {
+      case 'Los Andes':
+        solicitudMail = `
+        <table>
+          <thead>
+              <tr>
+                  <th>Articulo</th>
+                  <th>Talla</th>
+                  <th>Cantidad</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>${body.epp1}</td>
+                  <td>${body.tall1}</td>
+                  <td>1</td>
+              </tr>
+              <tr>
+                  <td>${body.epp2}</td>
+                  <td>${body.tall2}</td>
+                  <td>1</td>
+              </tr>
+              <tr>
+                  <td>${body.epp3}</td>
+                  <td>${body.tall3}</td>
+                  <td>1</td>
+              </tr> 
+          </tbody>
+      </table>
+      `;
+        break;
+    }
+  }
+  return solicitudMail;
+}
 
 export default solicitudRoutes;
