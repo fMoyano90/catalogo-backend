@@ -1,14 +1,14 @@
-import { Router, Response, request, response } from "express";
-import { verificaToken } from "../middlewares/autenticacion";
-import { Producto } from "../models/producto.model";
-import { FileUpload } from "../interfaces/file-upload";
-import FileSystem from "../classes/file-system";
+import { Router, Response, request, response } from 'express';
+import { verificaToken } from '../middlewares/autenticacion';
+import { Producto } from '../models/producto.model';
+import { FileUpload } from '../interfaces/file-upload';
+import FileSystem from '../classes/file-system';
 
 const productoRoutes = Router();
 const fileSystem = new FileSystem();
 
 // OBTENER TODOS LOS PRODUCTOS PAGINADOS
-productoRoutes.get("/", async (req: any, res: Response) => {
+productoRoutes.get('/', async (req: any, res: Response) => {
   let pagina = Number(req.query.pagina) || 1;
   let skip = pagina - 1;
   skip = skip * 10;
@@ -22,38 +22,38 @@ productoRoutes.get("/", async (req: any, res: Response) => {
   res.json({
     ok: true,
     pagina,
-    productos
+    productos,
   });
 });
 
 // OBTENER PRODUCTO POR ID
-productoRoutes.get("/:id", async (req: any, res: Response) => {
+productoRoutes.get('/:id', async (req: any, res: Response) => {
   let id = req.params.id;
   const producto = await Producto.findById(id, (err, productoBD) => {
     if (err) {
       return res.status(500).json({
         ok: false,
-        err
+        err,
       });
     }
 
     if (!productoBD) {
       return res.status(400).json({
         ok: false,
-        message: "No existe producto con esa ID",
-        err
+        message: 'No existe producto con esa ID',
+        err,
       });
     }
 
     res.json({
       ok: true,
-      producto: productoBD
+      producto: productoBD,
     });
   });
 });
 
 // OBTENER PRODUCTOS POR CATEGORIA
-productoRoutes.get("/categoria/:categoria", async (req: any, res: Response) => {
+productoRoutes.get('/categoria/:categoria', async (req: any, res: Response) => {
   let pagina = Number(req.query.pagina) || 1;
   let skip = pagina - 1;
   skip = skip * 10;
@@ -72,12 +72,12 @@ productoRoutes.get("/categoria/:categoria", async (req: any, res: Response) => {
   res.json({
     ok: true,
     pagina,
-    productos
+    productos,
   });
 });
 
 // OBTENER PRODUCTOS POR GENERO
-productoRoutes.get("/genero/:genero", async (req: any, res: Response) => {
+productoRoutes.get('/genero/:genero', async (req: any, res: Response) => {
   let pagina = Number(req.query.pagina) || 1;
   let skip = pagina - 1;
   skip = skip * 10;
@@ -96,58 +96,58 @@ productoRoutes.get("/genero/:genero", async (req: any, res: Response) => {
   res.json({
     ok: true,
     pagina,
-    productos
+    productos,
   });
 });
 
 // CREAR PRODUCTO
-productoRoutes.post("/", [verificaToken], async (req: any, res: Response) => {
+productoRoutes.post('/', [verificaToken], async (req: any, res: Response) => {
   let body = req.body;
 
   const imagen = fileSystem.imagenDeTempHaciaProducto();
   body.img = imagen;
   Producto.create(body)
-    .then(async productoDB => {
+    .then(async (productoDB) => {
       res.json({
         ok: true,
         producto: productoDB,
-        nombreImagen: imagen
+        nombreImagen: imagen,
       });
     })
-    .catch(err => {
+    .catch((err) => {
       res.json(err);
     });
 });
 
 // EDITAR PRODUCTO
-productoRoutes.put("/:id", [verificaToken], async (req: any, res: Response) => {
+productoRoutes.put('/:id', [verificaToken], async (req: any, res: Response) => {
   let id = req.params.id;
   let body = req.body;
   const imagen = fileSystem.imagenDeTempHaciaProducto();
   body.img = imagen;
 
   Producto.findByIdAndUpdate(id, body)
-    .then(async productoDB => {
+    .then(async (productoDB) => {
       res.json({
         ok: true,
         producto: productoDB,
-        nombreImagen: imagen
+        nombreImagen: imagen,
       });
     })
-    .catch(err => {
+    .catch((err) => {
       res.json(err);
     });
 });
 
 // SERVICIO PARA SUBIR ARCHIVOS A STORAGE
 productoRoutes.post(
-  "/upload",
+  '/upload',
   [verificaToken],
   async (req: any, res: Response) => {
     if (!req.files) {
       return res.status(400).json({
         ok: false,
-        mensaje: "No se subió el archivo."
+        mensaje: 'No se subió el archivo.',
       });
     }
 
@@ -156,14 +156,14 @@ productoRoutes.post(
     if (!file) {
       return res.status(400).json({
         ok: false,
-        mensaje: "No se subió el archivo - image"
+        mensaje: 'No se subió el archivo - image',
       });
     }
 
-    if (!file.mimetype.includes("image")) {
+    if (!file.mimetype.includes('image')) {
       return res.status(400).json({
         ok: false,
-        mensaje: "El archivo no es una imagen"
+        mensaje: 'El archivo no es una imagen',
       });
     }
 
@@ -171,13 +171,13 @@ productoRoutes.post(
 
     res.json({
       ok: true,
-      file: file.mimetype
+      file: file.mimetype,
     });
   }
 );
 
 // LLAMAR IMAGEN DESDE STORAGE
-productoRoutes.get("/imagen/:img", (req: any, res: Response) => {
+productoRoutes.get('/imagen/:img', (req: any, res: Response) => {
   const img = req.params.img;
   const pathImage = fileSystem.getImageUrl(img);
 
@@ -185,16 +185,16 @@ productoRoutes.get("/imagen/:img", (req: any, res: Response) => {
 });
 
 // IMPORTAR CSV A BASE DE DATOS (PRODUCTOS)
-productoRoutes.post("/leercsv", (req: any, res: any) => {
-  const mongodb = require("mongodb").MongoClient;
-  const csvtojson = require("csvtojson");
-  const csvFilePath = "assets/productos1.csv";
+productoRoutes.post('/leercsv', (req: any, res: any) => {
+  const mongodb = require('mongodb').MongoClient;
+  const csvtojson = require('csvtojson');
+  const csvFilePath = 'assets/productos1.csv';
 
   // let url = "mongodb://username:password@localhost:27017/";
-  let url = "mongodb://localhost:27017/";
+  let url = 'mongodb://localhost:27017/';
 
   csvtojson({
-    delimiter: [";"]
+    delimiter: [';'],
   })
     .fromFile(csvFilePath)
     .then((csvData: any) => {
@@ -204,8 +204,8 @@ productoRoutes.post("/leercsv", (req: any, res: any) => {
         (err: any, client: any) => {
           if (err) throw err;
           client
-            .db("catalogo")
-            .collection("productos")
+            .db('catalogo')
+            .collection('productos')
             .insertMany(csvData, (err: any, res: any) => {
               if (err) throw err;
               console.log(`Inserted: ${res.insertedCount} rows`);
@@ -215,22 +215,22 @@ productoRoutes.post("/leercsv", (req: any, res: any) => {
       );
       res.json({
         status: 200,
-        data: csvData
+        data: csvData,
       });
     });
 });
 
 // IMPORTAR CSV A BASE DE DATOS
-productoRoutes.post("/leercsv2", (req: any, res: any) => {
-  const mongodb = require("mongodb").MongoClient;
-  const csvtojson = require("csvtojson");
-  const csvFilePath = "assets/usuarios.csv";
+productoRoutes.post('/leercsv2', (req: any, res: any) => {
+  const mongodb = require('mongodb').MongoClient;
+  const csvtojson = require('csvtojson');
+  const csvFilePath = 'assets/usuarios.csv';
 
   // let url = "mongodb://username:password@localhost:27017/";
-  let url = "mongodb://localhost:27017/";
+  let url = 'mongodb://localhost:27017/';
 
   csvtojson({
-    delimiter: [";"]
+    delimiter: [';'],
   })
     .fromFile(csvFilePath)
     .then((csvData: any) => {
@@ -240,8 +240,8 @@ productoRoutes.post("/leercsv2", (req: any, res: any) => {
         (err: any, client: any) => {
           if (err) throw err;
           client
-            .db("catalogo")
-            .collection("usuarios")
+            .db('catalogo')
+            .collection('usuarios')
             .insertMany(csvData, (err: any, res: any) => {
               if (err) throw err;
               console.log(`Inserted: ${res.insertedCount} rows`);
@@ -251,28 +251,28 @@ productoRoutes.post("/leercsv2", (req: any, res: any) => {
       );
       res.json({
         status: 200,
-        data: csvData
+        data: csvData,
       });
     });
 });
 
-productoRoutes.post("/subir-imagen", (req, res) => {
+productoRoutes.post('/subir-imagen', (req, res) => {
   req.body;
 });
 
 // Eliminar producto por ID
-productoRoutes.delete("/delete-epp/:id", (req: any, res: Response) => {
+productoRoutes.delete('/delete-epp/:id', (req: any, res: Response) => {
   let id = req.params.id;
   Producto.findByIdAndDelete(id, (err, eppEliminado) => {
     if (err) {
       return res.status(500).json({
         ok: false,
-        err
+        err,
       });
     }
     res.json({
       ok: true,
-      eppEliminado
+      eppEliminado,
     });
   });
 });

@@ -19,7 +19,7 @@ const file_system_1 = __importDefault(require("../classes/file-system"));
 const productoRoutes = express_1.Router();
 const fileSystem = new file_system_1.default();
 // OBTENER TODOS LOS PRODUCTOS PAGINADOS
-productoRoutes.get("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+productoRoutes.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     let pagina = Number(req.query.pagina) || 1;
     let skip = pagina - 1;
     skip = skip * 10;
@@ -31,34 +31,34 @@ productoRoutes.get("/", (req, res) => __awaiter(void 0, void 0, void 0, function
     res.json({
         ok: true,
         pagina,
-        productos
+        productos,
     });
 }));
 // OBTENER PRODUCTO POR ID
-productoRoutes.get("/:id", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+productoRoutes.get('/:id', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     let id = req.params.id;
     const producto = yield producto_model_1.Producto.findById(id, (err, productoBD) => {
         if (err) {
             return res.status(500).json({
                 ok: false,
-                err
+                err,
             });
         }
         if (!productoBD) {
             return res.status(400).json({
                 ok: false,
-                message: "No existe producto con esa ID",
-                err
+                message: 'No existe producto con esa ID',
+                err,
             });
         }
         res.json({
             ok: true,
-            producto: productoBD
+            producto: productoBD,
         });
     });
 }));
 // OBTENER PRODUCTOS POR CATEGORIA
-productoRoutes.get("/categoria/:categoria", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+productoRoutes.get('/categoria/:categoria', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     let pagina = Number(req.query.pagina) || 1;
     let skip = pagina - 1;
     skip = skip * 10;
@@ -73,11 +73,11 @@ productoRoutes.get("/categoria/:categoria", (req, res) => __awaiter(void 0, void
     res.json({
         ok: true,
         pagina,
-        productos
+        productos,
     });
 }));
 // OBTENER PRODUCTOS POR GENERO
-productoRoutes.get("/genero/:genero", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+productoRoutes.get('/genero/:genero', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     let pagina = Number(req.query.pagina) || 1;
     let skip = pagina - 1;
     skip = skip * 10;
@@ -92,11 +92,11 @@ productoRoutes.get("/genero/:genero", (req, res) => __awaiter(void 0, void 0, vo
     res.json({
         ok: true,
         pagina,
-        productos
+        productos,
     });
 }));
 // CREAR PRODUCTO
-productoRoutes.post("/", [autenticacion_1.verificaToken], (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+productoRoutes.post('/', [autenticacion_1.verificaToken], (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     let body = req.body;
     const imagen = fileSystem.imagenDeTempHaciaProducto();
     body.img = imagen;
@@ -105,15 +105,15 @@ productoRoutes.post("/", [autenticacion_1.verificaToken], (req, res) => __awaite
         res.json({
             ok: true,
             producto: productoDB,
-            nombreImagen: imagen
+            nombreImagen: imagen,
         });
     }))
-        .catch(err => {
+        .catch((err) => {
         res.json(err);
     });
 }));
 // EDITAR PRODUCTO
-productoRoutes.put("/:id", [autenticacion_1.verificaToken], (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+productoRoutes.put('/:id', [autenticacion_1.verificaToken], (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     let id = req.params.id;
     let body = req.body;
     const imagen = fileSystem.imagenDeTempHaciaProducto();
@@ -123,55 +123,55 @@ productoRoutes.put("/:id", [autenticacion_1.verificaToken], (req, res) => __awai
         res.json({
             ok: true,
             producto: productoDB,
-            nombreImagen: imagen
+            nombreImagen: imagen,
         });
     }))
-        .catch(err => {
+        .catch((err) => {
         res.json(err);
     });
 }));
 // SERVICIO PARA SUBIR ARCHIVOS A STORAGE
-productoRoutes.post("/upload", [autenticacion_1.verificaToken], (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+productoRoutes.post('/upload', [autenticacion_1.verificaToken], (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     if (!req.files) {
         return res.status(400).json({
             ok: false,
-            mensaje: "No se subió el archivo."
+            mensaje: 'No se subió el archivo.',
         });
     }
     const file = req.files.image;
     if (!file) {
         return res.status(400).json({
             ok: false,
-            mensaje: "No se subió el archivo - image"
+            mensaje: 'No se subió el archivo - image',
         });
     }
-    if (!file.mimetype.includes("image")) {
+    if (!file.mimetype.includes('image')) {
         return res.status(400).json({
             ok: false,
-            mensaje: "El archivo no es una imagen"
+            mensaje: 'El archivo no es una imagen',
         });
     }
     yield fileSystem.guardarImagenTemporal(file);
     res.json({
         ok: true,
-        file: file.mimetype
+        file: file.mimetype,
     });
 }));
 // LLAMAR IMAGEN DESDE STORAGE
-productoRoutes.get("/imagen/:img", (req, res) => {
+productoRoutes.get('/imagen/:img', (req, res) => {
     const img = req.params.img;
     const pathImage = fileSystem.getImageUrl(img);
     res.sendFile(pathImage);
 });
 // IMPORTAR CSV A BASE DE DATOS (PRODUCTOS)
-productoRoutes.post("/leercsv", (req, res) => {
-    const mongodb = require("mongodb").MongoClient;
-    const csvtojson = require("csvtojson");
-    const csvFilePath = "assets/productos1.csv";
+productoRoutes.post('/leercsv', (req, res) => {
+    const mongodb = require('mongodb').MongoClient;
+    const csvtojson = require('csvtojson');
+    const csvFilePath = 'assets/productos1.csv';
     // let url = "mongodb://username:password@localhost:27017/";
-    let url = "mongodb://localhost:27017/";
+    let url = 'mongodb://localhost:27017/';
     csvtojson({
-        delimiter: [";"]
+        delimiter: [';'],
     })
         .fromFile(csvFilePath)
         .then((csvData) => {
@@ -179,8 +179,8 @@ productoRoutes.post("/leercsv", (req, res) => {
             if (err)
                 throw err;
             client
-                .db("catalogo")
-                .collection("productos")
+                .db('catalogo')
+                .collection('productos')
                 .insertMany(csvData, (err, res) => {
                 if (err)
                     throw err;
@@ -190,19 +190,19 @@ productoRoutes.post("/leercsv", (req, res) => {
         });
         res.json({
             status: 200,
-            data: csvData
+            data: csvData,
         });
     });
 });
 // IMPORTAR CSV A BASE DE DATOS
-productoRoutes.post("/leercsv2", (req, res) => {
-    const mongodb = require("mongodb").MongoClient;
-    const csvtojson = require("csvtojson");
-    const csvFilePath = "assets/usuarios.csv";
+productoRoutes.post('/leercsv2', (req, res) => {
+    const mongodb = require('mongodb').MongoClient;
+    const csvtojson = require('csvtojson');
+    const csvFilePath = 'assets/usuarios.csv';
     // let url = "mongodb://username:password@localhost:27017/";
-    let url = "mongodb://localhost:27017/";
+    let url = 'mongodb://localhost:27017/';
     csvtojson({
-        delimiter: [";"]
+        delimiter: [';'],
     })
         .fromFile(csvFilePath)
         .then((csvData) => {
@@ -210,8 +210,8 @@ productoRoutes.post("/leercsv2", (req, res) => {
             if (err)
                 throw err;
             client
-                .db("catalogo")
-                .collection("usuarios")
+                .db('catalogo')
+                .collection('usuarios')
                 .insertMany(csvData, (err, res) => {
                 if (err)
                     throw err;
@@ -221,26 +221,26 @@ productoRoutes.post("/leercsv2", (req, res) => {
         });
         res.json({
             status: 200,
-            data: csvData
+            data: csvData,
         });
     });
 });
-productoRoutes.post("/subir-imagen", (req, res) => {
+productoRoutes.post('/subir-imagen', (req, res) => {
     req.body;
 });
 // Eliminar producto por ID
-productoRoutes.delete("/delete-epp/:id", (req, res) => {
+productoRoutes.delete('/delete-epp/:id', (req, res) => {
     let id = req.params.id;
     producto_model_1.Producto.findByIdAndDelete(id, (err, eppEliminado) => {
         if (err) {
             return res.status(500).json({
                 ok: false,
-                err
+                err,
             });
         }
         res.json({
             ok: true,
-            eppEliminado
+            eppEliminado,
         });
     });
 });

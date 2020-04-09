@@ -4,7 +4,7 @@ import { Usuario } from '../models/usuario.model';
 
 const buscadorRoutes = Router();
 
-// Obtener producto por busquedas
+// Obtener producto por busqueda
 buscadorRoutes.get('/:busqueda', async (req: any, res: Response) => {
   let pagina = Number(req.query.pagina) || 1;
   let skip = pagina - 1;

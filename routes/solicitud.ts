@@ -1,7 +1,7 @@
 import { Router, Response, request, response } from 'express';
 import { verificaToken } from '../middlewares/autenticacion';
 import { Solicitud } from '../models/solicitud.model';
-import nodemailer from 'nodemailer';
+// import nodemailer from 'nodemailer';
 
 const solicitudRoutes = Router();
 
@@ -10,30 +10,30 @@ solicitudRoutes.post('/', [verificaToken], async (req: any, res: Response) => {
   let body = req.body;
 
   // EMITIR CORREOS
-  const transporter = nodemailer.createTransport({
-    host: 'smtp.ethereal.email',
-    port: 587,
-    secure: false,
-    auth: {
-      user: 'reyna.will76@ethereal.email',
-      pass: 'kX4PqKMv45RxH9z4xA',
-    },
-  });
+  // const transporter = nodemailer.createTransport({
+  //   host: 'smtp.ethereal.email',
+  //   port: 587,
+  //   secure: false,
+  //   auth: {
+  //     user: 'reyna.will76@ethereal.email',
+  //     pass: 'kX4PqKMv45RxH9z4xA',
+  //   },
+  // });
 
-  var mailOptions = {
-    from: 'Remitente',
-    to: 'f.moyano90@gmail.com',
-    subject: 'Solicitud de Epp peridodo: ',
-    text: 'Texto enviado desde Node',
-  };
+  // var mailOptions = {
+  //   from: 'Remitente',
+  //   to: 'f.moyano90@gmail.com',
+  //   subject: 'Solicitud de Epp peridodo: ',
+  //   text: 'Texto enviado desde Node',
+  // };
 
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      res.status(500).send(error.message);
-    } else {
-      console.log('Email enviado correctamente');
-    }
-  });
+  // transporter.sendMail(mailOptions, (error, info) => {
+  //   if (error) {
+  //     res.status(500).send(error.message);
+  //   } else {
+  //     console.log('Email enviado correctamente');
+  //   }
+  // });
 
   Solicitud.create(body)
     .then(async (solicitudDB) => {
