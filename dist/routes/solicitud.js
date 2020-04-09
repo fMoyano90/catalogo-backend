@@ -35,12 +35,12 @@ solicitudRoutes.post('/', [autenticacion_1.verificaToken], (req, res) => __await
         subject: 'Solicitud de Epp peridodo: ',
         text: 'Texto enviado desde Node',
     };
-    yield transporter.sendMail(mailOptions, (err, info) => {
+    let envioCorreo = yield transporter.sendMail(mailOptions, (err, info) => {
         if (err) {
             res.status(500).send(err.message);
         }
         else {
-            console.log('Email enviado');
+            res.status(200).send('Enviado correctamente');
         }
     });
     solicitud_model_1.Solicitud.create(body)
@@ -48,6 +48,7 @@ solicitudRoutes.post('/', [autenticacion_1.verificaToken], (req, res) => __await
         res.json({
             ok: true,
             solicitud: solicitudDB,
+            envioCorreo,
         });
     }))
         .catch((err) => {

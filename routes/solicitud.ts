@@ -26,19 +26,23 @@ solicitudRoutes.post('/', [verificaToken], async (req: any, res: Response) => {
     text: 'Texto enviado desde Node',
   };
 
-  await transporter.sendMail(mailOptions, (err: any, info: any) => {
-    if (err) {
-      res.status(500).send(err.message);
-    } else {
-      console.log('Email enviado');
+  let envioCorreo = await transporter.sendMail(
+    mailOptions,
+    (err: any, info: any) => {
+      if (err) {
+        res.status(500).send(err.message);
+      } else {
+        res.status(200).send('Enviado correctamente');
+      }
     }
-  });
+  );
 
   Solicitud.create(body)
     .then(async (solicitudDB) => {
       res.json({
         ok: true,
         solicitud: solicitudDB,
+        envioCorreo,
       });
     })
     .catch((err) => {
