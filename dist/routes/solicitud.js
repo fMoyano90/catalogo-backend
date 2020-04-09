@@ -33,14 +33,13 @@ solicitudRoutes.post('/', [autenticacion_1.verificaToken], (req, res) => __await
         subject: 'Solicitud de Epp peridodo: ',
         text: 'Texto enviado desde Node',
     };
-    transporter.sendMail(mailOptions, (err, info) => {
-        if (err) {
-            res.status(500).send(err.message);
-        }
-        else {
-            console.log('Email enviado');
-        }
-    });
+    // transporter.sendMail(mailOptions, (err: any, info: any) => {
+    //   if (err) {
+    //     res.status(500).send(err.message);
+    //   } else {
+    //     console.log('Email enviado');s
+    //   }
+    // });
     solicitud_model_1.Solicitud.create(body)
         .then((solicitudDB) => __awaiter(void 0, void 0, void 0, function* () {
         res.json({
