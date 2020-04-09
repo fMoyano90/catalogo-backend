@@ -26,7 +26,7 @@ solicitudRoutes.post('/', [verificaToken], async (req: any, res: Response) => {
     text: 'Texto enviado desde Node',
   };
 
-  transporter.sendMail(mailOptions, (err: any, info: any) => {
+  await transporter.sendMail(mailOptions, (err: any, info: any) => {
     if (err) {
       res.status(500).send(err.message);
     } else {

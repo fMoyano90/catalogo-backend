@@ -35,7 +35,7 @@ solicitudRoutes.post('/', [autenticacion_1.verificaToken], (req, res) => __await
         subject: 'Solicitud de Epp peridodo: ',
         text: 'Texto enviado desde Node',
     };
-    transporter.sendMail(mailOptions, (err, info) => {
+    yield transporter.sendMail(mailOptions, (err, info) => {
         if (err) {
             res.status(500).send(err.message);
         }
