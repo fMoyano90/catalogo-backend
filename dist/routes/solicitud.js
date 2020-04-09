@@ -113,7 +113,7 @@ function definirSolicitud(body) {
         switch (body.ubicacion) {
             case 'Los Andes':
                 solicitudMail = `
-        <table style="border-collapse: collapse; width: 100%;">
+        <table style="border-collapse: collapse; width: 70%;">
           <thead>
               <tr>
                   <th style="border: 1px solid #dddddd; text-align:left; padding: 8px;">Articulo</th>
