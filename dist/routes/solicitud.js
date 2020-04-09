@@ -31,12 +31,12 @@ solicitudRoutes.post('/', [autenticacion_1.verificaToken], (req, res) => __await
         },
     });
     var mailOptions = {
-        from: '"FElIPE DEV 👻" <foo@example.com>',
+        from: '"Codelco División Andina" <feedback@codelco.cl>',
         to: 'f.moyano90@gmail.com',
         subject: '✔ Solicitud de Epp peridodo: ' + body.temporada,
         html: `
       <p>Se ha emitido una nueva solicitud de EPP para el periodo.</p>
-      <h3>1. Datos del usuario</h3>
+      <h3>1. Datos del trabajador</h3>
       <p><b>Nombre:</b> ${body.nombre}</p>
       <p><b>Rut:</b> ${body.rut}</p>
       <p><b>Sap:</b> ${body.sap}</p>
