@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const producto_model_1 = require("../models/producto.model");
 const buscadorRoutes = express_1.Router();
-// Obtener producto por busqueda
+// Obtener producto por busquedas
 buscadorRoutes.get('/:busqueda', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     let pagina = Number(req.query.pagina) || 1;
     let skip = pagina - 1;
@@ -28,7 +28,7 @@ buscadorRoutes.get('/:busqueda', (req, res) => __awaiter(void 0, void 0, void 0,
     res.json({
         ok: true,
         pagina,
-        productos
+        productos,
     });
 }));
 exports.default = buscadorRoutes;
