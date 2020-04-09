@@ -23,7 +23,17 @@ solicitudRoutes.post('/', [verificaToken], async (req: any, res: Response) => {
     from: '"FElIPE DEV 👻" <foo@example.com>',
     to: 'f.moyano90@gmail.com',
     subject: '✔ Solicitud de Epp peridodo: ' + body.temporada,
-    html: '<b>Texto enviado desde Node</b>',
+    html: `
+      <p>Se ha emitido una nueva solicitud de EPP para el periodo de {{body.temporada}}.</p>
+      <h3>1. Datos del usuario</h3>
+      <p><b>Nombre:</b> ${body.nombre}</p>
+      <p><b>Rut:</b> ${body.rut}</p>
+      <p><b>Sap:</b> ${body.sap}</p>
+      <p><b>Función:</b> ${body.funcion}</p>
+      <p><b>Ubicación:</b> ${body.ubicacion}</p>
+      <p><b>Año:</b> ${body.anio}</p>
+      <p><b>Temporada:</b> ${body.temporada}</p>
+      `,
   };
 
   let envioCorreo = await transporter.sendMail(
