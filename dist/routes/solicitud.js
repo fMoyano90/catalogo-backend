@@ -109,8 +109,294 @@ solicitudRoutes.get('/obtener/:id', (req, res) => __awaiter(void 0, void 0, void
 }));
 function definirSolicitud(body) {
     var solicitudMail = '';
+    // SOLICITUDES INVIERNO
     if (body.temporada == 'INVIERNO') {
         switch (body.ubicacion) {
+            case 'MINA RAJO':
+                solicitudMail = `
+        <table style="border-collapse: collapse; width: 70%;">
+          <thead>
+              <tr>
+                  <th style="border: 1px solid #dddddd; text-align:left; padding: 8px;">Articulo</th>
+                  <th style="border: 1px solid #dddddd; text-align:left; padding: 8px;">Talla</th>
+                  <th style="border: 1px solid #dddddd; text-align:left; padding: 8px;">Cantidad</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp1}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall1}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr>
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp2}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall2}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr>
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp3}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall3}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp4}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall4}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp5}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall5}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp6}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall6}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp7}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall7}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp8}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall8}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp9}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall9}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+          </tbody>
+      </table>
+      `;
+                break;
+            case 'Mina Subterr.':
+                solicitudMail = `
+        <table style="border-collapse: collapse; width: 70%;">
+          <thead>
+              <tr>
+                  <th style="border: 1px solid #dddddd; text-align:left; padding: 8px;">Articulo</th>
+                  <th style="border: 1px solid #dddddd; text-align:left; padding: 8px;">Talla</th>
+                  <th style="border: 1px solid #dddddd; text-align:left; padding: 8px;">Cantidad</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp1}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall1}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr>
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp2}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall2}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr>
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp3}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall3}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp4}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall4}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp5}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall5}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp6}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall6}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp7}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall7}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp8}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall8}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp9}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall9}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+          </tbody>
+      </table>
+      `;
+                break;
+            case 'Concentrador':
+                solicitudMail = `
+        <table style="border-collapse: collapse; width: 70%;">
+          <thead>
+              <tr>
+                  <th style="border: 1px solid #dddddd; text-align:left; padding: 8px;">Articulo</th>
+                  <th style="border: 1px solid #dddddd; text-align:left; padding: 8px;">Talla</th>
+                  <th style="border: 1px solid #dddddd; text-align:left; padding: 8px;">Cantidad</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp1}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall1}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr>
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp2}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall2}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr>
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp3}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall3}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp4}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall4}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp5}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall5}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp6}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall6}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp7}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall7}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp8}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall8}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp9}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall9}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+          </tbody>
+      </table>
+      `;
+                break;
+            case 'Plan.Fil. A.Ind':
+                solicitudMail = `
+        <table style="border-collapse: collapse; width: 70%;">
+          <thead>
+              <tr>
+                  <th style="border: 1px solid #dddddd; text-align:left; padding: 8px;">Articulo</th>
+                  <th style="border: 1px solid #dddddd; text-align:left; padding: 8px;">Talla</th>
+                  <th style="border: 1px solid #dddddd; text-align:left; padding: 8px;">Cantidad</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp1}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall1}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr>
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp2}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall2}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr>
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp3}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall3}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp4}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall4}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp5}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall5}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp6}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall6}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp7}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall7}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp8}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall8}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+          </tbody>
+      </table>
+      `;
+                break;
+            case 'Saladillo':
+                solicitudMail = `
+        <table style="border-collapse: collapse; width: 70%;">
+          <thead>
+              <tr>
+                  <th style="border: 1px solid #dddddd; text-align:left; padding: 8px;">Articulo</th>
+                  <th style="border: 1px solid #dddddd; text-align:left; padding: 8px;">Talla</th>
+                  <th style="border: 1px solid #dddddd; text-align:left; padding: 8px;">Cantidad</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp1}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall1}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr>
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp2}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall2}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr>
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp3}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall3}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp4}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall4}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp5}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall5}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp6}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall6}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp7}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall7}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+          </tbody>
+      </table>
+      `;
+                break;
             case 'Los Andes':
                 solicitudMail = `
         <table style="border-collapse: collapse; width: 70%;">
@@ -135,6 +421,316 @@ function definirSolicitud(body) {
               <tr>
                   <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp3}</td>
                   <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall3}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+          </tbody>
+      </table>
+      `;
+                break;
+            case 'Huechun A.Ind.':
+                solicitudMail = `
+        <table style="border-collapse: collapse; width: 70%;">
+          <thead>
+              <tr>
+                  <th style="border: 1px solid #dddddd; text-align:left; padding: 8px;">Articulo</th>
+                  <th style="border: 1px solid #dddddd; text-align:left; padding: 8px;">Talla</th>
+                  <th style="border: 1px solid #dddddd; text-align:left; padding: 8px;">Cantidad</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp1}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall1}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr>
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp2}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall2}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr>
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp3}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall3}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp4}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall4}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp5}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall5}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp6}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall6}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp7}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall7}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+          </tbody>
+      </table>
+      `;
+                break;
+        }
+    }
+    // SOLICITUDES VERANO
+    if (body.temporada == 'VERANO') {
+        switch (body.ubicacion) {
+            case 'MINA RAJO':
+                solicitudMail = `
+        <table style="border-collapse: collapse; width: 70%;">
+          <thead>
+              <tr>
+                  <th style="border: 1px solid #dddddd; text-align:left; padding: 8px;">Articulo</th>
+                  <th style="border: 1px solid #dddddd; text-align:left; padding: 8px;">Talla</th>
+                  <th style="border: 1px solid #dddddd; text-align:left; padding: 8px;">Cantidad</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp1}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall1}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr>
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp2}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall2}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr>
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp3}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall3}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp4}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall4}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp5}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall5}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+          </tbody>
+      </table>
+      `;
+                break;
+            case 'Mina Subterr.':
+                solicitudMail = `
+        <table style="border-collapse: collapse; width: 70%;">
+          <thead>
+              <tr>
+                  <th style="border: 1px solid #dddddd; text-align:left; padding: 8px;">Articulo</th>
+                  <th style="border: 1px solid #dddddd; text-align:left; padding: 8px;">Talla</th>
+                  <th style="border: 1px solid #dddddd; text-align:left; padding: 8px;">Cantidad</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp1}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall1}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr>
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp2}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall2}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr>
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp3}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall3}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp4}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall4}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp5}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall5}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp6}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall6}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+          </tbody>
+      </table>
+      `;
+                break;
+            case 'Concentrador':
+                solicitudMail = `
+        <table style="border-collapse: collapse; width: 70%;">
+          <thead>
+              <tr>
+                  <th style="border: 1px solid #dddddd; text-align:left; padding: 8px;">Articulo</th>
+                  <th style="border: 1px solid #dddddd; text-align:left; padding: 8px;">Talla</th>
+                  <th style="border: 1px solid #dddddd; text-align:left; padding: 8px;">Cantidad</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp1}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall1}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr>
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp2}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall2}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr>
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp3}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall3}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp4}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall4}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp5}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall5}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp6}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall6}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+          </tbody>
+      </table>
+      `;
+                break;
+            case 'Plan.Fil. A.Ind':
+                solicitudMail = `
+        <table style="border-collapse: collapse; width: 70%;">
+          <thead>
+              <tr>
+                  <th style="border: 1px solid #dddddd; text-align:left; padding: 8px;">Articulo</th>
+                  <th style="border: 1px solid #dddddd; text-align:left; padding: 8px;">Talla</th>
+                  <th style="border: 1px solid #dddddd; text-align:left; padding: 8px;">Cantidad</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp1}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall1}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr>
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp2}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall2}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr>
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp3}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall3}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp4}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall4}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+          </tbody>
+      </table>
+      `;
+                break;
+            case 'Saladillo':
+                solicitudMail = `
+        <table style="border-collapse: collapse; width: 70%;">
+          <thead>
+              <tr>
+                  <th style="border: 1px solid #dddddd; text-align:left; padding: 8px;">Articulo</th>
+                  <th style="border: 1px solid #dddddd; text-align:left; padding: 8px;">Talla</th>
+                  <th style="border: 1px solid #dddddd; text-align:left; padding: 8px;">Cantidad</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp1}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall1}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr>
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp2}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall2}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr>
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp3}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall3}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp4}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall4}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+          </tbody>
+      </table>
+      `;
+                break;
+            case 'Los Andes':
+                solicitudMail = `
+        <table style="border-collapse: collapse; width: 70%;">
+          <thead>
+              <tr>
+                  <th style="border: 1px solid #dddddd; text-align:left; padding: 8px;">Articulo</th>
+                  <th style="border: 1px solid #dddddd; text-align:left; padding: 8px;">Talla</th>
+                  <th style="border: 1px solid #dddddd; text-align:left; padding: 8px;">Cantidad</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp1}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall1}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr>
+          </tbody>
+      </table>
+      `;
+                break;
+            case 'Huechun A.Ind.':
+                solicitudMail = `
+        <table style="border-collapse: collapse; width: 70%;">
+          <thead>
+              <tr>
+                  <th style="border: 1px solid #dddddd; text-align:left; padding: 8px;">Articulo</th>
+                  <th style="border: 1px solid #dddddd; text-align:left; padding: 8px;">Talla</th>
+                  <th style="border: 1px solid #dddddd; text-align:left; padding: 8px;">Cantidad</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp1}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall1}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr>
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp2}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall2}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr>
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp3}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall3}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp4}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall4}</td>
                   <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
               </tr> 
           </tbody>
