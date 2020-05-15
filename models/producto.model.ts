@@ -2,34 +2,34 @@ import { Schema, Document, model } from "mongoose";
 
 const productoSchema = new Schema({
   material: {
-    type: String
+    type: String,
   },
   nombre: {
-    type: String
+    type: String,
   },
   descripcion: {
-    type: String
+    type: String,
   },
   categoria: {
-    type: String
+    type: String,
   },
   genero: {
-    type: String
+    type: String,
   },
   medida: {
-    type: String
+    type: String,
   },
   img: [
     {
-      type: String
-    }
+      type: String,
+    },
   ],
   created: {
-    type: Date
-  }
+    type: Date,
+  },
 });
 
-productoSchema.pre<IProducto>("save", function(next) {
+productoSchema.pre<IProducto>("save", function (next) {
   this.created = new Date();
   next();
 });
