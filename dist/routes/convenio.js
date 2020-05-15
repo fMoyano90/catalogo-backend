@@ -17,8 +17,7 @@ const convenioRoutes = express_1.Router();
 convenioRoutes.get("/:tipo", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     let params = req.params.tipo;
     let tipo = params.toString();
-    console.log(tipo);
-    const eppsConvenio = yield convenio_model_1.Convenio.find();
+    const eppsConvenio = yield convenio_model_1.Convenio.find({ tipo: tipo });
     res.json({
         ok: true,
         eppsConvenio,

@@ -9,9 +9,7 @@ convenioRoutes.get("/:tipo", async (req: any, res: Response) => {
   let params = req.params.tipo;
   let tipo = params.toString();
 
-  console.log(tipo);
-
-  const eppsConvenio = await Convenio.find();
+  const eppsConvenio = await Convenio.find({ tipo: tipo });
 
   res.json({
     ok: true,
