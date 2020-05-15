@@ -5,21 +5,16 @@ import { Convenio } from "../models/convenio.model";
 const convenioRoutes = Router();
 
 // OBTENER EPPS CONVENIO POR TIPO
-convenioRoutes.get("/convenio/:tipo", async (req: any, res: Response) => {
-  let pagina = Number(req.query.pagina) || 1;
-  let skip = pagina - 1;
-  skip = skip * 10;
-
+convenioRoutes.get("/:tipo", async (req: any, res: Response) => {
   let params = req.params.tipo;
   let tipo = params.toString();
 
   console.log(tipo);
 
-  const eppsConvenio = await Convenio.find({ tipo: tipo });
+  const eppsConvenio = await Convenio.find();
 
   res.json({
     ok: true,
-    pagina,
     eppsConvenio,
   });
 });

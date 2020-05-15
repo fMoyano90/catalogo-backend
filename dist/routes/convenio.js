@@ -14,17 +14,13 @@ const autenticacion_1 = require("../middlewares/autenticacion");
 const convenio_model_1 = require("../models/convenio.model");
 const convenioRoutes = express_1.Router();
 // OBTENER EPPS CONVENIO POR TIPO
-convenioRoutes.get("/convenio/:tipo", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    let pagina = Number(req.query.pagina) || 1;
-    let skip = pagina - 1;
-    skip = skip * 10;
+convenioRoutes.get("/:tipo", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     let params = req.params.tipo;
     let tipo = params.toString();
     console.log(tipo);
-    const eppsConvenio = yield convenio_model_1.Convenio.find({ tipo: tipo });
+    const eppsConvenio = yield convenio_model_1.Convenio.find();
     res.json({
         ok: true,
-        pagina,
         eppsConvenio,
     });
 }));
