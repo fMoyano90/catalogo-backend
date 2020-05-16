@@ -1,9 +1,9 @@
-import { Schema, model, Document } from 'mongoose';
+import { Schema, model, Document } from "mongoose";
 
 const solicitudSchema = new Schema({
   usuarioID: {
     type: String,
-    required: [true, 'El id del usuario es obligatorio'],
+    required: [true, "El id del usuario es obligatorio"],
   },
   nombre: { type: String },
   rut: { type: String },
@@ -103,4 +103,4 @@ interface ISolicitud extends Document {
   mes: number;
 }
 
-export const Solicitud = model<ISolicitud>('Solicitud', solicitudSchema);
+export const Solicitud = model<ISolicitud>("Solicitud", solicitudSchema);

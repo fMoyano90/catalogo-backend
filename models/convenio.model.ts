@@ -37,7 +37,7 @@ interface IConvenio extends Document {
   general: boolean;
   añoxmedio: boolean;
   tipo: string;
-  talla: number;
+  talla: any;
 }
 
 export const Convenio = model<IConvenio>("Convenio", productoSchema);
