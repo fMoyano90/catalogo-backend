@@ -17,7 +17,7 @@ const productoSchema = new Schema({
   general: { type: Boolean },
   añoxmedio: { type: Boolean },
   tipo: { type: String },
-  talla: { type: Number },
+  talla: {},
 });
 
 interface IConvenio extends Document {
