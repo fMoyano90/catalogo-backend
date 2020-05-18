@@ -12,7 +12,7 @@ convenioRoutes.get("/:lugar", async (req: any, res: Response) => {
   const temporada = req.params.temporada;
   const cargo = req.params.cargo;
 
-  const eppsConvenio = await Convenio.find({ salacom: "1" });
+  const eppsConvenio = await Convenio.find({ invierno: "0" });
 
   res.json({
     ok: true,
