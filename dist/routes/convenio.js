@@ -21,7 +21,7 @@ convenioRoutes.get("/:genero", (req, res) => __awaiter(void 0, void 0, void 0, f
     const temporada = req.params.temporada;
     const cargo = req.params.cargo;
     const eppsConvenio = yield convenio_model_1.Convenio.find({
-        [genero]: 1,
+        los_andes: 1,
     });
     res.json({
         ok: true,
