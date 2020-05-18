@@ -4,7 +4,7 @@ const mongoose_1 = require("mongoose");
 const solicitudSchema = new mongoose_1.Schema({
     usuarioID: {
         type: String,
-        required: [true, 'El id del usuario es obligatorio'],
+        required: [true, "El id del usuario es obligatorio"],
     },
     nombre: { type: String },
     rut: { type: String },
@@ -53,4 +53,4 @@ const solicitudSchema = new mongoose_1.Schema({
     anio: { type: Number },
     mes: { type: Number },
 });
-exports.Solicitud = mongoose_1.model('Solicitud', solicitudSchema);
+exports.Solicitud = mongoose_1.model("Solicitud", solicitudSchema);

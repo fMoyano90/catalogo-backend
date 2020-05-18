@@ -18,6 +18,6 @@ const productoSchema = new mongoose_1.Schema({
     general: { type: Boolean },
     añoxmedio: { type: Boolean },
     tipo: { type: String },
-    talla: { type: Number },
+    talla: { type: String },
 });
 exports.Convenio = mongoose_1.model("Convenio", productoSchema);
