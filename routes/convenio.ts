@@ -5,12 +5,12 @@ import { Convenio } from "../models/convenio.model";
 const convenioRoutes = Router();
 
 // OBTENER EPPS CONVENIO POR TIPO
-convenioRoutes.get("/:lugar", async (req: any, res: Response) => {
-  const tipo = req.params.tipo;
-  const lugar = req.params.lugar;
-  const genero = req.params.genero;
-  const temporada = req.params.temporada;
-  const cargo = req.params.cargo;
+convenioRoutes.get("/", async (req: any, res: Response) => {
+  // const tipo = req.params.tipo;
+  // const lugar = req.params.lugar;
+  // const genero = req.params.genero;
+  // const temporada = req.params.temporada;
+  // const cargo = req.params.cargo;
 
   const eppsConvenio = await Convenio.find({ invierno: "0" });
 
