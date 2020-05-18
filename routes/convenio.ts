@@ -5,17 +5,31 @@ import { Convenio } from "../models/convenio.model";
 const convenioRoutes = Router();
 
 // OBTENER EPPS CONVENIO POR TIPO
-convenioRoutes.get("/:tipo", async (req: any, res: Response) => {
-  let params = req.params.tipo;
-  let tipo = params.toString();
+convenioRoutes.get(
+  "/:tipo/:lugar/:genero/:temporada/:cargo",
+  async (req: any, res: Response) => {
+    const tipo = req.params.tipo;
+    const lugar = req.params.lugar;
+    const genero = req.params.genero;
+    const temporada = req.params.temporada;
+    const cargo = req.params.cargo;
 
-  const eppsConvenio = await Convenio.find({ tipo: tipo });
+    const eppsConvenio = await Convenio.find({
+      $and: [
+        { tipo: tipo },
+        { [lugar]: true },
+        { [genero]: true },
+        { [temporada]: true },
+        { [cargo]: true },
+      ],
+    });
 
-  res.json({
-    ok: true,
-    eppsConvenio,
-  });
-});
+    res.json({
+      ok: true,
+      eppsConvenio,
+    });
+  }
+);
 
 // CREAR EPP CONVENIO
 convenioRoutes.post("/", [verificaToken], async (req: any, res: Response) => {

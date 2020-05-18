@@ -17,7 +17,7 @@ const productoSchema = new Schema({
   general: { type: Boolean },
   añoxmedio: { type: Boolean },
   tipo: { type: String },
-  talla: {},
+  talla: { type: String },
 });
 
 interface IConvenio extends Document {
@@ -37,7 +37,7 @@ interface IConvenio extends Document {
   general: boolean;
   añoxmedio: boolean;
   tipo: string;
-  talla: any;
+  talla: string;
 }
 
 export const Convenio = model<IConvenio>("Convenio", productoSchema);
