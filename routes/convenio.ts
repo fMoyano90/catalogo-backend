@@ -13,13 +13,7 @@ convenioRoutes.get("/:genero", async (req: any, res: Response) => {
   const cargo = req.params.cargo;
 
   const eppsConvenio = await Convenio.find({
-    $and: [
-      // { tipo: tipo },
-      // { [lugar]: true },
-      { [genero]: 1 },
-      // { [temporada]: true },
-      // { [cargo]: true },
-    ],
+    [genero]: 1,
   });
 
   res.json({
