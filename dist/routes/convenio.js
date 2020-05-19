@@ -20,7 +20,7 @@ convenioRoutes.get("/", (req, res) => __awaiter(void 0, void 0, void 0, function
     // const genero = req.params.genero;
     // const temporada = req.params.temporada;
     const cargo = req.params.cargo;
-    const eppsConvenio = yield convenio_model_1.Convenio.find({ los_andes: "1" });
+    const eppsConvenio = yield convenio_model_1.Convenio.find({ los_andes: "si" });
     res.json({
         ok: true,
         eppsConvenio,
