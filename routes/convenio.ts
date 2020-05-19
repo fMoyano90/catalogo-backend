@@ -10,9 +10,9 @@ convenioRoutes.get("/", async (req: any, res: Response) => {
   // const lugar = req.params.lugar;
   // const genero = req.params.genero;
   // const temporada = req.params.temporada;
-  // const cargo = req.params.cargo;
+  const cargo: string = req.params.cargo;
 
-  const eppsConvenio = await Convenio.find({ invierno: "1" });
+  const eppsConvenio = await Convenio.find({ los_andes: "1" });
 
   res.json({
     ok: true,
