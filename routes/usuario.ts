@@ -15,7 +15,7 @@ userRoutes.post("/login", (req: Request, res: Response) => {
     if (!userDB) {
       return res.json({
         ok: false,
-        mensaje: "El número de RUT no figura en nuestros registros."
+        mensaje: "El número de RUT no figura en nuestros registros.",
       });
     }
 
@@ -25,21 +25,21 @@ userRoutes.post("/login", (req: Request, res: Response) => {
         nombre: userDB.nombre,
         sap: userDB.sap,
         rut: userDB.rut,
-        ubicacion: userDB.div_pers,
-        tipo_usuario: userDB.tipo_usuario
+        ubicacion: userDB.ubicacion,
+        tipo_usuario: userDB.tipo_usuario,
       });
 
       res.json({
         ok: true,
         token: tokenUser,
         userID: userDB._id,
-        userUbicacion: userDB.div_pers,
-        userRole: userDB.tipo_usuario
+        userUbicacion: userDB.ubicacion,
+        userRole: userDB.tipo_usuario,
       });
     } else {
       return res.json({
         ok: false,
-        mensaje: "Número de SAP o RUT no son correctos"
+        mensaje: "Número de SAP o RUT no son correctos",
       });
     }
   });
@@ -52,45 +52,23 @@ userRoutes.post("/create", (req: Request, res: Response) => {
     rut: req.body.rut,
     nombre: req.body.nombre,
     genero: req.body.genero,
-    estado_civil: req.body.estado_civil,
-    rol: req.body.rol,
-    contrato: req.body.contrato,
-    aco: req.body.aco,
-    nacimiento: req.body.nacimiento,
-    ingreso: req.body.ingreso,
-    division: req.body.division,
     centro_costo: req.body.centro_costo,
-    posicion: req.body.posicion,
-    div_pers: req.body.div_pers,
-    funcion: req.body.funcion,
-    organizacion: req.body.organizacion,
-    superintendencia: req.body.superintendencia,
-    gerencia: req.body.gerencia,
-    regla_ppl: req.body.regla_ppl,
-    previsiones: req.body.previsiones,
-    salud: req.body.salud,
-    calle: req.body.calle,
-    villa: req.body.villa,
-    ciudad: req.body.ciudad,
-    comuna: req.body.comuna,
-    telefono: req.body.telefono,
-    region: req.body.region,
-    sindicato: req.body.sindicato,
-    tipo_socio: req.body.tipo_socio,
-    tipo_usuario: req.body.tipo_usuario
+    ubicacion: req.body.ubicacion,
+    cargo: req.body.cargo,
+    tipo_usuario: req.body.tipo_usuario,
   };
 
   Usuario.create(user)
-    .then(userDB => {
+    .then((userDB) => {
       res.json({
         ok: true,
-        user: userDB
+        user: userDB,
       });
     })
-    .catch(err => {
+    .catch((err) => {
       res.json({
         ok: false,
-        err
+        err,
       });
     });
 });
@@ -102,32 +80,10 @@ userRoutes.post("/update", verificaToken, (req: any, res: Response) => {
     rut: req.body.rut || req.usuario.rut,
     nombre: req.body.nombre || req.usuario.nombre,
     genero: req.body.genero || req.usuario.genero,
-    estado_civil: req.body.estado_civil || req.usuario.estado_civil,
-    rol: req.body.rol || req.usuario.rol,
-    contrato: req.body.contrato || req.usuario.contrato,
-    aco: req.body.aco || req.usuario.aco,
-    nacimiento: req.body.nacimiento || req.usuario.nacimiento,
-    ingreso: req.body.ingreso || req.usuario.ingreso,
-    division: req.body.division || req.usuario.division,
     centro_costo: req.body.centro_costo || req.usuario.centro_costo,
-    posicion: req.body.posicion || req.usuario.posicion,
-    div_pers: req.body.div_pers || req.usuario.div_pers,
-    funcion: req.body.funcion || req.usuario.funcion,
-    organizacion: req.body.organizacion || req.usuario.organizacion,
-    superintendencia: req.body.superintendencia || req.usuario.superintendencia,
-    gerencia: req.body.gerencia || req.usuario.gerencia,
-    regla_ppl: req.body.regla_ppl || req.usuario.regla_ppl,
-    previsiones: req.body.previsiones || req.usuario.previsiones,
-    salud: req.body.salud || req.usuario.salud,
-    calle: req.body.calle || req.usuario.calle,
-    villa: req.body.villa || req.usuario.villa,
-    ciudad: req.body.ciudad || req.usuario.ciudad,
-    comuna: req.body.comuna || req.usuario.comuna,
-    telefono: req.body.telefono || req.usuario.telefono,
-    region: req.body.region || req.usuario.region,
-    sindicato: req.body.sindicato || req.usuario.sindicato,
-    tipo_socio: req.body.tipo_socio || req.usuario.tipo_socio,
-    tipo_usuario: req.body.tipo_usuario || req.usuario.tipo_usuario
+    ubicacion: req.body.ubicacion || req.usuario.ubicacion,
+    cargo: req.body.cargo || req.usuario.cargo,
+    tipo_usuario: req.body.tipo_usuario || req.usuario.tipo_usuario,
   };
 
   Usuario.findByIdAndUpdate(
@@ -140,7 +96,7 @@ userRoutes.post("/update", verificaToken, (req: any, res: Response) => {
       if (!userDB) {
         return res.json({
           ok: false,
-          mensaje: "No existe un usuario con ese ID"
+          mensaje: "No existe un usuario con ese ID",
         });
       }
 
@@ -149,12 +105,12 @@ userRoutes.post("/update", verificaToken, (req: any, res: Response) => {
         nombre: userDB.nombre,
         sap: userDB.sap,
         rut: userDB.rut,
-        tipo_usuario: userDB.tipo_usuario
+        tipo_usuario: userDB.tipo_usuario,
       });
 
       res.json({
         ok: true,
-        token: tokenUser
+        token: tokenUser,
       });
     }
   );
@@ -165,7 +121,7 @@ userRoutes.get("/", [verificaToken], (req: any, res: Response) => {
 
   res.json({
     ok: true,
-    usuario
+    usuario,
   });
 });
 
@@ -184,7 +140,7 @@ userRoutes.get("/all", [verificaToken], async (req: any, res: Response) => {
   res.json({
     ok: true,
     pagina,
-    usuarios
+    usuarios,
   });
 });
 
@@ -195,7 +151,7 @@ userRoutes.get("/obtener/:id", async (req: any, res: Response) => {
     if (err) {
       return res.status(500).json({
         ok: false,
-        err
+        err,
       });
     }
 
@@ -203,13 +159,13 @@ userRoutes.get("/obtener/:id", async (req: any, res: Response) => {
       return res.status(400).json({
         ok: false,
         message: "No existe un usuario con esa ID",
-        err
+        err,
       });
     }
 
     res.json({
       ok: true,
-      usuario: usuarioBD
+      usuario: usuarioBD,
     });
   });
 });
@@ -225,7 +181,7 @@ userRoutes.post("/leercsv", (req: any, res: any) => {
   let url = "mongodb://localhost:27017/";
 
   csvtojson({
-    delimiter: [";"]
+    delimiter: [";"],
   })
     .fromFile(csvFilePath)
     .then((csvData: any) => {
@@ -246,7 +202,7 @@ userRoutes.post("/leercsv", (req: any, res: any) => {
       );
       res.json({
         status: 200,
-        data: csvData
+        data: csvData,
       });
     });
 });
@@ -270,7 +226,7 @@ userRoutes.get("/busqueda/:busqueda", async (req: any, res: Response) => {
   res.json({
     ok: true,
     pagina,
-    usuarios
+    usuarios,
   });
 });
 
@@ -281,12 +237,12 @@ userRoutes.delete("/delete-user/:id", (req: any, res: Response) => {
     if (err) {
       return res.status(500).json({
         ok: false,
-        err
+        err,
       });
     }
     res.json({
       ok: true,
-      usuarioEliminado
+      usuarioEliminado,
     });
   });
 });
