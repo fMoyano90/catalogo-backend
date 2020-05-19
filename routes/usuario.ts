@@ -192,7 +192,7 @@ userRoutes.post("/leercsv", (req: any, res: any) => {
           if (err) throw err;
           client
             .db("catalogo")
-            .collection("users")
+            .collection("usuarios")
             .insertMany(csvData, (err: any, res: any) => {
               if (err) throw err;
               console.log(`Inserted: ${res.insertedCount} rows`);

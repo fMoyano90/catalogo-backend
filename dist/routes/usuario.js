@@ -177,7 +177,7 @@ userRoutes.post("/leercsv", (req, res) => {
                 throw err;
             client
                 .db("catalogo")
-                .collection("users")
+                .collection("usuarios")
                 .insertMany(csvData, (err, res) => {
                 if (err)
                     throw err;
