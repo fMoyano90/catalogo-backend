@@ -20,6 +20,7 @@ convenioRoutes.get("/:codigo", (req, res) => __awaiter(void 0, void 0, void 0, f
     res.json({
         ok: true,
         epp,
+        codigo,
     });
 }));
 // OBTENER EPPS CONVENIO POR TIPO

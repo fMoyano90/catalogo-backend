@@ -13,6 +13,7 @@ convenioRoutes.get("/:codigo", async (req: any, res: Response) => {
   res.json({
     ok: true,
     epp,
+    codigo,
   });
 });
 
