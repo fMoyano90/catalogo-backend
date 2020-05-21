@@ -19,7 +19,7 @@ const solicitudSchema = new Schema({
 });
 
 interface Epp {
-  codigo: string;
+  codigo: number;
   nombre: string;
   talla: string;
 }
