@@ -4,6 +4,18 @@ import { Convenio } from "../models/convenio.model";
 
 const convenioRoutes = Router();
 
+// OBTENER EPP CONVENIO POR CODIGO
+convenioRoutes.get("/:codigo", async (req: any, res: Response) => {
+  const codigo = req.params.codigo;
+
+  const epp = await Convenio.findOne({ codigo: codigo });
+
+  res.json({
+    ok: true,
+    epp,
+  });
+});
+
 // OBTENER EPPS CONVENIO POR TIPO
 convenioRoutes.get(
   "/:tipo/:lugar/:genero/:temporada/:cargo",

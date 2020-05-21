@@ -13,6 +13,15 @@ const express_1 = require("express");
 const autenticacion_1 = require("../middlewares/autenticacion");
 const convenio_model_1 = require("../models/convenio.model");
 const convenioRoutes = express_1.Router();
+// OBTENER EPP CONVENIO POR CODIGO
+convenioRoutes.get("/:codigo", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const codigo = req.params.codigo;
+    const epp = yield convenio_model_1.Convenio.findOne({ codigo: codigo });
+    res.json({
+        ok: true,
+        epp,
+    });
+}));
 // OBTENER EPPS CONVENIO POR TIPO
 convenioRoutes.get("/:tipo/:lugar/:genero/:temporada/:cargo", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const tipo = req.params.tipo;

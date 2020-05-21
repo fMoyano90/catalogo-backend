@@ -1,138 +1,138 @@
-﻿codigo;epp;salacom;los_andes;huechun;saladillo;planta_filtro;mina_sub;concentrador;sur;hombre;mujer;verano;invierno;mecanico;electrico;general;añoxmedio;tipo;talla
-4175212;BANDANA MULTIFUNCIONAL ALTA CORDILLERA;si;si;si;si;si;si;si;si;si;si;no;si;si;si;si;no;BANDANA;0
-4171922;BOTA DE SEGURIDAD FRIO EXTREMO T-37;no;no;si;no;si;si;si;si;si;si;no;si;si;si;si;no;ZAPATO;37
-4169006;BOTA SEG FRIO EXTREMO IMPERMEABLE T-38;no;no;si;no;si;si;si;si;si;si;no;si;si;si;si;no;ZAPATO;38
-4003636;BOTA SEG FRIO EXTREMO IMPERMEABLE T-39;no;no;si;no;si;si;si;si;si;si;no;si;si;si;si;no;ZAPATO;39
-4003637;BOTA SEG FRIO EXTREMO IMPERMEABLE T-40;no;no;si;no;si;si;si;si;si;si;no;si;si;si;si;no;ZAPATO;40
-4003638;BOTA SEG FRIO EXTREMO IMPERMEABLE T-41;no;no;si;no;si;si;si;si;si;si;no;si;si;si;si;no;ZAPATO;41
-4003639;BOTA SEG FRIO EXTREMO IMPERMEABLE T-42;no;no;si;no;si;si;si;si;si;si;no;si;si;si;si;no;ZAPATO;42
-4003640;BOTA SEG FRIO EXTREMO IMPERMEABLE T-43;no;no;si;no;si;si;si;si;si;si;no;si;si;si;si;no;ZAPATO;43
-4003641;BOTA SEG FRIO EXTREMO IMPERMEABLE T-44;no;no;si;no;si;si;si;si;si;si;no;si;si;si;si;no;ZAPATO;44
-4162901;BOTA SEG FRIO EXTREMO IMPERMEABLE T-45;no;no;si;no;si;si;si;si;si;si;no;si;si;si;si;no;ZAPATO;45
-4162902;BOTA SEG FRIO EXTREMO IMPERMEABLE T-46;no;no;si;no;si;si;si;si;si;si;no;si;si;si;si;no;ZAPATO;46
-4162996;BOTA SEG FRIO EXTREMO IMPERMEABLE T-47;no;no;si;no;si;si;si;si;si;si;no;si;si;si;si;no;ZAPATO;47
-4060797;BOTIN DE SEGURIDAD AISLANTE 39;si;si;si;si;si;si;si;si;si;no;si;no;no;si;no;no;ZAPATO_ELECTRICO;39
-4060798;BOTIN DE SEGURIDAD AISLANTE 40;si;si;si;si;si;si;si;si;si;no;si;no;no;si;no;no;ZAPATO_ELECTRICO;40
-4060799;BOTIN DE SEGURIDAD AISLANTE 41;si;si;si;si;si;si;si;si;si;no;si;no;no;si;no;no;ZAPATO_ELECTRICO;41
-4060850;BOTIN DE SEGURIDAD AISLANTE 42;si;si;si;si;si;si;si;si;si;no;si;no;no;si;no;no;ZAPATO_ELECTRICO;42
-4060851;BOTIN DE SEGURIDAD AISLANTE 43;si;si;si;si;si;si;si;si;si;no;si;no;no;si;no;no;ZAPATO_ELECTRICO;43
-4060852;BOTIN DE SEGURIDAD AISLANTE 44;si;si;si;si;si;si;si;si;si;no;si;no;no;si;no;no;ZAPATO_ELECTRICO;44
-4058520;BOTIN SEG GRAL DIELECTRICO DAMA NRO.36;si;si;si;si;si;si;si;si;no;si;si;no;no;no;si;no;ZAPATO;36
-4058521;BOTIN SEG GRAL DIELECTRICO DAMA NRO.37;si;si;si;si;si;si;si;si;no;si;si;no;no;no;si;no;ZAPATO;37
-4038951;BOTIN SEG GRAL DIELECTRICO DAMA NRO.38;si;si;si;si;si;si;si;si;no;si;si;no;no;no;si;no;ZAPATO;38
-4058523;BOTIN SEG GRAL DIELECTRICO DAMA NRO.39;si;si;si;si;si;si;si;si;no;si;si;no;no;no;si;no;ZAPATO;39
-4058921;BOTIN SEG GRAL DIELECTRICO DAMA NRO.40;si;si;si;si;si;si;si;si;no;si;si;no;no;no;si;no;ZAPATO;40
-4020433;BOTIN USO GENERAL NRO. 39 RZ;si;si;si;si;si;si;si;si;si;no;si;no;si;no;si;no;ZAPATO;39 RZ
-4020434;BOTIN USO GENERAL NRO. 40 RZ;si;si;si;si;si;si;si;si;si;no;si;no;si;no;si;no;ZAPATO; 40 RZ
-4087208;BOTIN USO GENERAL NRO. 41 RZ;si;si;si;si;si;si;si;si;si;no;si;no;si;no;si;no;ZAPATO;41 RZ
-4087209;BOTIN USO GENERAL NRO. 42 RZ;si;si;si;si;si;si;si;si;si;no;si;no;si;no;si;no;ZAPATO;42 RZ
-4087210;BOTIN USO GENERAL NRO. 43 RZ;si;si;si;si;si;si;si;si;si;no;si;no;si;no;si;no;ZAPATO; 43 RZ
-4095824;BOTIN USO GENERAL NRO. 44 RZ;si;si;si;si;si;si;si;si;si;no;si;no;si;no;si;no;ZAPATO; 44 RZ
-4095825;BOTIN USO GENERAL NRO. 45 RZ;si;si;si;si;si;si;si;si;si;no;si;no;si;no;si;no;ZAPATO;45 RZ
-4060990;BUZO ANTIGRASA VARON T46 S MANTENEDOR;si;si;si;si;si;si;si;si;si;si;si;si;si;no;no;no;BUZO_MECANICO;46
-4060991;BUZO ANTIGRASA VARON T48 M MANTENEDOR;si;si;si;si;si;si;si;si;si;si;si;si;si;no;no;no;BUZO_MECANICO;48
-4060992;BUZO ANTIGRASA VARON T50 L MANTENEDOR;si;si;si;si;si;si;si;si;si;si;si;si;si;no;no;no;BUZO_MECANICO;50
-4060993;BUZO ANTIGRASA VARON T52 L MANTENEDOR;si;si;si;si;si;si;si;si;si;si;si;si;si;no;no;no;BUZO_MECANICO;52
-4060994;BUZO ANTIGRASA VARON T54 XL MANTENEDOR;si;si;si;si;si;si;si;si;si;si;si;si;si;no;no;no;BUZO_MECANICO;54
-4060998;BUZO ANTIGRASA XXXL;si;si;si;si;si;si;si;si;si;si;si;si;si;no;no;no;BUZO_MECANICO;XXXL
-4169148;BUZO ARCO ELECTRICO DAMA T-M;si;si;si;si;si;si;si;si;no;si;si;si;no;si;no;no;BUZO_ELECTRICO;M
-4125704;BUZO PROT ARCO ELECTRIC VARON T-S;si;si;si;si;si;si;si;si;si;no;si;si;no;si;no;no;BUZO_ELECTRICO;S
-4154651;BUZO PROT ARCO ELECTRICO TALLA M;si;si;si;si;si;si;si;si;si;no;si;si;no;si;no;no;BUZO_ELECTRICO;M
-4154652;BUZO PROT ARCO ELECTRIC VARON T-L;si;si;si;si;si;si;si;si;si;no;si;si;no;si;no;no;BUZO_ELECTRICO;L
-4120165;BUZO PROT ARCO ELECTRIC VARON T-XL;si;si;si;si;si;si;si;si;si;no;si;si;no;si;no;no;BUZO_ELECTRICO;XL
-4154654;BUZO PROT ARCO ELECTRIC VARON T-2XL;si;si;si;si;si;si;si;si;si;no;si;si;no;si;no;no;BUZO_ELECTRICO;2XL
-4145372;BUZO TERMICO AMBIENTE ACIDO VARON T-44;no;no;no;no;si;si;si;si;si;no;si;si;no;no;si;no;BUZO;44
-4145373;BUZO TERMICO AMBIENTE ACIDO VARON T-46;no;no;no;no;si;si;si;si;si;no;si;si;no;no;si;no;BUZO;46
-4145374;BUZO TERMICO AMBIENTE ACIDO VARON T-48;no;no;no;no;si;si;si;si;si;no;si;si;no;no;si;no;BUZO;48
-4145375;BUZO TERMICO AMBIENTE ACIDO VARON T-50;no;no;no;no;si;si;si;si;si;no;si;si;no;no;si;no;BUZO;50
-4082588;BUZO TERMICO AMBIENTE ACIDO VARON T-52;no;no;no;no;si;si;si;si;si;no;si;si;no;no;si;no;BUZO;52
-4082589;BUZO TERMICO AMBIENTE ACIDO VARON T-54;no;no;no;no;si;si;si;si;si;no;si;si;no;no;si;no;BUZO;54
-4082590;BUZO TERMICO AMBIENTE ACIDO VARON T-56;no;no;no;no;si;si;si;si;si;no;si;si;no;no;si;no;BUZO;56
-4083750;BUZO TERMICO AMBIENTE ACIDO VARON T-58;no;no;no;no;si;si;si;si;si;no;si;si;no;no;si;no;BUZO;58
-4162302;BUZO USO GENERAL DAMA T-S;no;no;no;no;si;si;si;si;no;si;si;si;si;si;si;no;BUZO;S
-4162303;BUZO USO GENERAL DAMA T-M;no;no;no;no;si;si;si;si;no;si;si;si;si;si;si;no;BUZO;M
-4162304;BUZO USO GENERAL DAMA T-L;no;no;no;no;si;si;si;si;no;si;si;si;si;si;si;no;BUZO;L
-4162305;BUZO USO GENERAL DAMA T-XL;no;no;no;no;si;si;si;si;no;si;si;si;si;si;si;no;BUZO;XL
-4064766;BUZO USO GENERAL VARON T-3XL;no;no;no;no;si;si;si;si;no;si;si;si;si;si;si;no;BUZO;3XL
-4053047;CAMISA ANTIACIDA USO GRAL T-S;no;no;no;no;si;si;si;si;si;si;si;si;si;no;si;no;CAMISA;S
-4053048;CAMISA ANTIACIDA USO GRAL T-M;no;no;no;no;si;si;si;si;si;si;si;si;si;no;si;no;CAMISA;M
-4125645;CAMISA ANTIACIDA USO GRAL T-L;no;no;no;no;si;si;si;si;si;si;si;si;si;no;si;no;CAMISA;L
-4053046;CAMISA ANTIACIDA USO GRAL T-XS;no;no;no;no;si;si;si;si;si;si;si;si;si;no;si;no;CAMISA;XS
-4125648;CAMISA ANTIACIDA USO GRAL T-XL;no;no;no;no;si;si;si;si;si;si;si;si;si;no;si;no;CAMISA;XL
-4125647;CAMISA ANTIACIDA USO GRAL T-2XL;no;no;no;no;si;si;si;si;si;si;si;si;si;no;si;no;CAMISA;2XL
-4053062;CAMISA ANTIACIDA USO GRAL T-3XL;no;no;no;no;si;si;si;si;si;si;si;si;si;no;si;no;CAMISA;C3XL
-4169236;CAMISA ARCO ELECTRICO DAMA T-S  46;si;si;si;si;si;si;si;si;no;si;si;si;no;si;no;no;CAMISA_ELECTRICO;S-46
-4125768;CAMISA PROTEC ARCO ELECT 44;si;si;si;si;si;si;si;si;no;si;si;si;no;si;no;no;CAMISA_ELECTRICO;44
-4086173;CAMISA RET A LA LLAMA;si;si;si;si;si;si;si;si;si;no;si;si;no;si;no;no;CAMISA_ELECTRICO;44
-4075658;CAMISA RET A LA LLAMA 46;si;si;si;si;si;si;si;si;si;no;si;si;no;si;no;no;CAMISA_ELECTRICO;46
-4075659;CAMISA RET A LA LLAMA 48;si;si;si;si;si;si;si;si;si;no;si;si;no;si;no;no;CAMISA_ELECTRICO;48
-4075660;CAMISA RET A LA LLAMA 50;si;si;si;si;si;si;si;si;si;no;si;si;no;si;no;no;CAMISA_ELECTRICO;50
-4075662;CAMISA RET A LA LLAMA 52;si;si;si;si;si;si;si;si;si;no;si;si;no;si;no;no;CAMISA_ELECTRICO;52
-4075663;CAMISA RET A LA LLAMA T-54;si;si;si;si;si;si;si;si;si;no;si;si;no;si;no;no;CAMISA_ELECTRICO;54
-4183017;CAMISA TEC. ALTA CORD. DAMA T-S;no;si;si;si;si;si;si;si;no;si;si;si;si;si;si;no;CAMISA; T-S
-4183018;CAMISA TEC. ALTA CORD. DAMA T-M;no;si;si;si;si;si;si;si;no;si;si;si;si;si;si;no;CAMISA;T-M
-4183019;CAMISA TEC. ALTA CORD. DAMA T-L;no;si;si;si;si;si;si;si;no;si;si;si;si;si;si;no;CAMISA;T-L
-4183016;CAMISA TEC. ALTA CORD. DAMA T-XS;no;si;si;si;si;si;si;si;no;si;si;si;si;si;si;no;CAMISA;T-XS
-4183020;CAMISA TEC. ALTA CORD. DAMA T-XL;no;si;si;si;si;si;si;si;no;si;si;si;si;si;si;no;CAMISA;T-XL
-4111751;CAMISETA 1RA CAPA S;no;si;no;no;no;si;si;si;no;no;si;no;no;si;no;no;CAMISA_PC_ELECT;S
-4111661;CAMISETA 1RA CAPA M;no;si;no;no;no;si;si;si;no;no;si;no;no;si;no;no;CAMISA_PC_ELECT;M
-4111662;CAMISETA 1RA CAPA L;no;si;no;no;no;si;si;si;no;no;si;no;no;si;no;no;CAMISA_PC_ELECT;L
-4111752;CAMISETA 1RA CAPA XL;no;si;no;no;no;si;si;si;no;no;si;no;no;si;no;no;CAMISA_PC_ELECT;XL
-4111656;PANTALON 1RA CAPA S;si;no;si;si;si;si;si;si;si;no;no;si;si;no;si;no;PANTALON_PC;S
-4111649;PANTALON 1RA CAPA M;si;no;si;si;si;si;si;si;si;no;no;si;si;no;si;no;PANTALON_PC;M
-4111650;PANTALON 1RA CAPA L;si;no;si;si;si;si;si;si;si;no;no;si;si;no;si;no;PANTALON_PC;L
-4111750;PANTALON 1RA CAPA XL;si;no;si;si;si;si;si;si;si;no;no;si;si;no;si;no;PANTALON_PC;XL
-4177581;PANTALON ALTA CORD. DAMA T-S;no;si;si;si;si;si;si;si;no;si;si;si;si;no;si;no;PANTALON;S
-4177582;PANTALON ALTA CORD. DAMA T-M;no;si;si;si;si;si;si;si;no;si;si;si;si;no;si;no;PANTALON;M
-4177583;PANTALON ALTA CORD. DAMA T-L;no;si;si;si;si;si;si;si;no;si;si;si;si;no;si;no;PANTALON;L
-4177584;PANTALON ALTA CORD. DAMA T-XL;no;si;si;si;si;si;si;si;no;si;si;si;si;no;si;no;PANTALON;XL
-4183031;PANTALON ALTA CORDILLERA VARON 2XL;si;si;si;si;no;si;si;si;si;no;si;si;si;no;si;no;PANTALON;2XL
-4183027;PANTALON ALTA CORDILLERA VARON S;si;si;si;si;no;si;si;si;si;no;si;si;si;no;si;no;PANTALON; S
-4183028;PANTALON ALTA CORDILLERA VARON M;si;si;si;si;no;si;si;si;si;no;si;si;si;no;si;no;PANTALON; M
-4183029;PANTALON ALTA CORDILLERA VARON L;si;si;si;si;no;si;si;si;si;no;si;si;si;no;si;no;PANTALON; L
-4183030;PANTALON ALTA CORDILLERA VARON XL;si;si;si;si;no;si;si;si;si;no;si;si;si;no;si;no;PANTALON; XL
-4183031;PANTALON ALTA CORDILLERA VARON 2XL;si;si;si;si;no;si;si;si;si;no;si;si;si;no;si;no;PANTALON; 2XL
-4154607;PANTALON ANTIACIDO USO GRAL VARON T-44;no;no;no;no;si;si;si;si;si;no;si;si;si;no;si;no;PANTALON;44
-4053039;PANTALON ANTIACIDO USO GRAL VARON T-46;no;no;no;no;si;si;si;si;si;no;si;si;si;no;si;no;PANTALON;46
-4053040;PANTALON ANTIACIDO USO GRAL VARON T-48;no;no;no;no;si;si;si;si;si;no;si;si;si;no;si;no;PANTALON;48
-4053041;PANTALON ANTIACIDO USO GRAL VARON T-50;no;no;no;no;si;si;si;si;si;no;si;si;si;no;si;no;PANTALON;50
-4053042;PANTALON ANTIACIDO USO GRAL VARON T-52;no;no;no;no;si;si;si;si;si;no;si;si;si;no;si;no;PANTALON;52
-4053043;PANTALON ANTIACIDO USO GRAL VARON T-54;no;no;no;no;si;si;si;si;si;no;si;si;si;no;si;no;PANTALON;54
-4053044;PANTALON ANTIACIDO USO GRAL VARON T-56;no;no;no;no;si;si;si;si;si;no;si;si;si;no;si;no;PANTALON;56
-4163670;PANTALON IGNIFUGO AZUL MUJER T-42 S;no;no;no;no;no;si;si;si;no;si;si;no;no;si;no;no;PANTALON;42-S
-4152515;PANTALON RET A LA LLAMA 46;si;si;si;si;si;si;si;si;si;no;si;si;no;si;no;no;PANTALON;46
-4152516;PANTALON RET A LA LLAMA 48;si;si;si;si;si;si;si;si;si;no;si;si;no;si;no;no;PANTALON;48
-4152517;PANTALON RET A LA LLAMA 50;si;si;si;si;si;si;si;si;si;no;si;si;no;si;no;no;PANTALON;50
-4163280;PANTALON RET A LA LLAMA T-54;si;si;si;si;si;si;si;si;si;no;si;si;no;si;no;no;PANTALON;54
-4180262;PARKA INSTITUCIONAL DAMA T-S;si;si;si;si;si;si;si;si;no;si;no;si;si;si;si;si;PARKA;S
-4180263;PARKA INSTITUCIONAL DAMA T-M;si;si;si;si;si;si;si;si;no;si;no;si;si;si;si;si;PARKA;M
-4180264;PARKA INSTITUCIONAL DAMA T-L;si;si;si;si;si;si;si;si;no;si;no;si;si;si;si;si;PARKA;L
-4180261;PARKA INSTITUCIONAL DAMA T-XS;si;si;si;si;si;si;si;si;no;si;no;si;si;si;si;si;PARKA;XS
-4180265;PARKA INSTITUCIONAL DAMA T-XL;si;si;si;si;si;si;si;si;no;si;no;si;si;si;si;si;PARKA;XL
-4180266;PARKA INSTITUCIONAL DAMA T-XXL;si;si;si;si;si;si;si;si;no;si;no;si;si;si;si;si;PARKA;XXL
-4180267;PARKA INSTITUCIONAL CORP VARON T-S;si;si;si;si;si;si;si;si;si;no;no;si;si;si;si;si;PARKA;S
-4180268;PARKA INSTITUCIONAL CORP VARON T-M;si;si;si;si;si;si;si;si;si;no;no;si;si;si;si;si;PARKA;M
-4180269;PARKA INSTITUCIONAL CORP VARON T-L;si;si;si;si;si;si;si;si;si;no;no;si;si;si;si;si;PARKA;L
-4180270;PARKA INSTITUCIONAL CORP VARON T-XL;si;si;si;si;si;si;si;si;si;no;no;si;si;si;si;si;PARKA;XL
-4180271;PARKA INSTITUCIONAL CORP VARON T-XXL;si;si;si;si;si;si;si;si;si;no;no;si;si;si;si;si;PARKA;XXL
-4154064;BUZO USO GENERAL VARON T-S;no;no;si;si;si;si;si;si;si;no;si;si;si;si;si;no;BUZO;S
-4154065;BUZO USO GENERAL VARON T-M;no;no;si;si;si;si;si;si;si;no;si;si;si;si;si;no;BUZO;M
-4154066;BUZO USO GENERAL VARON T-L;no;no;si;si;si;si;si;si;si;no;si;si;si;si;si;no;BUZO;L
-4154063;BUZO USO GENERAL VARON T-XS;no;no;si;si;si;si;si;si;si;no;si;si;si;si;si;no;BUZO;XS
-4064762;BUZO USO GENERAL VARON T-XL;no;no;si;si;si;si;si;si;si;no;si;si;si;si;si;no;BUZO;XL
-4003835;BUZO USO GENERAL VARON T-2XL;no;no;si;si;si;si;si;si;si;no;si;si;si;si;si;no;BUZO;2XL
-4064766;BUZO USO GENERAL VARON T-3XL;no;no;si;si;si;si;si;si;si;no;si;si;si;si;si;no;BUZO;3XL
-4003837;BUZO USO GENERAL VARON T-4XL;no;no;si;si;si;si;si;si;si;no;si;si;si;si;si;no;BUZO;4XL
-4110828;BUZO USO GENERAL VARON T-5XL;no;no;si;si;si;si;si;si;si;no;si;si;si;si;si;no;BUZO;5XL
-4003839;BUZO USO GENERAL VARON T-7XL;no;no;si;si;si;si;si;si;si;no;si;si;si;si;si;no;BUZO;7XL
-4183017;CAMISA TECN ALTA CORDILLERA DAMA T-S;no;si;si;si;no;si;si;si;no;si;si;si;si;no;si;no;CAMISA;S
-4183018;CAMISA TECN ALTA CORDILLERA DAMA T-M;no;si;si;si;no;si;si;si;no;si;si;si;si;no;si;no;CAMISA;M
-4183019;CAMISA TECN ALTA CORDILLERA DAMA T-L;no;si;si;si;no;si;si;si;no;si;si;si;si;no;si;no;CAMISA;L
-4183016;CAMISA TECN ALTA CORDILLERA DAMA T-XS;no;si;si;si;no;si;si;si;no;si;si;si;si;no;si;no;CAMISA;XS
-4183020;CAMISA TECN ALTA CORDILLERA DAMA T-XL;no;si;si;si;no;si;si;si;no;si;si;si;si;no;si;no;CAMISA;XL
-4183021;CAMISA TECN ALTA CORDILLERA DAMA T-XXL;no;si;si;si;no;si;si;si;no;si;si;si;si;no;si;no;CAMISA;XXL
-4183022;CAMISA TECN ALTA CORDILLERA VARON T-S;no;si;si;si;no;si;si;si;si;no;si;si;si;no;si;no;CAMISA;S
-4183023;CAMISA TECN ALTA CORDILLERA VARON T-M;no;si;si;si;no;si;si;si;si;no;si;si;si;no;si;no;CAMISA;M
-4183024;CAMISA TECN ALTA CORDILLERA VARON T-L;no;si;si;si;no;si;si;si;si;no;si;si;si;no;si;no;CAMISA;L
-4183025;CAMISA TECN ALTA CORDILLERA VARON T-XL;no;si;si;si;no;si;si;si;si;no;si;si;si;no;si;no;CAMISA;XL
-4183026;CAMISA TECN ALTA CORDILLERA VARON T-XXL;no;si;si;si;no;si;si;si;si;no;si;si;si;no;si;no;CAMISA;XXL
+﻿codigo;epp;salacom;los_andes;huechun;saladillo;planta_filtro;mina_sub;concentrador;sur;hombre;mujer;verano;invierno;mecanico;electrico;general;tipo;talla
+4175212;BANDANA MULTIFUNCIONAL ALTA CORDILLERA;si;si;si;si;si;si;si;si;si;si;no;si;si;si;si;BANDANA;0
+4171922;BOTA DE SEGURIDAD FRIO EXTREMO T-37;no;no;si;no;si;si;si;si;si;si;no;si;si;si;si;ZAPATO;37
+4169006;BOTA SEG FRIO EXTREMO IMPERMEABLE T-38;no;no;si;no;si;si;si;si;si;si;no;si;si;si;si;ZAPATO;38
+4003636;BOTA SEG FRIO EXTREMO IMPERMEABLE T-39;no;no;si;no;si;si;si;si;si;si;no;si;si;si;si;ZAPATO;39
+4003637;BOTA SEG FRIO EXTREMO IMPERMEABLE T-40;no;no;si;no;si;si;si;si;si;si;no;si;si;si;si;ZAPATO;40
+4003638;BOTA SEG FRIO EXTREMO IMPERMEABLE T-41;no;no;si;no;si;si;si;si;si;si;no;si;si;si;si;ZAPATO;41
+4003639;BOTA SEG FRIO EXTREMO IMPERMEABLE T-42;no;no;si;no;si;si;si;si;si;si;no;si;si;si;si;ZAPATO;42
+4003640;BOTA SEG FRIO EXTREMO IMPERMEABLE T-43;no;no;si;no;si;si;si;si;si;si;no;si;si;si;si;ZAPATO;43
+4003641;BOTA SEG FRIO EXTREMO IMPERMEABLE T-44;no;no;si;no;si;si;si;si;si;si;no;si;si;si;si;ZAPATO;44
+4162901;BOTA SEG FRIO EXTREMO IMPERMEABLE T-45;no;no;si;no;si;si;si;si;si;si;no;si;si;si;si;ZAPATO;45
+4162902;BOTA SEG FRIO EXTREMO IMPERMEABLE T-46;no;no;si;no;si;si;si;si;si;si;no;si;si;si;si;ZAPATO;46
+4162996;BOTA SEG FRIO EXTREMO IMPERMEABLE T-47;no;no;si;no;si;si;si;si;si;si;no;si;si;si;si;ZAPATO;47
+4060797;BOTIN DE SEGURIDAD AISLANTE 39;si;si;si;si;si;si;si;si;si;no;si;no;no;si;no;ZAPATO_ELECTRICO;39
+4060798;BOTIN DE SEGURIDAD AISLANTE 40;si;si;si;si;si;si;si;si;si;no;si;no;no;si;no;ZAPATO_ELECTRICO;40
+4060799;BOTIN DE SEGURIDAD AISLANTE 41;si;si;si;si;si;si;si;si;si;no;si;no;no;si;no;ZAPATO_ELECTRICO;41
+4060850;BOTIN DE SEGURIDAD AISLANTE 42;si;si;si;si;si;si;si;si;si;no;si;no;no;si;no;ZAPATO_ELECTRICO;42
+4060851;BOTIN DE SEGURIDAD AISLANTE 43;si;si;si;si;si;si;si;si;si;no;si;no;no;si;no;ZAPATO_ELECTRICO;43
+4060852;BOTIN DE SEGURIDAD AISLANTE 44;si;si;si;si;si;si;si;si;si;no;si;no;no;si;no;ZAPATO_ELECTRICO;44
+4058520;BOTIN SEG GRAL DIELECTRICO DAMA NRO.36;si;si;si;si;si;si;si;si;no;si;si;no;no;no;si;ZAPATO;36
+4058521;BOTIN SEG GRAL DIELECTRICO DAMA NRO.37;si;si;si;si;si;si;si;si;no;si;si;no;no;no;si;ZAPATO;37
+4038951;BOTIN SEG GRAL DIELECTRICO DAMA NRO.38;si;si;si;si;si;si;si;si;no;si;si;no;no;no;si;ZAPATO;38
+4058523;BOTIN SEG GRAL DIELECTRICO DAMA NRO.39;si;si;si;si;si;si;si;si;no;si;si;no;no;no;si;ZAPATO;39
+4058921;BOTIN SEG GRAL DIELECTRICO DAMA NRO.40;si;si;si;si;si;si;si;si;no;si;si;no;no;no;si;ZAPATO;40
+4020433;BOTIN USO GENERAL NRO. 39 RZ;si;si;si;si;si;si;si;si;si;no;si;no;si;no;si;ZAPATO;39 RZ
+4020434;BOTIN USO GENERAL NRO. 40 RZ;si;si;si;si;si;si;si;si;si;no;si;no;si;no;si;ZAPATO; 40 RZ
+4087208;BOTIN USO GENERAL NRO. 41 RZ;si;si;si;si;si;si;si;si;si;no;si;no;si;no;si;ZAPATO;41 RZ
+4087209;BOTIN USO GENERAL NRO. 42 RZ;si;si;si;si;si;si;si;si;si;no;si;no;si;no;si;ZAPATO;42 RZ
+4087210;BOTIN USO GENERAL NRO. 43 RZ;si;si;si;si;si;si;si;si;si;no;si;no;si;no;si;ZAPATO; 43 RZ
+4095824;BOTIN USO GENERAL NRO. 44 RZ;si;si;si;si;si;si;si;si;si;no;si;no;si;no;si;ZAPATO; 44 RZ
+4095825;BOTIN USO GENERAL NRO. 45 RZ;si;si;si;si;si;si;si;si;si;no;si;no;si;no;si;ZAPATO;45 RZ
+4060990;BUZO ANTIGRASA VARON T46 S MANTENEDOR;si;si;si;si;si;si;si;si;si;si;si;si;si;no;no;BUZO_MECANICO;46
+4060991;BUZO ANTIGRASA VARON T48 M MANTENEDOR;si;si;si;si;si;si;si;si;si;si;si;si;si;no;no;BUZO_MECANICO;48
+4060992;BUZO ANTIGRASA VARON T50 L MANTENEDOR;si;si;si;si;si;si;si;si;si;si;si;si;si;no;no;BUZO_MECANICO;50
+4060993;BUZO ANTIGRASA VARON T52 L MANTENEDOR;si;si;si;si;si;si;si;si;si;si;si;si;si;no;no;BUZO_MECANICO;52
+4060994;BUZO ANTIGRASA VARON T54 XL MANTENEDOR;si;si;si;si;si;si;si;si;si;si;si;si;si;no;no;BUZO_MECANICO;54
+4060998;BUZO ANTIGRASA XXXL;si;si;si;si;si;si;si;si;si;si;si;si;si;no;no;BUZO_MECANICO;XXXL
+4169148;BUZO ARCO ELECTRICO DAMA T-M;si;si;si;si;si;si;si;si;no;si;si;si;no;si;no;BUZO_ELECTRICO;M
+4125704;BUZO PROT ARCO ELECTRIC VARON T-S;si;si;si;si;si;si;si;si;si;no;si;si;no;si;no;BUZO_ELECTRICO;S
+4154651;BUZO PROT ARCO ELECTRICO TALLA M;si;si;si;si;si;si;si;si;si;no;si;si;no;si;no;BUZO_ELECTRICO;M
+4154652;BUZO PROT ARCO ELECTRIC VARON T-L;si;si;si;si;si;si;si;si;si;no;si;si;no;si;no;BUZO_ELECTRICO;L
+4120165;BUZO PROT ARCO ELECTRIC VARON T-XL;si;si;si;si;si;si;si;si;si;no;si;si;no;si;no;BUZO_ELECTRICO;XL
+4154654;BUZO PROT ARCO ELECTRIC VARON T-2XL;si;si;si;si;si;si;si;si;si;no;si;si;no;si;no;BUZO_ELECTRICO;2XL
+4145372;BUZO TERMICO AMBIENTE ACIDO VARON T-44;no;no;no;no;si;si;si;si;si;no;si;si;no;no;si;BUZO;44
+4145373;BUZO TERMICO AMBIENTE ACIDO VARON T-46;no;no;no;no;si;si;si;si;si;no;si;si;no;no;si;BUZO;46
+4145374;BUZO TERMICO AMBIENTE ACIDO VARON T-48;no;no;no;no;si;si;si;si;si;no;si;si;no;no;si;BUZO;48
+4145375;BUZO TERMICO AMBIENTE ACIDO VARON T-50;no;no;no;no;si;si;si;si;si;no;si;si;no;no;si;BUZO;50
+4082588;BUZO TERMICO AMBIENTE ACIDO VARON T-52;no;no;no;no;si;si;si;si;si;no;si;si;no;no;si;BUZO;52
+4082589;BUZO TERMICO AMBIENTE ACIDO VARON T-54;no;no;no;no;si;si;si;si;si;no;si;si;no;no;si;BUZO;54
+4082590;BUZO TERMICO AMBIENTE ACIDO VARON T-56;no;no;no;no;si;si;si;si;si;no;si;si;no;no;si;BUZO;56
+4083750;BUZO TERMICO AMBIENTE ACIDO VARON T-58;no;no;no;no;si;si;si;si;si;no;si;si;no;no;si;BUZO;58
+4162302;BUZO USO GENERAL DAMA T-S;no;no;no;no;si;si;si;si;no;si;si;si;si;si;si;BUZO;S
+4162303;BUZO USO GENERAL DAMA T-M;no;no;no;no;si;si;si;si;no;si;si;si;si;si;si;BUZO;M
+4162304;BUZO USO GENERAL DAMA T-L;no;no;no;no;si;si;si;si;no;si;si;si;si;si;si;BUZO;L
+4162305;BUZO USO GENERAL DAMA T-XL;no;no;no;no;si;si;si;si;no;si;si;si;si;si;si;BUZO;XL
+4064766;BUZO USO GENERAL VARON T-3XL;no;no;no;no;si;si;si;si;no;si;si;si;si;si;si;BUZO;3XL
+4053047;CAMISA ANTIACIDA USO GRAL T-S;no;no;no;no;si;si;si;si;si;si;si;si;si;no;si;CAMISA;S
+4053048;CAMISA ANTIACIDA USO GRAL T-M;no;no;no;no;si;si;si;si;si;si;si;si;si;no;si;CAMISA;M
+4125645;CAMISA ANTIACIDA USO GRAL T-L;no;no;no;no;si;si;si;si;si;si;si;si;si;no;si;CAMISA;L
+4053046;CAMISA ANTIACIDA USO GRAL T-XS;no;no;no;no;si;si;si;si;si;si;si;si;si;no;si;CAMISA;XS
+4125648;CAMISA ANTIACIDA USO GRAL T-XL;no;no;no;no;si;si;si;si;si;si;si;si;si;no;si;CAMISA;XL
+4125647;CAMISA ANTIACIDA USO GRAL T-2XL;no;no;no;no;si;si;si;si;si;si;si;si;si;no;si;CAMISA;2XL
+4053062;CAMISA ANTIACIDA USO GRAL T-3XL;no;no;no;no;si;si;si;si;si;si;si;si;si;no;si;CAMISA;C3XL
+4169236;CAMISA ARCO ELECTRICO DAMA T-S  46;si;si;si;si;si;si;si;si;no;si;si;si;no;si;no;CAMISA_ELECTRICO;S-46
+4125768;CAMISA PROTEC ARCO ELECT 44;si;si;si;si;si;si;si;si;no;si;si;si;no;si;no;CAMISA_ELECTRICO;44
+4086173;CAMISA RET A LA LLAMA;si;si;si;si;si;si;si;si;si;no;si;si;no;si;no;CAMISA_ELECTRICO;44
+4075658;CAMISA RET A LA LLAMA 46;si;si;si;si;si;si;si;si;si;no;si;si;no;si;no;CAMISA_ELECTRICO;46
+4075659;CAMISA RET A LA LLAMA 48;si;si;si;si;si;si;si;si;si;no;si;si;no;si;no;CAMISA_ELECTRICO;48
+4075660;CAMISA RET A LA LLAMA 50;si;si;si;si;si;si;si;si;si;no;si;si;no;si;no;CAMISA_ELECTRICO;50
+4075662;CAMISA RET A LA LLAMA 52;si;si;si;si;si;si;si;si;si;no;si;si;no;si;no;CAMISA_ELECTRICO;52
+4075663;CAMISA RET A LA LLAMA T-54;si;si;si;si;si;si;si;si;si;no;si;si;no;si;no;CAMISA_ELECTRICO;54
+4183017;CAMISA TEC. ALTA CORD. DAMA T-S;no;si;si;si;si;si;si;si;no;si;si;si;si;si;si;CAMISA; T-S
+4183018;CAMISA TEC. ALTA CORD. DAMA T-M;no;si;si;si;si;si;si;si;no;si;si;si;si;si;si;CAMISA;T-M
+4183019;CAMISA TEC. ALTA CORD. DAMA T-L;no;si;si;si;si;si;si;si;no;si;si;si;si;si;si;CAMISA;T-L
+4183016;CAMISA TEC. ALTA CORD. DAMA T-XS;no;si;si;si;si;si;si;si;no;si;si;si;si;si;si;CAMISA;T-XS
+4183020;CAMISA TEC. ALTA CORD. DAMA T-XL;no;si;si;si;si;si;si;si;no;si;si;si;si;si;si;CAMISA;T-XL
+4111751;CAMISETA 1RA CAPA S;no;si;no;no;no;si;si;si;no;no;si;no;no;si;no;CAMISA_PC_ELECT;S
+4111661;CAMISETA 1RA CAPA M;no;si;no;no;no;si;si;si;no;no;si;no;no;si;no;CAMISA_PC_ELECT;M
+4111662;CAMISETA 1RA CAPA L;no;si;no;no;no;si;si;si;no;no;si;no;no;si;no;CAMISA_PC_ELECT;L
+4111752;CAMISETA 1RA CAPA XL;no;si;no;no;no;si;si;si;no;no;si;no;no;si;no;CAMISA_PC_ELECT;XL
+4111656;PANTALON 1RA CAPA S;si;no;si;si;si;si;si;si;si;no;no;si;si;no;si;PANTALON_PC;S
+4111649;PANTALON 1RA CAPA M;si;no;si;si;si;si;si;si;si;no;no;si;si;no;si;PANTALON_PC;M
+4111650;PANTALON 1RA CAPA L;si;no;si;si;si;si;si;si;si;no;no;si;si;no;si;PANTALON_PC;L
+4111750;PANTALON 1RA CAPA XL;si;no;si;si;si;si;si;si;si;no;no;si;si;no;si;PANTALON_PC;XL
+4177581;PANTALON ALTA CORD. DAMA T-S;no;si;si;si;si;si;si;si;no;si;si;si;si;no;si;PANTALON;S
+4177582;PANTALON ALTA CORD. DAMA T-M;no;si;si;si;si;si;si;si;no;si;si;si;si;no;si;PANTALON;M
+4177583;PANTALON ALTA CORD. DAMA T-L;no;si;si;si;si;si;si;si;no;si;si;si;si;no;si;PANTALON;L
+4177584;PANTALON ALTA CORD. DAMA T-XL;no;si;si;si;si;si;si;si;no;si;si;si;si;no;si;PANTALON;XL
+4183031;PANTALON ALTA CORDILLERA VARON 2XL;si;si;si;si;no;si;si;si;si;no;si;si;si;no;si;PANTALON;2XL
+4183027;PANTALON ALTA CORDILLERA VARON S;si;si;si;si;no;si;si;si;si;no;si;si;si;no;si;PANTALON; S
+4183028;PANTALON ALTA CORDILLERA VARON M;si;si;si;si;no;si;si;si;si;no;si;si;si;no;si;PANTALON; M
+4183029;PANTALON ALTA CORDILLERA VARON L;si;si;si;si;no;si;si;si;si;no;si;si;si;no;si;PANTALON; L
+4183030;PANTALON ALTA CORDILLERA VARON XL;si;si;si;si;no;si;si;si;si;no;si;si;si;no;si;PANTALON; XL
+4183031;PANTALON ALTA CORDILLERA VARON 2XL;si;si;si;si;no;si;si;si;si;no;si;si;si;no;si;PANTALON; 2XL
+4154607;PANTALON ANTIACIDO USO GRAL VARON T-44;no;no;no;no;si;si;si;si;si;no;si;si;si;no;si;PANTALON;44
+4053039;PANTALON ANTIACIDO USO GRAL VARON T-46;no;no;no;no;si;si;si;si;si;no;si;si;si;no;si;PANTALON;46
+4053040;PANTALON ANTIACIDO USO GRAL VARON T-48;no;no;no;no;si;si;si;si;si;no;si;si;si;no;si;PANTALON;48
+4053041;PANTALON ANTIACIDO USO GRAL VARON T-50;no;no;no;no;si;si;si;si;si;no;si;si;si;no;si;PANTALON;50
+4053042;PANTALON ANTIACIDO USO GRAL VARON T-52;no;no;no;no;si;si;si;si;si;no;si;si;si;no;si;PANTALON;52
+4053043;PANTALON ANTIACIDO USO GRAL VARON T-54;no;no;no;no;si;si;si;si;si;no;si;si;si;no;si;PANTALON;54
+4053044;PANTALON ANTIACIDO USO GRAL VARON T-56;no;no;no;no;si;si;si;si;si;no;si;si;si;no;si;PANTALON;56
+4163670;PANTALON IGNIFUGO AZUL MUJER T-42 S;no;no;no;no;no;si;si;si;no;si;si;no;no;si;no;PANTALON;42-S
+4152515;PANTALON RET A LA LLAMA 46;si;si;si;si;si;si;si;si;si;no;si;si;no;si;no;PANTALON;46
+4152516;PANTALON RET A LA LLAMA 48;si;si;si;si;si;si;si;si;si;no;si;si;no;si;no;PANTALON;48
+4152517;PANTALON RET A LA LLAMA 50;si;si;si;si;si;si;si;si;si;no;si;si;no;si;no;PANTALON;50
+4163280;PANTALON RET A LA LLAMA T-54;si;si;si;si;si;si;si;si;si;no;si;si;no;si;no;PANTALON;54
+4180262;PARKA INSTITUCIONAL DAMA T-S;si;si;si;si;si;si;si;si;no;si;no;si;si;si;si;PARKA;S
+4180263;PARKA INSTITUCIONAL DAMA T-M;si;si;si;si;si;si;si;si;no;si;no;si;si;si;si;PARKA;M
+4180264;PARKA INSTITUCIONAL DAMA T-L;si;si;si;si;si;si;si;si;no;si;no;si;si;si;si;PARKA;L
+4180261;PARKA INSTITUCIONAL DAMA T-XS;si;si;si;si;si;si;si;si;no;si;no;si;si;si;si;PARKA;XS
+4180265;PARKA INSTITUCIONAL DAMA T-XL;si;si;si;si;si;si;si;si;no;si;no;si;si;si;si;PARKA;XL
+4180266;PARKA INSTITUCIONAL DAMA T-XXL;si;si;si;si;si;si;si;si;no;si;no;si;si;si;si;PARKA;XXL
+4180267;PARKA INSTITUCIONAL CORP VARON T-S;si;si;si;si;si;si;si;si;si;no;no;si;si;si;si;PARKA;S
+4180268;PARKA INSTITUCIONAL CORP VARON T-M;si;si;si;si;si;si;si;si;si;no;no;si;si;si;si;PARKA;M
+4180269;PARKA INSTITUCIONAL CORP VARON T-L;si;si;si;si;si;si;si;si;si;no;no;si;si;si;si;PARKA;L
+4180270;PARKA INSTITUCIONAL CORP VARON T-XL;si;si;si;si;si;si;si;si;si;no;no;si;si;si;si;PARKA;XL
+4180271;PARKA INSTITUCIONAL CORP VARON T-XXL;si;si;si;si;si;si;si;si;si;no;no;si;si;si;si;PARKA;XXL
+4154064;BUZO USO GENERAL VARON T-S;no;no;si;si;si;si;si;si;si;no;si;si;si;si;si;BUZO;S
+4154065;BUZO USO GENERAL VARON T-M;no;no;si;si;si;si;si;si;si;no;si;si;si;si;si;BUZO;M
+4154066;BUZO USO GENERAL VARON T-L;no;no;si;si;si;si;si;si;si;no;si;si;si;si;si;BUZO;L
+4154063;BUZO USO GENERAL VARON T-XS;no;no;si;si;si;si;si;si;si;no;si;si;si;si;si;BUZO;XS
+4064762;BUZO USO GENERAL VARON T-XL;no;no;si;si;si;si;si;si;si;no;si;si;si;si;si;BUZO;XL
+4003835;BUZO USO GENERAL VARON T-2XL;no;no;si;si;si;si;si;si;si;no;si;si;si;si;si;BUZO;2XL
+4064766;BUZO USO GENERAL VARON T-3XL;no;no;si;si;si;si;si;si;si;no;si;si;si;si;si;BUZO;3XL
+4003837;BUZO USO GENERAL VARON T-4XL;no;no;si;si;si;si;si;si;si;no;si;si;si;si;si;BUZO;4XL
+4110828;BUZO USO GENERAL VARON T-5XL;no;no;si;si;si;si;si;si;si;no;si;si;si;si;si;BUZO;5XL
+4003839;BUZO USO GENERAL VARON T-7XL;no;no;si;si;si;si;si;si;si;no;si;si;si;si;si;BUZO;7XL
+4183017;CAMISA TECN ALTA CORDILLERA DAMA T-S;no;si;si;si;no;si;si;si;no;si;si;si;si;no;si;CAMISA;S
+4183018;CAMISA TECN ALTA CORDILLERA DAMA T-M;no;si;si;si;no;si;si;si;no;si;si;si;si;no;si;CAMISA;M
+4183019;CAMISA TECN ALTA CORDILLERA DAMA T-L;no;si;si;si;no;si;si;si;no;si;si;si;si;no;si;CAMISA;L
+4183016;CAMISA TECN ALTA CORDILLERA DAMA T-XS;no;si;si;si;no;si;si;si;no;si;si;si;si;no;si;CAMISA;XS
+4183020;CAMISA TECN ALTA CORDILLERA DAMA T-XL;no;si;si;si;no;si;si;si;no;si;si;si;si;no;si;CAMISA;XL
+4183021;CAMISA TECN ALTA CORDILLERA DAMA T-XXL;no;si;si;si;no;si;si;si;no;si;si;si;si;no;si;CAMISA;XXL
+4183022;CAMISA TECN ALTA CORDILLERA VARON T-S;no;si;si;si;no;si;si;si;si;no;si;si;si;no;si;CAMISA;S
+4183023;CAMISA TECN ALTA CORDILLERA VARON T-M;no;si;si;si;no;si;si;si;si;no;si;si;si;no;si;CAMISA;M
+4183024;CAMISA TECN ALTA CORDILLERA VARON T-L;no;si;si;si;no;si;si;si;si;no;si;si;si;no;si;CAMISA;L
+4183025;CAMISA TECN ALTA CORDILLERA VARON T-XL;no;si;si;si;no;si;si;si;si;no;si;si;si;no;si;CAMISA;XL
+4183026;CAMISA TECN ALTA CORDILLERA VARON T-XXL;no;si;si;si;no;si;si;si;si;no;si;si;si;no;si;CAMISA;XXL
