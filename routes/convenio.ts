@@ -6,7 +6,7 @@ const convenioRoutes = Router();
 
 // OBTENER EPP CONVENIO POR CODIGO
 convenioRoutes.get("/:codigo", async (req: any, res: Response) => {
-  const codigo = req.params.codigo;
+  const codigo = parseInt(req.params.codigo);
 
   const epp = await Convenio.findOne({ codigo: codigo });
 
