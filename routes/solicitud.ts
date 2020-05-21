@@ -1,30 +1,30 @@
-import { Router, Response, request, response } from 'express';
-import { verificaToken } from '../middlewares/autenticacion';
-import { Solicitud } from '../models/solicitud.model';
-import nodemailer from 'nodemailer';
+import { Router, Response, request, response } from "express";
+import { verificaToken } from "../middlewares/autenticacion";
+import { Solicitud } from "../models/solicitud.model";
+import nodemailer from "nodemailer";
 
 const solicitudRoutes = Router();
 
 // CREAR SOLICITUD
-solicitudRoutes.post('/', [verificaToken], async (req: any, res: Response) => {
+solicitudRoutes.post("/", [verificaToken], async (req: any, res: Response) => {
   let body = req.body;
 
   // EMITIR CORREOS
   let solicitudMail = await definirSolicitud(body);
 
   const transporter = nodemailer.createTransport({
-    host: 'smtp.mailtrap.io',
+    host: "smtp.mailtrap.io",
     port: 2525,
     auth: {
-      user: '5af772fd26f4a4',
-      pass: '95176b25d32ae6',
+      user: "307c9998ff3e29",
+      pass: "a678b762fa04b8",
     },
   });
 
   var mailOptions = {
     from: '"Codelco División Andina" <feedback@codelco.cl>',
-    to: 'f.moyano90@gmail.com',
-    subject: '✔ Solicitud de Epp peridodo: ' + body.temporada,
+    to: "f.moyano90@gmail.com",
+    subject: "✔ Solicitud de Epp peridodo: " + body.temporada,
     html: `
       <p>Se ha emitido una nueva solicitud de EPP para el periodo.</p>
       <h3>1. Datos del trabajador</h3>
@@ -36,7 +36,7 @@ solicitudRoutes.post('/', [verificaToken], async (req: any, res: Response) => {
       <p><b>Año:</b> ${body.anio}</p>
       <p><b>Temporada:</b> ${body.temporada}</p>
       <h3>2. Datos de la solicitud</h3>
-      ${solicitudMail}
+      ${body.epps}
       `,
   };
 
@@ -46,7 +46,7 @@ solicitudRoutes.post('/', [verificaToken], async (req: any, res: Response) => {
       if (err) {
         res.status(500).send(err.message);
       } else {
-        res.status(200).send('Enviado correctamente');
+        res.status(200).send("Enviado correctamente");
       }
     }
   );
@@ -64,7 +64,7 @@ solicitudRoutes.post('/', [verificaToken], async (req: any, res: Response) => {
 });
 
 // LISTAR SOLICITUD POR AÑO
-solicitudRoutes.get('/:anio', async (req: any, res: Response) => {
+solicitudRoutes.get("/:anio", async (req: any, res: Response) => {
   let pagina = Number(req.query.pagina) || 1;
   let skip = pagina - 1;
   skip = skip * 10;
@@ -85,7 +85,7 @@ solicitudRoutes.get('/:anio', async (req: any, res: Response) => {
 });
 
 // SOLICITUD POR ID
-solicitudRoutes.get('/obtener/:id', async (req: any, res: Response) => {
+solicitudRoutes.get("/obtener/:id", async (req: any, res: Response) => {
   let id = req.params.id;
   const solicitud = await Solicitud.findById(id, (err, solicitudBD) => {
     if (err) {
@@ -98,7 +98,7 @@ solicitudRoutes.get('/obtener/:id', async (req: any, res: Response) => {
     if (!solicitudBD) {
       return res.status(400).json({
         ok: false,
-        message: 'No existe una solicitud con esa ID',
+        message: "No existe una solicitud con esa ID",
         err,
       });
     }
@@ -111,12 +111,12 @@ solicitudRoutes.get('/obtener/:id', async (req: any, res: Response) => {
 });
 
 function definirSolicitud(body: any) {
-  var solicitudMail = '';
+  var solicitudMail = "";
 
   // SOLICITUDES INVIERNO
-  if (body.temporada == 'INVIERNO') {
+  if (body.temporada == "INVIERNO") {
     switch (body.ubicacion) {
-      case 'MINA RAJO':
+      case "MINA RAJO":
         solicitudMail = `
         <table style="border-collapse: collapse; width: 70%;">
           <thead>
@@ -177,7 +177,7 @@ function definirSolicitud(body: any) {
       `;
         break;
 
-      case 'Mina Subterr.':
+      case "Mina Subterr.":
         solicitudMail = `
         <table style="border-collapse: collapse; width: 70%;">
           <thead>
@@ -238,7 +238,7 @@ function definirSolicitud(body: any) {
       `;
         break;
 
-      case 'Concentrador':
+      case "Concentrador":
         solicitudMail = `
         <table style="border-collapse: collapse; width: 70%;">
           <thead>
@@ -299,7 +299,7 @@ function definirSolicitud(body: any) {
       `;
         break;
 
-      case 'Plan.Fil. A.Ind':
+      case "Plan.Fil. A.Ind":
         solicitudMail = `
         <table style="border-collapse: collapse; width: 70%;">
           <thead>
@@ -355,7 +355,7 @@ function definirSolicitud(body: any) {
       `;
         break;
 
-      case 'Saladillo':
+      case "Saladillo":
         solicitudMail = `
         <table style="border-collapse: collapse; width: 70%;">
           <thead>
@@ -406,7 +406,7 @@ function definirSolicitud(body: any) {
       `;
         break;
 
-      case 'Los Andes':
+      case "Los Andes":
         solicitudMail = `
         <table style="border-collapse: collapse; width: 70%;">
           <thead>
@@ -437,7 +437,7 @@ function definirSolicitud(body: any) {
       `;
         break;
 
-      case 'Huechun A.Ind.':
+      case "Huechun A.Ind.":
         solicitudMail = `
         <table style="border-collapse: collapse; width: 70%;">
           <thead>
@@ -491,9 +491,9 @@ function definirSolicitud(body: any) {
   }
 
   // SOLICITUDES VERANO
-  if (body.temporada == 'VERANO') {
+  if (body.temporada == "VERANO") {
     switch (body.ubicacion) {
-      case 'MINA RAJO':
+      case "MINA RAJO":
         solicitudMail = `
         <table style="border-collapse: collapse; width: 70%;">
           <thead>
@@ -534,53 +534,7 @@ function definirSolicitud(body: any) {
       `;
         break;
 
-      case 'Mina Subterr.':
-        solicitudMail = `
-        <table style="border-collapse: collapse; width: 70%;">
-          <thead>
-              <tr>
-                  <th style="border: 1px solid #dddddd; text-align:left; padding: 8px;">Articulo</th>
-                  <th style="border: 1px solid #dddddd; text-align:left; padding: 8px;">Talla</th>
-                  <th style="border: 1px solid #dddddd; text-align:left; padding: 8px;">Cantidad</th>
-              </tr>
-          </thead>
-          <tbody>
-              <tr>
-                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp1}</td>
-                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall1}</td>
-                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
-              </tr>
-              <tr>
-                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp2}</td>
-                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall2}</td>
-                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
-              </tr>
-              <tr>
-                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp3}</td>
-                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall3}</td>
-                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
-              </tr> 
-              <tr>
-                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp4}</td>
-                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall4}</td>
-                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
-              </tr> 
-              <tr>
-                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp5}</td>
-                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall5}</td>
-                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
-              </tr> 
-              <tr>
-                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp6}</td>
-                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall6}</td>
-                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
-              </tr> 
-          </tbody>
-      </table>
-      `;
-        break;
-
-      case 'Concentrador':
+      case "Mina Subterr.":
         solicitudMail = `
         <table style="border-collapse: collapse; width: 70%;">
           <thead>
@@ -626,7 +580,53 @@ function definirSolicitud(body: any) {
       `;
         break;
 
-      case 'Plan.Fil. A.Ind':
+      case "Concentrador":
+        solicitudMail = `
+        <table style="border-collapse: collapse; width: 70%;">
+          <thead>
+              <tr>
+                  <th style="border: 1px solid #dddddd; text-align:left; padding: 8px;">Articulo</th>
+                  <th style="border: 1px solid #dddddd; text-align:left; padding: 8px;">Talla</th>
+                  <th style="border: 1px solid #dddddd; text-align:left; padding: 8px;">Cantidad</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp1}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall1}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr>
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp2}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall2}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr>
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp3}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall3}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp4}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall4}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp5}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall5}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+              <tr>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.epp6}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">${body.tall6}</td>
+                  <td style="border: 1px solid #dddddd; text-align:left; padding: 8px;">1</td>
+              </tr> 
+          </tbody>
+      </table>
+      `;
+        break;
+
+      case "Plan.Fil. A.Ind":
         solicitudMail = `
         <table style="border-collapse: collapse; width: 70%;">
           <thead>
@@ -662,7 +662,7 @@ function definirSolicitud(body: any) {
       `;
         break;
 
-      case 'Saladillo':
+      case "Saladillo":
         solicitudMail = `
         <table style="border-collapse: collapse; width: 70%;">
           <thead>
@@ -698,7 +698,7 @@ function definirSolicitud(body: any) {
       `;
         break;
 
-      case 'Los Andes':
+      case "Los Andes":
         solicitudMail = `
         <table style="border-collapse: collapse; width: 70%;">
           <thead>
@@ -719,7 +719,7 @@ function definirSolicitud(body: any) {
       `;
         break;
 
-      case 'Huechun A.Ind.':
+      case "Huechun A.Ind.":
         solicitudMail = `
         <table style="border-collapse: collapse; width: 70%;">
           <thead>
