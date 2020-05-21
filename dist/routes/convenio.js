@@ -15,7 +15,7 @@ const convenio_model_1 = require("../models/convenio.model");
 const convenioRoutes = express_1.Router();
 // OBTENER EPP CONVENIO POR CODIGO
 convenioRoutes.get("/:codigo", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const codigo = parseInt(req.params.codigo);
+    const codigo = req.params.codigo.toString();
     const epp = yield convenio_model_1.Convenio.findOne({ codigo: codigo });
     res.json({
         ok: true,
