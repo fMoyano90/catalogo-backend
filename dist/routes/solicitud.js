@@ -64,8 +64,8 @@ solicitudRoutes.post("/", [autenticacion_1.verificaToken], (req, res) => __await
       <p><b>Nombre:</b> ${body.nombre}</p>
       <p><b>Rut:</b> ${body.rut}</p>
       <p><b>Sap:</b> ${body.sap}</p>
-      <p><b>Función:</b> ${body.funcion}</p>
-      <p><b>Ubicación:</b> ${body.ubicacion}</p>
+      <p><b>Cargo Actual:</b> ${body.cargo_actual}</p>
+      <p><b>Lugar de retiro:</b> ${body.lugar_retiro}</p>
       <p><b>Año:</b> ${body.anio}</p>
       <p><b>Temporada:</b> ${body.temporada}</p>
       <h3>2. Datos de la solicitud</h3>

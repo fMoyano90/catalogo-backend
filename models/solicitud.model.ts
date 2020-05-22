@@ -33,6 +33,7 @@ interface ISolicitud extends Document {
   ubicacion: string;
   centro_costo: string;
   lugar_retiro: string;
+  cargo_actual: string;
   epps: Epp[];
   temporada: string;
   anio: number;
