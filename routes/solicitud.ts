@@ -19,12 +19,11 @@ solicitudRoutes.post("/", [verificaToken], async (req: any, res: Response) => {
   });
 
   const epps = body.epps;
-  for (let epp of epps) {
-    var mailOptions = {
-      from: '"Codelco División Andina" <feedback@codelco.cl>',
-      to: "f.moyano90@gmail.com",
-      subject: "✔ Solicitud de Epp peridodo: " + body.temporada,
-      html: `
+  var mailOptions = {
+    from: '"Codelco División Andina" <feedback@codelco.cl>',
+    to: "f.moyano90@gmail.com",
+    subject: "✔ Solicitud de Epp peridodo: " + body.temporada,
+    html: `
       <p>Se ha emitido una nueva solicitud de EPP para el periodo.</p>
       <h3>1. Datos del trabajador</h3>
       <p><b>Nombre:</b> ${body.nombre}</p>
@@ -36,21 +35,30 @@ solicitudRoutes.post("/", [verificaToken], async (req: any, res: Response) => {
       <p><b>Temporada:</b> ${body.temporada}</p>
       <h3>2. Datos de la solicitud</h3>
 
-      ${epp.nombre}, ${epp.talla}, ${epp.codigo}
+      ${epps[0].nombre}, ${epps[0].talla}, ${epps[0].codigo}
+      ${epps[1].nombre}, ${epps[1].talla}, ${epps[1].codigo}
+      ${epps[2].nombre}, ${epps[2].talla}, ${epps[2].codigo}
+      ${epps[3].nombre}, ${epps[3].talla}, ${epps[3].codigo}
+      ${epps[4].nombre}, ${epps[4].talla}, ${epps[4].codigo}
+      ${epps[5].nombre}, ${epps[5].talla}, ${epps[5].codigo}
+      ${epps[6].nombre}, ${epps[6].talla}, ${epps[6].codigo}
+      ${epps[7].nombre}, ${epps[7].talla}, ${epps[7].codigo}
+      ${epps[8].nombre}, ${epps[8].talla}, ${epps[8].codigo}
+      ${epps[9].nombre}, ${epps[9].talla}, ${epps[9].codigo}
+      ${epps[10].nombre}, ${epps[10].talla}, ${epps[10].codigo}
       `,
-    };
+  };
 
-    let envioCorreo = await transporter.sendMail(
-      mailOptions,
-      (err: any, info: any) => {
-        if (err) {
-          res.status(500).send(err.message);
-        } else {
-          res.status(200).send("Enviado correctamente");
-        }
+  let envioCorreo = await transporter.sendMail(
+    mailOptions,
+    (err: any, info: any) => {
+      if (err) {
+        res.status(500).send(err.message);
+      } else {
+        res.status(200).send("Enviado correctamente");
       }
-    );
-  }
+    }
+  );
 
   Solicitud.create(body)
     .then(async (solicitudDB) => {
