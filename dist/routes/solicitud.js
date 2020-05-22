@@ -131,5 +131,29 @@ solicitudRoutes.get("/obtener/:id", (req, res) => __awaiter(void 0, void 0, void
         });
     });
 }));
-// SOLICITUDES INVIERNO
+// OBTENER ÚLTIMA SOLICITUD POR ID DE USUARIO Y TEMPORADA
+solicitudRoutes.get("/:usuarioID/:temporada", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    let usuarioID = req.params.usuarioID;
+    let temporada = req.params.temporada;
+    let solicitud = yield solicitud_model_1.Solicitud.findOne({
+        $and: [{ usuarioID: usuarioID }, { temporada: temporada }],
+    }, (err, solicitudBD) => {
+        if (err) {
+            return res.status(500).json({
+                ok: false,
+                err,
+            });
+        }
+        if (!solicitudBD) {
+            return res.status(400).json({
+                ok: false,
+                solicitud: null,
+            });
+        }
+        res.json({
+            ok: true,
+            solicitud: solicitudBD,
+        });
+    });
+}));
 exports.default = solicitudRoutes;
