@@ -13,6 +13,7 @@ const solicitudSchema = new mongoose_1.Schema({
     ubicacion: { type: String },
     centro_costo: { type: String },
     lugar_retiro: { type: String },
+    cargo_actual: { type: String },
     epps: { type: [] },
     temporada: { type: String },
     mes: { type: Number },
