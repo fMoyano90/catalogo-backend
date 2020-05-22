@@ -19,6 +19,35 @@ solicitudRoutes.post("/", [verificaToken], async (req: any, res: Response) => {
   });
 
   const epps = body.epps;
+  let eppsConvenio =
+    '<table style="border: 1px solid #333;">' +
+    "<thead>" +
+    "<th> Codigo </th>" +
+    "<th> Epp </th>" +
+    "<th> Talla </th>" +
+    "<th> Cantidad </th>" +
+    "</thead>";
+
+  for (let epp of epps) {
+    eppsConvenio +=
+      "<tr>" +
+      "<td>" +
+      epp.codigo +
+      "</td>" +
+      "<td>" +
+      epp.nombre +
+      "</td>" +
+      "<td>" +
+      epp.talla +
+      "</td>" +
+      "<td>" +
+      "1" +
+      "</td>" +
+      "</tr>";
+  }
+
+  eppsConvenio += "</table>";
+
   var mailOptions = {
     from: '"Codelco División Andina" <feedback@codelco.cl>',
     to: "f.moyano90@gmail.com",
@@ -34,18 +63,7 @@ solicitudRoutes.post("/", [verificaToken], async (req: any, res: Response) => {
       <p><b>Año:</b> ${body.anio}</p>
       <p><b>Temporada:</b> ${body.temporada}</p>
       <h3>2. Datos de la solicitud</h3>
-
-      ${epps[0].nombre}, ${epps[0].talla}, ${epps[0].codigo}
-      ${epps[1].nombre}, ${epps[1].talla}, ${epps[1].codigo}
-      ${epps[2].nombre}, ${epps[2].talla}, ${epps[2].codigo}
-      ${epps[3].nombre}, ${epps[3].talla}, ${epps[3].codigo}
-      ${epps[4].nombre}, ${epps[4].talla}, ${epps[4].codigo}
-      ${epps[5].nombre}, ${epps[5].talla}, ${epps[5].codigo}
-      ${epps[6].nombre}, ${epps[6].talla}, ${epps[6].codigo}
-      ${epps[7].nombre}, ${epps[7].talla}, ${epps[7].codigo}
-      ${epps[8].nombre}, ${epps[8].talla}, ${epps[8].codigo}
-      ${epps[9].nombre}, ${epps[9].talla}, ${epps[9].codigo}
-      ${epps[10].nombre}, ${epps[10].talla}, ${epps[10].codigo}
+      ${eppsConvenio}
       `,
   };
 
