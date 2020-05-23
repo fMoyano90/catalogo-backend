@@ -139,8 +139,8 @@ solicitudRoutes.get("/:usuarioID/:temporada", (req, res) => __awaiter(void 0, vo
         $and: [{ usuarioID: usuarioID }, { temporada: temporada }],
     }).sort({ anio: -1 });
     if (!solicitud) {
-        return res.status(400).json({
-            ok: false,
+        return res.json({
+            ok: true,
             solicitud: null,
         });
     }

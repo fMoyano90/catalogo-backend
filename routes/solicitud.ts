@@ -149,12 +149,11 @@ solicitudRoutes.get(
     }).sort({ anio: -1 });
 
     if (!solicitud) {
-      return res.status(400).json({
-        ok: false,
+      return res.json({
+        ok: true,
         solicitud: null,
       });
     }
-
     res.json({
       ok: true,
       solicitud: solicitud,
