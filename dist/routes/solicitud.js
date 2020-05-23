@@ -137,23 +137,16 @@ solicitudRoutes.get("/:usuarioID/:temporada", (req, res) => __awaiter(void 0, vo
     let temporada = req.params.temporada;
     let solicitud = yield solicitud_model_1.Solicitud.findOne({
         $and: [{ usuarioID: usuarioID }, { temporada: temporada }],
-    }, (err, solicitudBD) => {
-        if (err) {
-            return res.status(500).json({
-                ok: false,
-                err,
-            });
-        }
-        if (!solicitudBD) {
-            return res.status(400).json({
-                ok: false,
-                solicitud: null,
-            });
-        }
-        res.json({
-            ok: true,
-            solicitud: solicitudBD,
+    }).sort({ anio: -1 });
+    if (!solicitud) {
+        return res.status(400).json({
+            ok: false,
+            solicitud: null,
         });
+    }
+    res.json({
+        ok: true,
+        solicitud: solicitud,
     });
 }));
 exports.default = solicitudRoutes;

@@ -144,31 +144,21 @@ solicitudRoutes.get(
     let usuarioID = req.params.usuarioID;
     let temporada = req.params.temporada;
 
-    let solicitud = await Solicitud.findOne(
-      {
-        $and: [{ usuarioID: usuarioID }, { temporada: temporada }],
-      },
-      (err, solicitudBD) => {
-        if (err) {
-          return res.status(500).json({
-            ok: false,
-            err,
-          });
-        }
+    let solicitud = await Solicitud.findOne({
+      $and: [{ usuarioID: usuarioID }, { temporada: temporada }],
+    }).sort({ anio: -1 });
 
-        if (!solicitudBD) {
-          return res.status(400).json({
-            ok: false,
-            solicitud: null,
-          });
-        }
+    if (!solicitud) {
+      return res.status(400).json({
+        ok: false,
+        solicitud: null,
+      });
+    }
 
-        res.json({
-          ok: true,
-          solicitud: solicitudBD,
-        });
-      }
-    );
+    res.json({
+      ok: true,
+      solicitud: solicitud,
+    });
   }
 );
 
