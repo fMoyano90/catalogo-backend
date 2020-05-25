@@ -111,6 +111,18 @@ solicitudRoutes.get("/:anio", async (req: any, res: Response) => {
   });
 });
 
+// LISTAR SOLICITUD POR AÑO
+solicitudRoutes.get("/:anio/completo", async (req: any, res: Response) => {
+  let anio = req.params.anio;
+
+  const solicitudes = await Solicitud.find({ anio: anio }).sort({ nombre: 1 });
+
+  res.json({
+    ok: true,
+    solicitudes,
+  });
+});
+
 // SOLICITUD POR ID
 solicitudRoutes.get("/obtener/:id", async (req: any, res: Response) => {
   let id = req.params.id;
@@ -161,7 +173,7 @@ solicitudRoutes.get(
   }
 );
 
-// EDITAR PRODUCTO
+// EDITAR SOLICITUD
 solicitudRoutes.put(
   "/editar/:id",
   [verificaToken],

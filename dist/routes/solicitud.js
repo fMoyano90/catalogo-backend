@@ -108,6 +108,15 @@ solicitudRoutes.get("/:anio", (req, res) => __awaiter(void 0, void 0, void 0, fu
         solicitudes,
     });
 }));
+// LISTAR SOLICITUD POR AÑO
+solicitudRoutes.get("/:anio/completo", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    let anio = req.params.anio;
+    const solicitudes = yield solicitud_model_1.Solicitud.find({ anio: anio }).sort({ nombre: 1 });
+    res.json({
+        ok: true,
+        solicitudes,
+    });
+}));
 // SOLICITUD POR ID
 solicitudRoutes.get("/obtener/:id", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     let id = req.params.id;
@@ -149,7 +158,7 @@ solicitudRoutes.get("/:usuarioID/:temporada", (req, res) => __awaiter(void 0, vo
         solicitud: solicitud,
     });
 }));
-// EDITAR PRODUCTO
+// EDITAR SOLICITUD
 solicitudRoutes.put("/editar/:id", [autenticacion_1.verificaToken], (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     let id = req.params.id;
     let body = req.body;
