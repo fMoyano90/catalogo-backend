@@ -161,4 +161,25 @@ solicitudRoutes.get(
   }
 );
 
+// EDITAR PRODUCTO
+solicitudRoutes.put(
+  "/editar/:id",
+  [verificaToken],
+  async (req: any, res: Response) => {
+    let id = req.params.id;
+    let body = req.body;
+
+    Solicitud.findByIdAndUpdate(id, body)
+      .then(async (solicitudDB) => {
+        res.json({
+          ok: true,
+          producto: solicitudDB,
+        });
+      })
+      .catch((err) => {
+        res.json(err);
+      });
+  }
+);
+
 export default solicitudRoutes;

@@ -149,4 +149,19 @@ solicitudRoutes.get("/:usuarioID/:temporada", (req, res) => __awaiter(void 0, vo
         solicitud: solicitud,
     });
 }));
+// EDITAR PRODUCTO
+solicitudRoutes.put("/editar/:id", [autenticacion_1.verificaToken], (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    let id = req.params.id;
+    let body = req.body;
+    solicitud_model_1.Solicitud.findByIdAndUpdate(id, body)
+        .then((solicitudDB) => __awaiter(void 0, void 0, void 0, function* () {
+        res.json({
+            ok: true,
+            producto: solicitudDB,
+        });
+    }))
+        .catch((err) => {
+        res.json(err);
+    });
+}));
 exports.default = solicitudRoutes;
