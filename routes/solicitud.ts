@@ -10,11 +10,11 @@ solicitudRoutes.post("/", [verificaToken], async (req: any, res: Response) => {
   let body = req.body;
 
   const transporter = nodemailer.createTransport({
-    host: "smtp.mailtrap.io",
-    port: 2525,
+    host: "smtp.gmail.com",
+    port: 465,
     auth: {
-      user: "307c9998ff3e29",
-      pass: "a678b762fa04b8",
+      user: "feedback.cacciuttolo@gmail.com",
+      pass: "maspoqugfvhoxzfg",
     },
   });
 
@@ -50,7 +50,8 @@ solicitudRoutes.post("/", [verificaToken], async (req: any, res: Response) => {
 
   var mailOptions = {
     from: '"Codelco División Andina" <feedback@codelco.cl>',
-    to: "f.moyano90@gmail.com",
+    to: "iherr004@contratistas.codelco.cl",
+    cc: "icheherrera@gmail.com",
     subject: "✔ Solicitud de Epp peridodo: " + body.temporada,
     html: `
       <p>Se ha emitido una nueva solicitud de EPP para el periodo.</p>
