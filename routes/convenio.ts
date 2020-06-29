@@ -59,6 +59,44 @@ convenioRoutes.post("/", [verificaToken], async (req: any, res: Response) => {
     });
 });
 
+// EDITAR EPPS CONVENIO
+convenioRoutes.put(
+  "/editar/:id",
+  [verificaToken],
+  async (req: any, res: Response) => {
+    let id = req.params.id;
+    let body = req.body;
+
+    Convenio.findByIdAndUpdate(id, body)
+      .then(async (productoDB) => {
+        res.json({
+          ok: true,
+          producto: productoDB,
+        });
+      })
+      .catch((err) => {
+        res.json(err);
+      });
+  }
+);
+
+// ELIMINAR EPPS CONVENIO POR ID
+convenioRoutes.delete("/delete/:id", (req: any, res: Response) => {
+  let id = req.params.id;
+  Convenio.findByIdAndDelete(id, (err, eppEliminado) => {
+    if (err) {
+      return res.status(500).json({
+        ok: false,
+        err,
+      });
+    }
+    res.json({
+      ok: true,
+      eppEliminado,
+    });
+  });
+});
+
 // IMPORTAR CSV A BASE DE DATOS (PRODUCTOS)
 convenioRoutes.post("/leercsv", (req: any, res: any) => {
   const mongodb = require("mongodb").MongoClient;
