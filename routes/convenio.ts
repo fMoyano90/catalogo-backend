@@ -4,6 +4,25 @@ import { Convenio } from "../models/convenio.model";
 
 const convenioRoutes = Router();
 
+// OBTENER TODOS LOS EPPS CONVENIO PAGINADOS
+convenioRoutes.get("/listado/convenio", async (req: any, res: Response) => {
+  let pagina = Number(req.query.pagina) || 1;
+  let skip = pagina - 1;
+  skip = skip * 10;
+
+  const epps = await Convenio.find()
+    .sort({ nombre: 1 })
+    .limit(10)
+    .skip(skip)
+    .exec();
+
+  res.json({
+    ok: true,
+    pagina,
+    epps,
+  });
+});
+
 // OBTENER EPP CONVENIO POR CODIGO
 convenioRoutes.get("/:codigo", async (req: any, res: Response) => {
   const codigo = req.params.codigo.toString();

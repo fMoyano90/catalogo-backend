@@ -13,6 +13,22 @@ const express_1 = require("express");
 const autenticacion_1 = require("../middlewares/autenticacion");
 const convenio_model_1 = require("../models/convenio.model");
 const convenioRoutes = express_1.Router();
+// OBTENER TODOS LOS EPPS CONVENIO PAGINADOS
+convenioRoutes.get("/listado/convenio", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    let pagina = Number(req.query.pagina) || 1;
+    let skip = pagina - 1;
+    skip = skip * 10;
+    const epps = yield convenio_model_1.Convenio.find()
+        .sort({ nombre: 1 })
+        .limit(10)
+        .skip(skip)
+        .exec();
+    res.json({
+        ok: true,
+        pagina,
+        epps,
+    });
+}));
 // OBTENER EPP CONVENIO POR CODIGO
 convenioRoutes.get("/:codigo", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const codigo = req.params.codigo.toString();
