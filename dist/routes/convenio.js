@@ -39,6 +39,29 @@ convenioRoutes.get("/:codigo", (req, res) => __awaiter(void 0, void 0, void 0, f
         codigo,
     });
 }));
+// OBTENER PRODUCTO POR ID
+convenioRoutes.get("obtener/epp/:id", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    let id = req.params.id;
+    const eppConvenio = yield convenio_model_1.Convenio.findById(id, (err, convenioBD) => {
+        if (err) {
+            return res.status(500).json({
+                ok: false,
+                err,
+            });
+        }
+        if (!convenioBD) {
+            return res.status(400).json({
+                ok: false,
+                message: "No existe producto con esa ID",
+                err,
+            });
+        }
+        res.json({
+            ok: true,
+            convenioEpp: convenioBD,
+        });
+    });
+}));
 // OBTENER EPPS CONVENIO POR TIPO
 convenioRoutes.get("/:tipo/:lugar/:genero/:temporada/:cargo", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const tipo = req.params.tipo;

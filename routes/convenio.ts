@@ -36,6 +36,32 @@ convenioRoutes.get("/:codigo", async (req: any, res: Response) => {
   });
 });
 
+// OBTENER PRODUCTO POR ID
+convenioRoutes.get("obtener/epp/:id", async (req: any, res: Response) => {
+  let id = req.params.id;
+  const eppConvenio = await Convenio.findById(id, (err, convenioBD) => {
+    if (err) {
+      return res.status(500).json({
+        ok: false,
+        err,
+      });
+    }
+
+    if (!convenioBD) {
+      return res.status(400).json({
+        ok: false,
+        message: "No existe producto con esa ID",
+        err,
+      });
+    }
+
+    res.json({
+      ok: true,
+      convenioEpp: convenioBD,
+    });
+  });
+});
+
 // OBTENER EPPS CONVENIO POR TIPO
 convenioRoutes.get(
   "/:tipo/:lugar/:genero/:temporada/:cargo",
