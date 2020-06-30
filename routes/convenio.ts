@@ -24,7 +24,7 @@ convenioRoutes.get("/listado/convenio", async (req: any, res: Response) => {
 });
 
 // OBTENER EPP CONVENIO POR CODIGO
-convenioRoutes.get("busqueda/:epp", async (req: any, res: Response) => {
+convenioRoutes.get("/busqueda/:epp", async (req: any, res: Response) => {
   let pagina = Number(req.query.pagina) || 1;
   let skip = pagina - 1;
   skip = skip * 10;
@@ -47,7 +47,7 @@ convenioRoutes.get("busqueda/:epp", async (req: any, res: Response) => {
 });
 
 // OBTENER PRODUCTO POR ID
-convenioRoutes.get("obtener/epp/:id", async (req: any, res: Response) => {
+convenioRoutes.get("/obtener/epp/:id", async (req: any, res: Response) => {
   let id = req.params.id;
   const eppConvenio = await Convenio.findById(id, (err, convenioBD) => {
     if (err) {
