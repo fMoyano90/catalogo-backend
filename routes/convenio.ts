@@ -24,15 +24,25 @@ convenioRoutes.get("/listado/convenio", async (req: any, res: Response) => {
 });
 
 // OBTENER EPP CONVENIO POR CODIGO
-convenioRoutes.get("/:codigo", async (req: any, res: Response) => {
-  const codigo = req.params.codigo.toString();
+convenioRoutes.get("busqueda/:epp", async (req: any, res: Response) => {
+  let pagina = Number(req.query.pagina) || 1;
+  let skip = pagina - 1;
+  skip = skip * 10;
 
-  const epp = await Convenio.find({ codigo: codigo });
+  const eppConvenio = req.params.epp.toString();
+  var regex = new RegExp(eppConvenio, "i");
+
+  const epps = await Convenio.find({})
+    .or([{ codigo: regex }, { epp: regex }])
+    .sort({ epp: 1 })
+    .limit(10)
+    .skip(skip)
+    .exec();
 
   res.json({
     ok: true,
-    epp,
-    codigo,
+    pagina,
+    epps,
   });
 });
 

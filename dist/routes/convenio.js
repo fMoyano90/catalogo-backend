@@ -30,13 +30,22 @@ convenioRoutes.get("/listado/convenio", (req, res) => __awaiter(void 0, void 0, 
     });
 }));
 // OBTENER EPP CONVENIO POR CODIGO
-convenioRoutes.get("/:codigo", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const codigo = req.params.codigo.toString();
-    const epp = yield convenio_model_1.Convenio.find({ codigo: codigo });
+convenioRoutes.get("busqueda/:epp", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    let pagina = Number(req.query.pagina) || 1;
+    let skip = pagina - 1;
+    skip = skip * 10;
+    const eppConvenio = req.params.epp.toString();
+    var regex = new RegExp(eppConvenio, "i");
+    const epps = yield convenio_model_1.Convenio.find({})
+        .or([{ codigo: regex }, { epp: regex }])
+        .sort({ epp: 1 })
+        .limit(10)
+        .skip(skip)
+        .exec();
     res.json({
         ok: true,
-        epp,
-        codigo,
+        pagina,
+        epps,
     });
 }));
 // OBTENER PRODUCTO POR ID
