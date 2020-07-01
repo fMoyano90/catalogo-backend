@@ -23,32 +23,6 @@ convenioRoutes.get("/listado/convenio", async (req: any, res: Response) => {
   });
 });
 
-// OBTENER EPP CONVENIO POR CODIGO
-convenioRoutes.get(
-  "/busqueda/epp/:busqueda",
-  async (req: any, res: Response) => {
-    let pagina = Number(req.query.pagina) || 1;
-    let skip = pagina - 1;
-    skip = skip * 10;
-
-    const eppConvenio = req.params.busqueda;
-    var regex = new RegExp(eppConvenio, "i");
-
-    const epps = await Convenio.find({})
-      .or([{ codigo: regex }, { epp: regex }])
-      .sort({ epp: 1 })
-      .limit(10)
-      .skip(skip)
-      .exec();
-
-    res.json({
-      ok: true,
-      pagina,
-      epps,
-    });
-  }
-);
-
 // OBTENER PRODUCTO POR ID
 convenioRoutes.get("/obtener/epp/:id", async (req: any, res: Response) => {
   let id = req.params.id;
