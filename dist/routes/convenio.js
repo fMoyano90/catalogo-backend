@@ -30,11 +30,11 @@ convenioRoutes.get("/listado/convenio", (req, res) => __awaiter(void 0, void 0, 
     });
 }));
 // OBTENER EPP CONVENIO POR CODIGO
-convenioRoutes.get("/busqueda/:busqueda", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+convenioRoutes.get("/busqueda/epp/:busqueda", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     let pagina = Number(req.query.pagina) || 1;
     let skip = pagina - 1;
     skip = skip * 10;
-    const eppConvenio = req.params.busqueda.toString();
+    const eppConvenio = req.params.busqueda;
     var regex = new RegExp(eppConvenio, "i");
     const epps = yield convenio_model_1.Convenio.find({})
         .or([{ codigo: regex }, { epp: regex }])
