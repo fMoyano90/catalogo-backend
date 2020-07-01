@@ -37,7 +37,7 @@ buscadorRoutes.get("/convenio-epp/:busqueda", (req, res) => __awaiter(void 0, vo
     let pagina = Number(req.query.pagina) || 1;
     let skip = pagina - 1;
     skip = skip * 10;
-    const eppConvenio = req.params.busqueda;
+    let eppConvenio = req.params.busqueda;
     var regex = new RegExp(eppConvenio, "i");
     const epps = yield convenio_model_1.Convenio.find({})
         .or([{ codigo: regex }, { epp: regex }])
