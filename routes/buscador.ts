@@ -36,8 +36,8 @@ buscadorRoutes.get(
     let skip = pagina - 1;
     skip = skip * 10;
 
-    let eppConvenio = req.params.busqueda;
-    var regex = new RegExp(eppConvenio, "i");
+    let busqueda = req.params.busqueda;
+    var regex = new RegExp(busqueda, "i");
 
     const epps = await Convenio.find({})
       .or([{ codigo: regex }, { epp: regex }])
