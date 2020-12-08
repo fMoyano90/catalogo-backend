@@ -20,7 +20,7 @@
     "csvtojson": "^2.0.10",
     "express": "^4.17.1",
     "express-fileupload": "^1.1.6",
-    "fast-csv": "^4.0.2",
+    "fast-csv": "^4.3.6",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.4.11",
     "mv": "^2.1.1",
